@@ -5,13 +5,16 @@ import static oceanrodent.characters.TheRodent.Enums.RODENT_COLOUR_OCEAN;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -27,43 +30,49 @@ import oceanrodent.cards.Strike;
 import oceanrodent.relics.TodoItem;
 
 public class TheRodent extends CustomPlayer {
-
     static final String ID = makeID("rodentcharacter");
     public static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
-
+    private static final Float SIZE_SCALE = 0.6f;
+    private static final Float ANIMATION_SPEED = 1.0f;
 
     public TheRodent(String name, PlayerClass setClass) {
-        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpriterAnimation(
-                makeCharacterPath("mainChar/static.scml")));
-        initializeClass(null,
-                SHOULDER1,
-                SHOULDER2,
-                CORPSE,
-                getLoadout(), 20.0F, -10.0F, 166.0F, 327.0F, new EnergyManager(3));
+        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), new float[]{24f, 36f, 16f, 12f, 0f}), new SpineAnimation(makeCharacterPath("mainChar/rat.atlas"), makeCharacterPath("mainChar/rat.json"), 1f / SIZE_SCALE));
+        initializeClass(null, SHOULDER1, SHOULDER2, CORPSE, getLoadout(), 20.0F, -10.0F, 166.0F, 80.0F, new EnergyManager(3));
 
+        AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
+        stateData.setMix("Hit", "Idle", 0.5F);
+        e.setTimeScale(ANIMATION_SPEED);
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
     }
 
     @Override
+    public void damage(DamageInfo info) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - currentBlock > 0) {
+            AnimationState.TrackEntry e = state.setAnimation(0, "Hit", false);
+            AnimationState.TrackEntry e2 = state.addAnimation(0, "Idle", true, 0.0F);
+            e.setTimeScale(ANIMATION_SPEED);
+            e2.setTimeScale(ANIMATION_SPEED);
+        }
+
+        super.damage(info);
+    }
+
+    @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0],
-                80, 80, 0, 99, 5, this, getStartingRelics(),
-                getStartingDeck(), false);
+        return new CharSelectInfo(NAMES[0], TEXT[0],75, 75, 1, 99, 5, this, getStartingRelics(), getStartingDeck(), false);
     }
 
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
             retVal.add(Strike.ID);
-        }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
             retVal.add(Defend.ID);
-        }
         return retVal;
     }
 
@@ -76,22 +85,21 @@ public class TheRodent extends CustomPlayer {
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
-                false);
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false);
     }
 
     private static final String[] orbTextures = {
-            makeCharacterPath("mainChar/orb/layer1.png"),
-            makeCharacterPath("mainChar/orb/layer2.png"),
-            makeCharacterPath("mainChar/orb/layer3.png"),
-            makeCharacterPath("mainChar/orb/layer4.png"),
-            makeCharacterPath("mainChar/orb/layer4.png"),
-            makeCharacterPath("mainChar/orb/layer6.png"),
-            makeCharacterPath("mainChar/orb/layer1d.png"),
-            makeCharacterPath("mainChar/orb/layer2d.png"),
-            makeCharacterPath("mainChar/orb/layer3d.png"),
-            makeCharacterPath("mainChar/orb/layer4d.png"),
-            makeCharacterPath("mainChar/orb/layer5d.png"),
+        makeCharacterPath("mainChar/orb/layer1.png"),
+        makeCharacterPath("mainChar/orb/layer2.png"),
+        makeCharacterPath("mainChar/orb/layer3.png"),
+        makeCharacterPath("mainChar/orb/layer4.png"),
+        makeCharacterPath("mainChar/orb/layer4.png"),
+        makeCharacterPath("mainChar/orb/layer6.png"),
+        makeCharacterPath("mainChar/orb/layer1d.png"),
+        makeCharacterPath("mainChar/orb/layer2d.png"),
+        makeCharacterPath("mainChar/orb/layer3d.png"),
+        makeCharacterPath("mainChar/orb/layer4d.png"),
+        makeCharacterPath("mainChar/orb/layer5d.png"),
     };
 
     @Override
@@ -153,9 +161,9 @@ public class TheRodent extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.FIRE,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.FIRE};
+                AbstractGameAction.AttackEffect.SLASH_VERTICAL,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL};
     }
 
     @Override
@@ -166,6 +174,11 @@ public class TheRodent extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+
+    @Override
+    public String getSensoryStoneText() {
+        return TEXT[3];
     }
 
     public static class Enums {
