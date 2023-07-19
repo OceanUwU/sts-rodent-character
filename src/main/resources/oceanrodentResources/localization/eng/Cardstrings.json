@@ -57,5 +57,9 @@
   "${ModID}:Straw": {
     "NAME": "plastic straw",
     "DESCRIPTION": "gain !B! block. NL apply !M! weak."
+  },
+  "${ModID}:PaperPlate": {
+    "NAME": "paper plate",
+    "DESCRIPTION": "draw !M! card{!M!|>1=s}."
   }
 }

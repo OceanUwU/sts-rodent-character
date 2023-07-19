@@ -76,6 +76,9 @@ public class Junk {
         add(new JunkCard("MouldyCheese", 5, CardType.SKILL, CardTarget.ENEMY, 0, 0, 3, (c, m) -> {
             applyToEnemy(m, new Encheesed(m, c.magicNumber));}));
 
+        add(new JunkCard("PaperPlate", 5, CardType.SKILL, CardTarget.SELF, 0, 0, 1, (c, m) -> {
+            atb(new DrawCardAction(c.magicNumber));}));
+
         add(new JunkCard("FullCan", 3, CardType.SKILL, CardTarget.SELF, 0, 0, 1, (c, m) -> {
             atb(new GainEnergyAction(c.magicNumber));}));
 
