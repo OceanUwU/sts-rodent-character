@@ -1,7 +1,10 @@
 {
   "${ModID}:Strike": {
     "NAME": "strike",
-    "DESCRIPTION": "deal !D! damage."
+    "DESCRIPTION": "deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b!M! block."
+    ]
   },
   "${ModID}:Defend": {
     "NAME": "defend",

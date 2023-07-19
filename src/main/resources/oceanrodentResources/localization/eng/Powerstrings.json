@@ -1,10 +1,15 @@
 {
-  "${ModID}:ExampleTwoAmountPower": {
-    "NAME": "Example 2",
+  "${ModID}:Wreck": {
+    "NAME": "wreck",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yStrength and #b",
-      " #yDexterity."
+      "play #b",
+      " attack",
+      " attacks",
+      " skill",
+      " skills",
+      " power",
+      " powers",
+      " this turn to "
     ]
   }
 }

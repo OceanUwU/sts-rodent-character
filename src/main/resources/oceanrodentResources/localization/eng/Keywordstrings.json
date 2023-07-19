@@ -13,6 +13,17 @@
     "NAMES": [
       "hardy"
     ],
-    "DESCRIPTION": "returns to your hand when discarded."
+    "DESCRIPTION": "returns to your hand when discarded, triggering any listed effects."
+  },
+  {
+    "PROPER_NAME": "wreck",
+    "NAMES": [
+      "wreck",
+      "wrecks",
+      "wrecked",
+      "wreckage",
+      "wreckages"
+    ],
+    "DESCRIPTION": "play x cards of the same type as this card this turn to trigger."
   }
 ]
