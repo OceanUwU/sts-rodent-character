@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.nio.charset.StandardCharsets;
-import oceanrodent.cards.AbstractEasyCard;
+import oceanrodent.cards.AbstractRodentCard;
 import oceanrodent.cards.cardvars.SecondDamage;
 import oceanrodent.cards.cardvars.SecondMagicNumber;
 import oceanrodent.characters.TheRodent;
@@ -134,7 +134,7 @@ public class RodentMod implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         new AutoAdd(modID)
-                .packageFilter(AbstractEasyCard.class)
+                .packageFilter(AbstractRodentCard.class)
                 .setDefaultSeen(true)
                 .cards();
     }

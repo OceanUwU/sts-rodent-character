@@ -29,7 +29,6 @@ public class Grime {
     public static class GrimedMod extends AbstractCardModifier {
         public static final String ID = makeID("GrimedMod");
         private static final Texture ICON_TEXTURE = TexLoader.getTexture(makeImagePath("ui/grime.png"));
-        private static String KEYWORD_ID = makeID("grimy");
         public int amount;
         public float timer = 0f;
         public boolean supplyingKeyword;

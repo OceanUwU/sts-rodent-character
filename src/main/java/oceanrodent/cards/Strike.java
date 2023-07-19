@@ -9,7 +9,7 @@ import oceanrodent.mechanics.Grime;
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
 
-public class Strike extends AbstractEasyCard {
+public class Strike extends AbstractRodentCard {
     public final static String ID = makeID("Strike");
 
     public Strike() {

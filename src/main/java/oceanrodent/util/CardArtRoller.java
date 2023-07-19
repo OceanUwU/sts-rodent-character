@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.random.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 import oceanrodent.RodentMod;
-import oceanrodent.cards.AbstractEasyCard;
+import oceanrodent.cards.AbstractRodentCard;
 
 import static com.badlogic.gdx.graphics.GL20.GL_DST_COLOR;
 import static com.badlogic.gdx.graphics.GL20.GL_ZERO;
@@ -184,7 +184,7 @@ public class CardArtRoller {
             CardLibrary.LibraryType.CURSE
     };
 
-    public static void computeCard(AbstractEasyCard c) {
+    public static void computeCard(AbstractRodentCard c) {
         c.portrait = doneCards.computeIfAbsent(c.cardID, key -> {
             ReskinInfo r = infos.computeIfAbsent(key, key2 -> {
                 Random rng = new Random((long) c.cardID.hashCode());

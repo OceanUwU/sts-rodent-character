@@ -1,10 +1,5 @@
 package oceanrodent.cards;
 
-import static oceanrodent.RodentMod.makeImagePath;
-import static oceanrodent.RodentMod.modID;
-import static oceanrodent.util.Wiz.atb;
-import static oceanrodent.util.Wiz.att;
-
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -23,7 +18,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import oceanrodent.characters.TheRodent;
 import oceanrodent.util.CardArtRoller;
 
-public abstract class AbstractEasyCard extends CustomCard {
+import static oceanrodent.RodentMod.makeImagePath;
+import static oceanrodent.RodentMod.modID;
+import static oceanrodent.util.Wiz.*;
+
+public abstract class AbstractRodentCard extends CustomCard {
 
     protected final CardStrings cardStrings;
 
@@ -36,14 +35,16 @@ public abstract class AbstractEasyCard extends CustomCard {
     public int baseSecondDamage;
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
-
+    
+    public boolean hardy = false;
+    
     private boolean needsArtRefresh = false;
 
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
+    public AbstractRodentCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheRodent.Enums.RODENT_COLOUR_OCEAN);
     }
 
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
+    public AbstractRodentCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
@@ -171,6 +172,29 @@ public abstract class AbstractEasyCard extends CustomCard {
             upp();
         }
     }
+
+    public void triggerOnManualDiscard() {
+        if (hardy)
+            att(new HardyReturnAction(this));
+    }
+
+    private static class HardyReturnAction extends AbstractGameAction {
+        AbstractRodentCard c;
+
+        public HardyReturnAction(AbstractRodentCard c) {
+            this.c = c;
+        }
+
+        public void update() {
+            adp().discardPile.moveToHand(c);
+            adp().hand.refreshHandLayout();
+            adp().hand.applyPowers();
+            c.onHardyReturn();
+            isDone = true;
+        }
+    }
+
+    public void onHardyReturn() {}
 
     public abstract void upp();
 

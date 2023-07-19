@@ -1,7 +1,7 @@
 {
   "${ModID}:Strike": {
     "NAME": "strike",
-    "DESCRIPTION": "deal !D! damage. [E]"
+    "DESCRIPTION": "deal !D! damage."
   },
   "${ModID}:Defend": {
     "NAME": "defend",

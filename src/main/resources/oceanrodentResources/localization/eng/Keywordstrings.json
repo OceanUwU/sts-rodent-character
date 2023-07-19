@@ -7,5 +7,12 @@
       "grimed"
     ],
     "DESCRIPTION": "grimy cards have extra damage and block the next time they're played."
+  },
+  {
+    "PROPER_NAME": "hardy",
+    "NAMES": [
+      "hardy"
+    ],
+    "DESCRIPTION": "returns to your hand when discarded."
   }
 ]
