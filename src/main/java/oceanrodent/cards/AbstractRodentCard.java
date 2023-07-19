@@ -24,7 +24,7 @@ import static oceanrodent.util.Wiz.*;
 
 public abstract class AbstractRodentCard extends CustomCard {
 
-    protected final CardStrings cardStrings;
+    protected CardStrings cardStrings;
 
     public int secondMagic;
     public int baseSecondMagic;
@@ -206,28 +206,32 @@ public abstract class AbstractRodentCard extends CustomCard {
     }
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
-    protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
+    public void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
     }
 
-    protected void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
+    public void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
     }
 
-    protected void allDmg(AbstractGameAction.AttackEffect fx) {
+    public void allDmg(AbstractGameAction.AttackEffect fx) {
         atb(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
     }
 
-    protected void allDmgTop(AbstractGameAction.AttackEffect fx) {
+    public void allDmgTop(AbstractGameAction.AttackEffect fx) {
         att(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
     }
 
-    protected void altDmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
+    public void altDmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, secondDamage, damageTypeForTurn), fx));
     }
 
-    protected void blck() {
+    public void blck() {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+    }
+
+    public void blckTop() {
+        att(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
     }
 
     public String cardArtCopy() {

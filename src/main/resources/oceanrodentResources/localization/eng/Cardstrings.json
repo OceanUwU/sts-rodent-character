@@ -9,5 +9,53 @@
   "${ModID}:Defend": {
     "NAME": "defend",
     "DESCRIPTION": "gain !B! block."
+  },
+  "${ModID}:Junk": {
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "{@@}${ModID}:junk. NL ",
+      " NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}. NL exhaust."
+    ]
+  },
+  "${ModID}:Wrapper": {
+    "NAME": "wrapper",
+    "DESCRIPTION": "deal !D! damage."
+  },
+  "${ModID}:Lid": {
+    "NAME": "lid",
+    "DESCRIPTION": "gain !B! block."
+  },
+  "${ModID}:StaleLoafOfBread": {
+    "NAME": "stale loaf of bread",
+    "DESCRIPTION": "deal !D! damage to all enemies."
+  },
+  "${ModID}:Mud": {
+    "NAME": "mud",
+    "DESCRIPTION": "${ModID}:grime !M! card{!M!|>1=s} at random."
+  },
+  "${ModID}:MouldyCheese": {
+    "NAME": "mouldy cheese",
+    "DESCRIPTION": "apply !M! ${ModID}:encheesed."
+  },
+  "${ModID}:FullCan": {
+    "NAME": "full can",
+    "DESCRIPTION": "gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
+  },
+  "${ModID}:BinBag": {
+    "NAME": "bin bag",
+    "DESCRIPTION": "add !M! ${ModID}:junk to your hand."
+  },
+  "${ModID}:Cigarette": {
+    "NAME": "cigarette",
+    "DESCRIPTION": "deal !D! damage. NL apply !M! vulnerable."
+  },
+  "${ModID}:Bottle": {
+    "NAME": "water bottle",
+    "DESCRIPTION": "gain !B! block. NL deal !D! damage."
+  },
+  "${ModID}:Straw": {
+    "NAME": "plastic straw",
+    "DESCRIPTION": "gain !B! block. NL apply !M! weak."
   }
 }

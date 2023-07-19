@@ -11,5 +11,20 @@
       " powers",
       " this turn to "
     ]
+  },
+  "${ModID}:Encheesed": {
+    "NAME": "encheesed",
+    "DESCRIPTIONS": [
+      "takes #b",
+      " more attack damage this turn."
+    ]
+  },
+  "${ModID}:CheeseSeal": {
+    "NAME": "cheese seal",
+    "DESCRIPTIONS": [
+      "#yencheesed lasts #b",
+      " more turn.",
+      " more turns."
+    ]
   }
 }

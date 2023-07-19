@@ -15,12 +15,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.nio.charset.StandardCharsets;
 import oceanrodent.cards.AbstractRodentCard;
 import oceanrodent.cards.cardvars.SecondDamage;
 import oceanrodent.cards.cardvars.SecondMagicNumber;
 import oceanrodent.characters.TheRodent;
+import oceanrodent.mechanics.Junk;
 import oceanrodent.relics.AbstractEasyRelic;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -134,21 +136,25 @@ public class RodentMod implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         new AutoAdd(modID)
-                .packageFilter(AbstractRodentCard.class)
-                .setDefaultSeen(true)
-                .cards();
+            .packageFilter(AbstractRodentCard.class)
+            .setDefaultSeen(true)
+            .cards();
+        
+        Junk.initialise();
+        for (Junk.JunkCard junk : Junk.allJunk) {
+            BaseMod.addCard(junk);
+            UnlockTracker.unlockCard(junk.cardID);
+        }
     }
 
 
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/" + getLangString() + "/Cardstrings.json");
-
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/" + getLangString() + "/Relicstrings.json");
-
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/" + getLangString() + "/Charstrings.json");
-
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/" + getLangString() + "/UIstrings.json");
     }
 
     @Override

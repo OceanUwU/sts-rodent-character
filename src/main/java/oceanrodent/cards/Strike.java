@@ -1,10 +1,9 @@
 package oceanrodent.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import oceanrodent.powers.WreckPower;
+import oceanrodent.mechanics.Junk;
 
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
@@ -21,7 +20,7 @@ public class Strike extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        applyToSelf(new WreckPower(this, cardStrings.EXTENDED_DESCRIPTION[0], true, 1, 8, a -> atb(new GainBlockAction(p, a))));
+        atb(new Junk.MakeAction(Junk.MakeAction.Location.HAND));
     }
 
     public void upp() {

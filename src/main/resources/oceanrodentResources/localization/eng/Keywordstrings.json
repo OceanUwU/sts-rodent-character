@@ -25,5 +25,27 @@
       "wreckages"
     ],
     "DESCRIPTION": "play x cards of the same type as this card this turn to trigger."
+  },
+  {
+    "PROPER_NAME": "encheesed",
+    "NAMES": [
+      "encheese",
+      "encheesed"
+    ],
+    "DESCRIPTION": "encheesed creatures take more attack damage this turn."
+  },
+  {
+    "PROPER_NAME": "nip",
+    "NAMES": [
+      "nip"
+    ],
+    "DESCRIPTION": "effect triggers every time you play a card this turn."
+  },
+  {
+    "PROPER_NAME": "junk",
+    "NAMES": [
+      "junk"
+    ],
+    "DESCRIPTION": "junk cards cost #b0, draw #b1 card, and #yexhaust in addition to a random effect."
   }
 ]
