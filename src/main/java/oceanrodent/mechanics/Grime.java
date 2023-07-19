@@ -60,12 +60,12 @@ public class Grime {
         }
 
         public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard c, AbstractMonster target) {
-            if (c.damage > 0) return damage * amplifier();
+            if (damage > 0) return damage * amplifier();
             return damage;
         }
 
         public float modifyBlock(float block, AbstractCard c) {
-            if (c.block > 0) return block * amplifier();
+            if (block > 0) return block * amplifier();
             return block;
         }
 
@@ -106,6 +106,7 @@ public class Grime {
         GrimedMod modifier = getModifier(c);
         if (modifier == null) CardModifierManager.addModifier(c, new GrimedMod(amount));
         else modifier.amount += amount;
+        c.flash(Color.BROWN.cpy());
     }
 
     public static void grime(AbstractCard c) {
