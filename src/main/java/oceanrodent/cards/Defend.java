@@ -1,9 +1,10 @@
 package oceanrodent.cards;
 
-import static oceanrodent.RodentMod.makeID;
-
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import static oceanrodent.RodentMod.makeID;
+import static oceanrodent.util.Wiz.*;
 
 public class Defend extends AbstractEasyCard {
     public final static String ID = makeID("Defend");

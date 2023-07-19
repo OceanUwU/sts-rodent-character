@@ -1,10 +1,11 @@
 [
   {
-    "PROPER_NAME": "TODO",
+    "PROPER_NAME": "grimy",
     "NAMES": [
-      "todo",
-      "todos"
+      "grimy",
+      "grime",
+      "grimed"
     ],
-    "DESCRIPTION": "TODO: Make your own epic keywords"
+    "DESCRIPTION": "grimy cards have extra damage and block the next time they're played."
   }
 ]
