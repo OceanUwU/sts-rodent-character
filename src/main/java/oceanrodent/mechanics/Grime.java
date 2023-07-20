@@ -54,7 +54,12 @@ public class Grime {
             att(new AbstractGameAction() {
                 public void update() {
                     isDone = true;
-                    CardModifierManager.removeSpecificModifier(c, modifier, true);
+                    TarnishedMod tarnish = getTarnish(c);
+                    if (tarnish != null) {
+                        if (tarnish.amount > 1) tarnish.amount--;
+                        else CardModifierManager.removeSpecificModifier(c, tarnish, true);
+                    } else
+                        CardModifierManager.removeSpecificModifier(c, modifier, true);
                 }
             });
         }
@@ -85,6 +90,37 @@ public class Grime {
         public GrimedMod makeCopy() {return new GrimedMod(amount);}
     }
 
+    public static class TarnishedMod extends AbstractCardModifier {
+        public static final String ID = makeID("TarnishedMod");
+        private static final Texture ICON_TEXTURE = TexLoader.getTexture(makeImagePath("ui/tarnish.png"));
+        public int amount;
+        public float timer = 0f;
+        public boolean supplyingKeyword;
+
+        public TarnishedMod(int amount) {
+            this.amount = amount;
+        }
+
+        public void onRender(AbstractCard c, SpriteBatch sb) {
+            ExtraIcons.icon(ICON_TEXTURE).text(String.valueOf(amount)).render(c);
+        }
+
+        public boolean shouldApply(AbstractCard c) {
+            return canGrime(c) && !CardModifierManager.hasModifier(c, ID);
+        }
+
+        public void onInitialApplication(AbstractCard c) {
+            c.initializeDescription();
+        }
+     
+        public void onRemove(AbstractCard c) {
+            c.initializeDescription();
+        }
+
+        public String identifier(AbstractCard c) {return ID;}
+        public TarnishedMod makeCopy() {return new TarnishedMod(amount);}
+    }
+
     public static GrimedMod getModifier(AbstractCard c) {
         ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(c, GrimedMod.ID);
         if (modifiers.size() > 0)
@@ -92,8 +128,19 @@ public class Grime {
         return null;
     }
 
+    public static TarnishedMod getTarnish(AbstractCard c) {
+        ArrayList<AbstractCardModifier> modifiers = CardModifierManager.getModifiers(c, TarnishedMod.ID);
+        if (modifiers.size() > 0)
+            return (TarnishedMod)modifiers.get(0);
+        return null;
+    }
+
     public static boolean isGrimy(AbstractCard c) {
         return grimeAmount(c) > 0;
+    }
+
+    public static boolean isTarnished(AbstractCard c) {
+        return getTarnish(c) != null;
     }
 
     public static int grimeAmount(AbstractCard c) {
@@ -103,6 +150,7 @@ public class Grime {
     }
 
     public static void grime(AbstractCard c, int amount) {
+        if (!canGrime(c)) return;
         GrimedMod modifier = getModifier(c);
         if (modifier == null) CardModifierManager.addModifier(c, new GrimedMod(amount));
         else modifier.amount += amount;
@@ -110,6 +158,18 @@ public class Grime {
     }
 
     public static void grime(AbstractCard c) {
+        grime(c, 1);
+    }
+
+    public static void tarnish(AbstractCard c, int amount) {
+        if (!canGrime(c)) return;
+        TarnishedMod modifier = getTarnish(c);
+        if (modifier == null) CardModifierManager.addModifier(c, new TarnishedMod(amount));
+        else modifier.amount += amount;
+        c.flash(Color.FIREBRICK.cpy());
+    }
+
+    public static void tarnish(AbstractCard c) {
         grime(c, 1);
     }
 
@@ -137,13 +197,36 @@ public class Grime {
         }
     }
 
+    public static class TarnishAction extends AbstractGameAction {
+        AbstractCard c;
+        int amount;
+
+        public TarnishAction(AbstractCard c, int amount) {
+            this.c = c;
+            this.amount = amount;
+        }
+
+        public TarnishAction(AbstractCard c) {
+            this(c, 1);
+        }
+
+        public void update() {
+            if (c != null)
+                tarnish(c, amount);
+            isDone = true;
+        }
+    }
+
     @SpirePatch(clz=AbstractCard.class, method="initializeDescription")
     public static class AddKeyword {
-        private static String KEYWORD_ID = makeID("grimy");
+        private static String GRIME_KEYWORD_ID = makeID("grimy");
+        private static String TARNISHED_KEYWORD_ID = makeID("tarnished");
 
         public static void Postfix(AbstractCard __instance) {
-            if (isGrimy(__instance) && !__instance.keywords.contains(KEYWORD_ID))
-                __instance.keywords.add(KEYWORD_ID);
+            if (isGrimy(__instance) && !__instance.keywords.contains(GRIME_KEYWORD_ID))
+                __instance.keywords.add(GRIME_KEYWORD_ID);
+            if (isTarnished(__instance) && !__instance.keywords.contains(TARNISHED_KEYWORD_ID))
+                __instance.keywords.add(TARNISHED_KEYWORD_ID);
         }
     }
 

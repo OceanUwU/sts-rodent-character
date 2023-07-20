@@ -6,7 +6,15 @@
       "grime",
       "grimed"
     ],
-    "DESCRIPTION": "grimy cards have extra damage and block the next time they're played."
+    "DESCRIPTION": "grimy cards have extra damage and #yblock the next time they're played."
+  },
+  {
+    "PROPER_NAME": "tarnished",
+    "NAMES": [
+      "tarnished",
+      "tarnish"
+    ],
+    "DESCRIPTION": "tarnishing cards prevents the next time they would consume #ygrime."
   },
   {
     "PROPER_NAME": "hardy",
