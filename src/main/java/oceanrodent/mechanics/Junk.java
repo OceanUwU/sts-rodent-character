@@ -82,7 +82,7 @@ public class Junk {
         add(new JunkCard("FullCan", 3, CardType.SKILL, CardTarget.SELF, 0, 0, 1, (c, m) -> {
             atb(new GainEnergyAction(c.magicNumber));}));
 
-        add(new JunkCard("BinBag", 1, CardType.ATTACK, CardTarget.SELF, 0, 0, 2, (c, m) -> {
+        add(new JunkCard("BinBag", 1, CardType.SKILL, CardTarget.SELF, 0, 0, 2, (c, m) -> {
             atb(new MakeAction(c.magicNumber, Location.HAND));}));
     }
 
