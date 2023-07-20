@@ -13,7 +13,7 @@
     "NAMES": [
       "hardy"
     ],
-    "DESCRIPTION": "returns to your hand when discarded, triggering any listed effects."
+    "DESCRIPTION": "returns to your hand when discarded during your turn, triggering any listed effects."
   },
   {
     "PROPER_NAME": "wreck",

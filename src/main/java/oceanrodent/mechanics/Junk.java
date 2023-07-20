@@ -107,9 +107,22 @@ public class Junk {
     }
 
     public static ArrayList<JunkCard> getRandomJunk(Random random, int amount) {
+        return getRandomJunk(random, amount, false);
+    }
+
+    public static ArrayList<JunkCard> getRandomJunk(Random random, int amount, boolean allUnique) {
         ArrayList<JunkCard> junk = new ArrayList<>();
-        for (int i = 0; i < amount; i++)
-            junk.add(getRandomJunk(random));
+        for (int i = 0; i < amount; i++) {
+            while (true) {
+                JunkCard newJunk = getRandomJunk(random);
+                if (allUnique)
+                    for (JunkCard comp : junk)
+                        if (comp.cardID == newJunk.cardID)
+                            continue;
+                junk.add(newJunk);
+                break;
+            }
+        }
         return junk;
     }
 
