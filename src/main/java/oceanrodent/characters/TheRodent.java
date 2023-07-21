@@ -1,12 +1,8 @@
 package oceanrodent.characters;
 
-import static oceanrodent.RodentMod.*;
-import static oceanrodent.characters.TheRodent.Enums.RODENT_COLOUR_OCEAN;
-
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -23,7 +19,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -35,6 +30,9 @@ import oceanrodent.cards.Strike;
 import oceanrodent.effects.RatsVictoryEffect;
 import oceanrodent.relics.TodoItem;
 import oceanrodent.util.TexLoader;
+
+import static oceanrodent.RodentMod.*;
+import static oceanrodent.characters.TheRodent.Enums.RODENT_COLOUR_OCEAN;
 
 public class TheRodent extends CustomPlayer {
     static final String ID = makeID("rodentcharacter");

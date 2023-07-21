@@ -24,6 +24,7 @@ public class WreckPower extends AbstractEasyPower {
         super(POWER_ID+from.type.toString(), powerStrings.NAME + ": " + from.name, buff ? PowerType.BUFF : PowerType.DEBUFF, true, adp(), cardsNeeded);
         this.power = power;
         this.effectText = effectText;
+        this.effect = effect;
         cardType = from.type;
         ID += idOffset++;
         updateDescription();

@@ -26,5 +26,18 @@
       " more turn.",
       " more turns."
     ]
+  },
+  "${ModID}:Nip": {
+    "NAME": "nip",
+    "DESCRIPTIONS": [
+      "whenever you play a card this turn, "
+    ]
+  },
+  "${ModID}:NipBlock": {
+    "NAME": "block",
+    "DESCRIPTIONS": [
+      "gain #b",
+      " #yblock."
+    ]
   }
 }

@@ -1,9 +1,8 @@
 package oceanrodent.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import oceanrodent.mechanics.Grime;
+import oceanrodent.powers.NipBlockPower;
 
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
@@ -19,10 +18,7 @@ public class Defend extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        atb(new SelectCardsInHandAction(1, "Tarnish", cards -> {
-            if (cards.size() > 0)
-                att(new Grime.TarnishAction(cards.get(0)));
-        }));
+        applyToSelf(new NipBlockPower(2));
     }
 
     public void upp() {
