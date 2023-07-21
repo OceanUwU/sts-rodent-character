@@ -1,10 +1,7 @@
 {
   "${ModID}:Strike": {
     "NAME": "strike",
-    "DESCRIPTION": "deal !D! damage.",
-    "EXTENDED_DESCRIPTION": [
-      "gain #b!M! block."
-    ]
+    "DESCRIPTION": "deal !D! damage."
   },
   "${ModID}:Defend": {
     "NAME": "defend",
@@ -80,9 +77,104 @@
   },
   "${ModID}:Belch": {
     "NAME": "belch",
-    "DESCRIPTION": "{@@}gain !B! block. NL ${ModID}:grime !M! card{!M!|>1=s} at random.",
+    "DESCRIPTION": "{@@}gain !B! block. NL ${ModID}:grime !M! card{!M!|>1=s}{@@}{!Upgrades!|@= at random|>0=}.",
     "EXTENDED_DESCRIPTION": [
       "grime"
     ]
+  },
+  "${ModID}:TailWhap": {
+    "NAME": "tail whap",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: gain !B! block.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " #yblock."
+    ]
+  },
+  "${ModID}:Hindstrike": {
+    "NAME": "hindstrike",
+    "DESCRIPTION": "{@@}deal !D! damage twice. NL ${ModID}:grime !M! card{!M!|>1=s}.",
+    "EXTENDED_DESCRIPTION": [
+      "grime"
+    ]
+  },
+  "${ModID}:GetStuckIn": {
+    "NAME": "get stuck in",
+    "DESCRIPTION": "{@@}deal !D! damage. NL {!Upgrades!|@=|>0=upgrade and }${ModID}:grime your hand."
+  },
+  "${ModID}:Litterpicking": {
+    "NAME": "litterpicking",
+    "DESCRIPTION": "deal !D! damage. NL shuffle !M! ${ModID}:junk into your draw pile."
+  },
+  "${ModID}:Scrabble": {
+    "NAME": "scrabble",
+    "DESCRIPTION": "{@@}deal !D! damage to a random enemy twice. NL discard !M! card{!M!|>1=s}."
+  },
+  "${ModID}:Agitation": {
+    "NAME": "agitation",
+    "DESCRIPTION": "{@@}deal !D! damage !${ModID}:m2! times. NL ${ModID}:nip: gain !M! vigor.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " #yvigor."
+    ]
+  },
+  "${ModID}:StillCold": {
+    "NAME": "still cold!",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: channel !M! frost.",
+    "EXTENDED_DESCRIPTION": [
+      "#ychannel #b",
+      " #yfrost."
+    ]
+  },
+  "${ModID}:NimbleStrike": {
+    "NAME": "nimble strike",
+    "DESCRIPTION": "{@@}deal !D! damage. NL discard !M! card{!M!|>1=s} from your draw pile."
+  },
+  "${ModID}:Dart": {
+    "NAME": "dart",
+    "DESCRIPTION": "deal !D! damage to all enemies. NL ${ModID}:wreck !${ModID}:m2!: apply !M! weak to them.",
+    "EXTENDED_DESCRIPTION": [
+      "apply #b",
+      " #yweak to all enemies."
+    ]
+  },
+  "${ModID}:RashPounce": {
+    "NAME": "rash pounce",
+    "DESCRIPTION": "deal !D! damage to all enemies. NL discard your hand."
+  },
+  "${ModID}:RiskyManoeuvre": {
+    "NAME": "risky manoeuvre",
+    "DESCRIPTION": "{@@}deal !D! damage. NL shuffle !${ModID}:m2! *splinter{!${ModID}:m2!|>1=s} into your draw pile."
+  },
+  "${ModID}:Mine": {
+    "NAME": "mine!",
+    "DESCRIPTION": "gain !B! block. NL add !M! ${ModID}:junk to your hand."
+  },
+  "${ModID}:Singles": {
+    "NAME": "singles",
+    "DESCRIPTION": "apply !M! ${ModID}:encheesed."
+  },
+  "${ModID}:Scurry": {
+    "NAME": "scurry",
+    "DESCRIPTION": "{@@}gain !B! block. NL discard !${ModID}:m2! card{!${ModID}:m2!|>1=s}. NL ${ModID}:wreck !${ModID}:m3!: draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:Ratflip": {
+    "NAME": "ratflip",
+    "DESCRIPTION": "gain !B! block. NL apply !M! ${ModID}:encheesed and vulnerable."
+  },
+  "${ModID}:GatherSurroundings": {
+    "NAME": "gather surroundings",
+    "DESCRIPTION": "{@@}${ModID}:wreck !${ModID}:m2!: gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " [E] next turn."
+    ]
+  },
+  "${ModID}:StowAway": {
+    "NAME": "stow away",
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:nip: gain !M! block."
+  },
+  "${ModID}:Acclimatise": {
+    "NAME": "acclimatise",
+    "DESCRIPTION": "{@@}${ModID}:grime the next !M! card{!M!|>1=s} you play."
   }
 }

@@ -8,13 +8,13 @@ import oceanrodent.mechanics.Junk;
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
 
-public class Rummage extends AbstractRodentCard {
-    public final static String ID = makeID("Rummage");
+public class Litterpicking extends AbstractRodentCard {
+    public final static String ID = makeID("Litterpicking");
 
-    public Rummage() {
-        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 7;
-        baseMagicNumber = magicNumber = 2;
+    public Litterpicking() {
+        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = 3;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -23,6 +23,6 @@ public class Rummage extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(3);
     }
 }

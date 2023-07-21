@@ -8,7 +8,7 @@ import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
 
 public class BinLidShield extends AbstractRodentCard {
-   public final static String ID = makeID("BinLidShield");
+    public final static String ID = makeID("BinLidShield");
 
     public BinLidShield() {
         super(ID, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

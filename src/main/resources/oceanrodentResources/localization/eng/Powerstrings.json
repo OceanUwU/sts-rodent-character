@@ -46,5 +46,20 @@
       "whenever you play a card, apply #b",
       " #yencheesed to a random enemy."
     ]
+  },
+  "${ModID}:EnergizedRodent": {
+    "NAME": "energized",
+    "DESCRIPTIONS": [
+      "gain #b",
+      " [E] next turn."
+    ]
+  },
+  "${ModID}:AcclimatisePower": {
+    "NAME": "acclimatise",
+    "DESCRIPTIONS": [
+      "#ygrime the next #b",
+      " card you play.",
+      " cards you play"
+    ]
   }
 }

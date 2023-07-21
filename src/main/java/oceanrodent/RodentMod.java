@@ -19,8 +19,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.nio.charset.StandardCharsets;
 import oceanrodent.cards.AbstractRodentCard;
-import oceanrodent.cards.cardvars.SecondDamage;
-import oceanrodent.cards.cardvars.SecondMagicNumber;
+import oceanrodent.cards.cardvars.*;
 import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk;
 import oceanrodent.relics.AbstractEasyRelic;
@@ -134,6 +133,7 @@ public class RodentMod implements
     @Override
     public void receiveEditCards() {
         BaseMod.addDynamicVariable(new SecondMagicNumber());
+        BaseMod.addDynamicVariable(new ThirdMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         new AutoAdd(modID)
             .packageFilter(AbstractRodentCard.class)

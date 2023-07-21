@@ -8,7 +8,7 @@ import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
 
 public class Splinter extends AbstractRodentCard {
-   public final static String ID = makeID("Splinter");
+    public final static String ID = makeID("Splinter");
 
     public Splinter() {
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.NONE, CardColor.COLORLESS);

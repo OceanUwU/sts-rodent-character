@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -27,6 +28,7 @@ import static oceanrodent.util.Wiz.*;
 public abstract class AbstractRodentCard extends CustomCard {
 
     protected CardStrings cardStrings;
+    protected String[] exDesc;
 
     public int secondMagic;
     public int baseSecondMagic;
@@ -55,6 +57,7 @@ public abstract class AbstractRodentCard extends CustomCard {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
+        exDesc = cardStrings.EXTENDED_DESCRIPTION;
         rawDescription = cardStrings.DESCRIPTION;
         name = originalName = cardStrings.NAME;
         initializeTitle();
@@ -251,6 +254,10 @@ public abstract class AbstractRodentCard extends CustomCard {
 
     public void altDmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, secondDamage, damageTypeForTurn), fx));
+    }
+
+    protected void randomDmg(AbstractGameAction.AttackEffect fx) {
+        atb(new AttackDamageRandomEnemyAction(this, fx));
     }
 
     public void blck() {

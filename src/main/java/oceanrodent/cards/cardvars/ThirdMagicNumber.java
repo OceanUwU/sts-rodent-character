@@ -10,7 +10,7 @@ public class ThirdMagicNumber extends DynamicVariable {
 
     @Override
     public String key() {
-        return makeID("m2");
+        return makeID("m3");
     }
 
     @Override

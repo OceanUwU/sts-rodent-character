@@ -9,7 +9,7 @@ import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
 
 public class Belch extends AbstractRodentCard {
-   public final static String ID = makeID("Belch");
+    public final static String ID = makeID("Belch");
 
     public Belch() {
         super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
@@ -20,7 +20,7 @@ public class Belch extends AbstractRodentCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         if (upgraded)
-            atb(new SelectCardsInHandAction(magicNumber, cardStrings.EXTENDED_DESCRIPTION[0], false, false, c -> Grime.canGrime(c), cards -> cards.stream().forEach(c -> att(new Grime.Action(c)))));
+            atb(new SelectCardsInHandAction(magicNumber, exDesc[0], false, false, c -> Grime.canGrime(c), cards -> cards.stream().forEach(c -> att(new Grime.Action(c)))));
         else
             atb(new Grime.GrimeRandomAction(magicNumber));
     }
