@@ -55,23 +55,7 @@ public class Junk {
             applyToEnemy(m, new WeakPower(m, c.magicNumber, false));}));
 
         add(new JunkCard("Mud", 5, CardType.SKILL, CardTarget.SELF, 0, 0, 1, (c, m) -> {
-            atb(new AbstractGameAction() {
-                public void update() {
-                    isDone = true;
-                    CardGroup grimable = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                    for (AbstractCard c : adp().hand.group)
-                        if (Grime.canGrime(c))
-                            grimable.addToTop(c);
-                    if (grimable.size() > 0) {
-                        grimable.shuffle();
-                        int toAttune = c.magicNumber;
-                        for (AbstractCard c : grimable.group) {
-                            att(new Grime.Action(c));
-                            if (--toAttune <= 0) break;
-                        }
-                    }
-                }
-            });}));
+            atb(new Grime.GrimeRandomAction(c.magicNumber));}));
 
         add(new JunkCard("MouldyCheese", 5, CardType.SKILL, CardTarget.ENEMY, 0, 0, 3, (c, m) -> {
             applyToEnemy(m, new Encheesed(m, c.magicNumber));}));

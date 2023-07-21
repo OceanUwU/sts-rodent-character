@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -194,6 +195,34 @@ public class Grime {
             if (c != null)
                 grime(c, amount);
             isDone = true;
+        }
+    }
+
+    public static class GrimeRandomAction extends AbstractGameAction {
+        int amount;
+
+        public GrimeRandomAction(int amount) {
+            this.amount = amount;
+        }
+
+        public GrimeRandomAction() {
+            this(1);
+        }
+
+        public void update() {
+            isDone = true;
+            CardGroup grimable = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            for (AbstractCard c : adp().hand.group)
+                if (Grime.canGrime(c))
+                    grimable.addToTop(c);
+            if (grimable.size() > 0) {
+                grimable.shuffle();
+                int toAttune = amount;
+                for (AbstractCard c : grimable.group) {
+                    att(new Grime.Action(c));
+                    if (--toAttune <= 0) break;
+                }
+            }
         }
     }
 
