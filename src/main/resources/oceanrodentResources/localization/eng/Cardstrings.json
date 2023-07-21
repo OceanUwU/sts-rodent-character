@@ -65,5 +65,13 @@
   "${ModID}:TallForm": {
     "NAME": "tall form",
     "DESCRIPTION": "{@@}{!Upgrades!|@=ethereal. NL |>0=}whenever you play a card, apply !M! ${ModID}:encheesed to a random enemy."
+  },
+  "${ModID}:Splinter": {
+    "NAME": "splinter",
+    "DESCRIPTION": "unplayable. NL ${ModID}:hardy: exhaust."
+  },
+  "${ModID}:BinLidShield": {
+    "NAME": "bin lid shield",
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:hardy: gain !M! block."
   }
 }

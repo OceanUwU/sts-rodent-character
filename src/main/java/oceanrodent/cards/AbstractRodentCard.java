@@ -1,5 +1,6 @@
 package oceanrodent.cards;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -175,7 +177,7 @@ public abstract class AbstractRodentCard extends CustomCard {
 
     public void triggerOnManualDiscard() {
         if (hardy)
-            att(new HardyReturnAction(this));
+            atb(new HardyReturnAction(this));
     }
 
     private static class HardyReturnAction extends AbstractGameAction {
@@ -186,10 +188,19 @@ public abstract class AbstractRodentCard extends CustomCard {
         }
 
         public void update() {
-            adp().discardPile.moveToHand(c);
-            adp().hand.refreshHandLayout();
-            adp().hand.applyPowers();
-            c.onHardyReturn();
+            if (adp().hand.size() < BaseMod.MAX_HAND_SIZE) {
+                adp().discardPile.moveToHand(c);
+                adp().hand.refreshHandLayout();
+                adp().hand.applyPowers();
+                c.onHardyReturn();
+                att(new AbstractGameAction() {
+                    public void update() {
+                        isDone = true;
+                        c.flash();
+                    }
+                });
+                att(new WaitAction(0.1f));
+            }
             isDone = true;
         }
     }

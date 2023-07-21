@@ -1,0 +1,32 @@
+{
+	"Card": {
+		"scope": "java",
+		"isFileTemplate": true,
+		"body": [
+"package oceanrodent.cards;",
+"",
+"import com.megacrit.cardcrawl.characters.AbstractPlayer;",
+"import com.megacrit.cardcrawl.monsters.AbstractMonster;",
+"",
+"import static oceanrodent.RodentMod.makeID;",
+"import static oceanrodent.util.Wiz.*;",
+"",
+"public class $TM_FILENAME_BASE extends AbstractRodentCard {",
+"   public final static String ID = makeID(\"$TM_FILENAME_BASE\");",
+"",
+"    public $TM_FILENAME_BASE() {",
+"        super(ID, ${1|0,1,2,3,-1,-2|}, CardType.${2|ATTACK,SKILL,POWER,CURSE,STATUS|}, CardRarity.${3|COMMON,UNCOMMON,RARE,SPECIAL,BASIC,CURSE|}, CardTarget.${4|ENEMY,ALL_ENEMY,SELF,NONE,SELF_AND_ENEMY,ALL|});",
+"        $0",
+"    }",
+"",
+"    public void use(AbstractPlayer p, AbstractMonster m) {",
+"        ",
+"    }",
+"",
+"    public void upp() {",
+"        ",
+"    }",
+"}",
+		]
+	}
+}
