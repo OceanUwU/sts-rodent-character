@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -22,6 +23,7 @@ import oceanrodent.cards.AbstractRodentCard;
 import oceanrodent.cards.cardvars.*;
 import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk;
+import oceanrodent.potions.*;
 import oceanrodent.relics.AbstractEasyRelic;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -110,24 +112,27 @@ public class RodentMod implements
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new TheRodent(TheRodent.characterStrings.NAMES[1], TheRodent.Enums.THE_RODENT_OCEAN),
-                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheRodent.Enums.THE_RODENT_OCEAN);
+        BaseMod.addCharacter(new TheRodent(TheRodent.characterStrings.NAMES[1], TheRodent.Enums.THE_RODENT_OCEAN), CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheRodent.Enums.THE_RODENT_OCEAN);
+                
+        BaseMod.addPotion(Gunk.class, new Color(0.1f, 0.2f, 0.1f, 1f), new Color(0f,0f,0f,0f), new Color(0.5f, 0.1f, 0.1f, 1f), Gunk.POTION_ID, TheRodent.Enums.THE_RODENT_OCEAN);
+        BaseMod.addPotion(Sugar.class, new Color(1.0f, 1.0f, 1.0f, 1f), new Color(0f,0f,0f,0f), new Color(0.8f, 0.8f, 0.8f, 1f), Sugar.POTION_ID, TheRodent.Enums.THE_RODENT_OCEAN);
+        BaseMod.addPotion(MudBottle.class, new Color(0.25f, 0.2f, 0.15f, 1f), new Color(0f,0f,0f,0f), new Color(0f,0f,0f,0f), MudBottle.POTION_ID, TheRodent.Enums.THE_RODENT_OCEAN);
     }
 
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-                .packageFilter(AbstractEasyRelic.class)
-                .any(AbstractEasyRelic.class, (info, relic) -> {
-                    if (relic.color == null) {
-                        BaseMod.addRelic(relic, RelicType.SHARED);
-                    } else {
-                        BaseMod.addRelicToCustomPool(relic, relic.color);
-                    }
-                    if (!info.seen) {
-                        UnlockTracker.markRelicAsSeen(relic.relicId);
-                    }
-                });
+            .packageFilter(AbstractEasyRelic.class)
+            .any(AbstractEasyRelic.class, (info, relic) -> {
+                if (relic.color == null) {
+                    BaseMod.addRelic(relic, RelicType.SHARED);
+                } else {
+                    BaseMod.addRelicToCustomPool(relic, relic.color);
+                }
+                if (!info.seen) {
+                    UnlockTracker.markRelicAsSeen(relic.relicId);
+                }
+            });
     }
 
     @Override
@@ -154,6 +159,7 @@ public class RodentMod implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/" + getLangString() + "/Relicstrings.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/" + getLangString() + "/Charstrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/" + getLangString() + "/UIstrings.json");
     }
 

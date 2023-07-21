@@ -1,0 +1,26 @@
+{
+    "${ModID}:Gunk": {
+        "NAME": "gunk",
+        "DESCRIPTIONS": [
+            "add #b",
+            " #yjunk to your hand."
+        ]
+    },
+    "${ModID}:Sugar": {
+        "NAME": "sugar",
+        "DESCRIPTIONS": [
+            "#ynip: deal #b",
+            " damage to all enemies.",
+            "deal #b",
+            " damage to all enemies."
+        ]
+    },
+    "${ModID}:MudBottle": {
+        "NAME": "mud bottle",
+        "DESCRIPTIONS": [
+            "#ygrime and #ytarnish your hand.",
+            "#ygrime and #ytarnish your hand #b",
+            " times."
+        ]
+    }
+}
