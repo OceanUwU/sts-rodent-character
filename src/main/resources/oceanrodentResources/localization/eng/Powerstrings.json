@@ -39,5 +39,12 @@
       "gain #b",
       " #yblock."
     ]
+  },
+  "${ModID}:TallFormPower": {
+    "NAME": "tall form",
+    "DESCRIPTIONS": [
+      "whenever you play a card, apply #b",
+      " #yencheesed to a random enemy."
+    ]
   }
 }

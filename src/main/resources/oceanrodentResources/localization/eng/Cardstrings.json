@@ -61,5 +61,9 @@
   "${ModID}:PaperPlate": {
     "NAME": "paper plate",
     "DESCRIPTION": "draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:TallForm": {
+    "NAME": "tall form",
+    "DESCRIPTION": "{@@}{!Upgrades!|@=ethereal. NL |>0=}whenever you play a card, apply !M! ${ModID}:encheesed to a random enemy."
   }
 }

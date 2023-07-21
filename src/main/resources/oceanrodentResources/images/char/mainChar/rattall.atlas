@@ -1,0 +1,48 @@
+
+rattall.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 1, 180
+  size: 233, 53
+  orig: 233, 53
+  offset: 0, 0
+  index: -1
+legs
+  rotate: false
+  xy: 158, 92
+  size: 62, 45
+  orig: 62, 45
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 103, 92
+  size: 53, 70
+  orig: 53, 70
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1, 1
+  size: 100, 177
+  orig: 100, 177
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 103, 1
+  size: 142, 89
+  orig: 142, 89
+  offset: 0, 0
+  index: -1
+arm
+  rotate: false
+  xy: 222, 92
+  size: 12, 58
+  orig: 12, 58
+  offset: 0, 0
+  index: -1

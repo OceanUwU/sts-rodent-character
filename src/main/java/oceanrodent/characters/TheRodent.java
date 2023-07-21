@@ -46,13 +46,18 @@ public class TheRodent extends CustomPlayer {
     public TheRodent(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), new float[]{24f, 36f, 16f, 12f, 0f}), new SpineAnimation(makeCharacterPath("mainChar/rat.atlas"), makeCharacterPath("mainChar/rat.json"), 1f / SIZE_SCALE));
         initializeClass(null, SHOULDER1, SHOULDER2, CORPSE, getLoadout(), 20.0F, -10.0F, 166.0F, 90.0F, new EnergyManager(3));
+        loadNewAnimation("rat");
+        dialogX = (drawX + 0.0F * Settings.scale);
+        dialogY = (drawY + 240.0F * Settings.scale);
+    }
 
+    public void loadNewAnimation(String version) {
+        animation = new SpineAnimation(makeCharacterPath("mainChar/"+version+".atlas"), makeCharacterPath("mainChar/"+version+".json"), 1f / SIZE_SCALE);
+        SpineAnimation spine = (SpineAnimation)animation;
+        loadAnimation(spine.atlasUrl, spine.skeletonUrl, spine.scale);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         stateData.setMix("Hit", "Idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
-
-        dialogX = (drawX + 0.0F * Settings.scale);
-        dialogY = (drawY + 240.0F * Settings.scale);
     }
 
     @Override

@@ -58,6 +58,10 @@ public class Wiz {
         return monsters;
     }
 
+    public static AbstractMonster getRandomEnemy() {
+        return AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+    }
+
     public static ArrayList<AbstractCard> getCardsMatchingPredicate(Predicate<AbstractCard> pred) {
         return getCardsMatchingPredicate(pred, false);
     }

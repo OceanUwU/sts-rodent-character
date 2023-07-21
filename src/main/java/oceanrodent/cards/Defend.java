@@ -2,7 +2,6 @@ package oceanrodent.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import oceanrodent.powers.NipBlockPower;
 
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
@@ -18,7 +17,6 @@ public class Defend extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        applyToSelf(new NipBlockPower(2));
     }
 
     public void upp() {
