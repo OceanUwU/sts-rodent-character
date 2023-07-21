@@ -25,7 +25,9 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 import java.util.List;
+import oceanrodent.cards.Belch;
 import oceanrodent.cards.Defend;
+import oceanrodent.cards.Rummage;
 import oceanrodent.cards.Strike;
 import oceanrodent.effects.RatsVictoryEffect;
 import oceanrodent.relics.TodoItem;
@@ -84,6 +86,8 @@ public class TheRodent extends CustomPlayer {
             retVal.add(Strike.ID);
         for (int i = 0; i < 4; i++)
             retVal.add(Defend.ID);
+        retVal.add(Rummage.ID);
+        retVal.add(Belch.ID);
         return retVal;
     }
 

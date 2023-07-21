@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static oceanrodent.RodentMod.makeID;
-import static oceanrodent.util.Wiz.*;
 
 public class Strike extends AbstractRodentCard {
     public final static String ID = makeID("Strike");

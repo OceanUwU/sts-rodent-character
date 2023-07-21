@@ -28,5 +28,9 @@
 "    }",
 "}",
 		]
+	},
+	"Damage": {
+		"scope": "java",
+		"body": ["dmg(m, AbstractGameAction.AttackEffect.${1|BLUNT_LIGHT,BLUNT_HEAVY,SLASH_DIAGONAL,SMASH,SLASH_HEAVY,SLASH_HORIZONTAL,SLASH_VERTICAL,NONE,FIRE,POISON,SHIELD,LIGHTNING|});"]
 	}
 }

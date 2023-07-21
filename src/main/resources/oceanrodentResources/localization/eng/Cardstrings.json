@@ -73,5 +73,16 @@
   "${ModID}:BinLidShield": {
     "NAME": "bin lid shield",
     "DESCRIPTION": "gain !B! block. NL ${ModID}:hardy: gain !M! block."
+  },
+  "${ModID}:Rummage": {
+    "NAME": "rummage",
+    "DESCRIPTION": "deal !D! damage. NL shuffle !M! ${ModID}:junk into your draw pile."
+  },
+  "${ModID}:Belch": {
+    "NAME": "belch",
+    "DESCRIPTION": "{@@}gain !B! block. NL ${ModID}:grime !M! card{!M!|>1=s} at random.",
+    "EXTENDED_DESCRIPTION": [
+      "grime"
+    ]
   }
 }

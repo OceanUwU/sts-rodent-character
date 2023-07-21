@@ -66,13 +66,13 @@ public class Grime {
         }
 
         public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard c, AbstractMonster target) {
-            if (damage > 0) return damage * amplifier();
+            if (type == DamageInfo.DamageType.NORMAL)
+                return damage * amplifier();
             return damage;
         }
 
         public float modifyBlock(float block, AbstractCard c) {
-            if (block > 0) return block * amplifier();
-            return block;
+            return block * amplifier();
         }
 
         public boolean shouldApply(AbstractCard c) {
