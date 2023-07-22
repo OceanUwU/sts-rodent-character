@@ -176,5 +176,77 @@
   "${ModID}:Acclimatise": {
     "NAME": "acclimatise",
     "DESCRIPTION": "{@@}${ModID}:grime the next !M! card{!M!|>1=s} you play."
+  },
+  "${ModID}:RecyclingBin": {
+    "NAME": "recycling bin",
+    "DESCRIPTION": "discard your hand. NL add !M! ${ModID}:junk to your hand for each card discarded."
+  },
+  "${ModID}:OopsDroppedEm": {
+    "NAME": "oops, dropped 'em!",
+    "DESCRIPTION": "{@@}${ModID}:nip: ${ModID}:grime !M! card{!M!|>1=s} at random.",
+    "EXTENDED_DESCRIPTION": [
+      "#ygrime #b",
+      " card at random.",
+      " cards at random."
+    ]
+  },
+  "${ModID}:Careen": {
+    "NAME": "careen",
+    "DESCRIPTION": "add !M! ${ModID}:junk to your hand. NL ${ModID}:wreck !${ModID}:m2!: play a *vault. NL exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "play a #yvault."
+    ]
+  },
+  "${ModID}:Exude": {
+    "NAME": "exude",
+    "DESCRIPTION": "{@@}apply double ${ModID}:encheesed the next !M! time{!M!|>1=s} you apply it."
+  },
+  "${ModID}:TakeAWhiff": {
+    "NAME": "take a whiff",
+    "DESCRIPTION": "{@@}draw !M! card{!M!|>1=s}. NL gain [E] equal to the number of ${ModID}:junk in your hand. NL exhaust."
+  },
+  "${ModID}:SurpriseShiv": {
+    "NAME": "surprise shiv",
+    "DESCRIPTION": "retain. NL deal !D! damage. NL increase this card's damage by !M! whenever you exhaust a card with this in hand. NL exhaust."
+  },
+  "${ModID}:Ratpack": {
+    "NAME": "ratpack",
+    "DESCRIPTION": "{@@}discard your hand. NL put !M! card{!M!|>1=s} from your discard pile into your hand."
+  },
+  "${ModID}:Lazors": {
+    "NAME": "lazors!!",
+    "DESCRIPTION": "deal !D! damage to a random enemy !M! times."
+  },
+  "${ModID}:SteppingStones": {
+    "NAME": "stepping stones",
+    "DESCRIPTION": "{@@}whenever you discard a card, ${ModID}:grime it{!M!|>1= !M! times}."
+  },
+  "${ModID}:Piddle": {
+    "NAME": "piddle",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=innate. NL }${ModID}:grime and discard your draw pile. NL exhaust."
+  },
+  "${ModID}:BeatChest": {
+    "NAME": "beat chest",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:hardy: gain !M! strength."
+  },
+  "${ModID}:SqueezeThrough": {
+    "NAME": "squeeze through",
+    "DESCRIPTION": "{@@}add !${ModID}:m2! *splinter{!${ModID}:m2!|>1=s} into your hand. NL gain !B! block."
+  },
+  "${ModID}:Empty": {
+    "NAME": "empty",
+    "DESCRIPTION": "shuffle !M! ${ModID}:junk into your draw pile. NL exhaust."
+  },
+  "${ModID}:MuddyPuddle": {
+    "NAME": "muddy puddle",
+    "DESCRIPTION": "{@@}double ${ModID}:grime on all cards.{!Upgrades!|@= NL exhaust.|>0=}"
+  },
+  "${ModID}:Hoard": {
+    "NAME": "hoard",
+    "DESCRIPTION": "at the end of combat, choose 1 of !M! ${ModID}:junk to add to your deck."
+  },
+  "${ModID}:RatKing": {
+    "NAME": "rat king",
+    "DESCRIPTION": "upgrade all future ${ModID}:junk."
   }
 }

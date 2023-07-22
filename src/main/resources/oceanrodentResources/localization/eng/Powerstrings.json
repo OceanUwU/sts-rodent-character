@@ -61,5 +61,35 @@
       " card you play.",
       " cards you play"
     ]
+  },
+  "${ModID}:DoubleEncheesedPower": {
+    "NAME": "double encheesed",
+    "DESCRIPTIONS": [
+      "the next #b",
+      " time you apply #yencheesed, apply twice as much.",
+      " times you apply #yencheesed, apply twice as much."
+    ]
+  },
+  "${ModID}:SteppingStonesPower": {
+    "NAME": "stepping stones",
+    "DESCRIPTIONS": [
+      "whenever you discard a card during your turn, #ygrime it.",
+      "whenever you discard a card during your turn, #ygrime it #b",
+      " times."
+    ]
+  },
+  "${ModID}:HoardPower": {
+    "NAME": "hoard",
+    "DESCRIPTIONS": [
+      "at the end of combat, you may add #b1 of #b",
+      " #yjunk to add to your deck.",
+      "hoard junk"
+    ]
+  },
+  "${ModID}:RatKingPower": {
+    "NAME": "rat king",
+    "DESCRIPTIONS": [
+      "whenever you create #yjunk, #yupgrade it."
+    ]
   }
 }

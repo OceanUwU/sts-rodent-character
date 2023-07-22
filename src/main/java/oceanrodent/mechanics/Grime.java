@@ -151,7 +151,7 @@ public class Grime {
     }
 
     public static void grime(AbstractCard c, int amount) {
-        if (!canGrime(c)) return;
+        if (!canGrime(c) || amount < 1) return;
         GrimedMod modifier = getModifier(c);
         if (modifier == null) CardModifierManager.addModifier(c, new GrimedMod(amount));
         else modifier.amount += amount;
@@ -163,7 +163,7 @@ public class Grime {
     }
 
     public static void tarnish(AbstractCard c, int amount) {
-        if (!canGrime(c)) return;
+        if (!canGrime(c) || amount < 1) return;
         TarnishedMod modifier = getTarnish(c);
         if (modifier == null) CardModifierManager.addModifier(c, new TarnishedMod(amount));
         else modifier.amount += amount;
@@ -194,6 +194,26 @@ public class Grime {
         public void update() {
             if (c != null)
                 grime(c, amount);
+            isDone = true;
+        }
+    }
+
+    public static class GroupAction extends AbstractGameAction {
+        CardGroup g;
+        int amount;
+
+        public GroupAction(CardGroup g, int amount) {
+            this.g = g;
+            this.amount = amount;
+        }
+
+        public GroupAction(CardGroup g) {
+            this(g, 1);
+        }
+
+        public void update() {
+            for (AbstractCard c : g.group)
+                att(new Action(c, amount));
             isDone = true;
         }
     }

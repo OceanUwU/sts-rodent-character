@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.random.Random;
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
 import oceanrodent.cards.AbstractRodentCard;
+import oceanrodent.cards.RatKing;
 import oceanrodent.mechanics.Junk.MakeAction.Location;
 import oceanrodent.powers.Encheesed;
 
@@ -125,7 +126,11 @@ public class Junk {
 
         public void update() {
             ArrayList<JunkCard> junk = getRandomJunk(AbstractDungeon.cardRandomRng, amount);
-            for (JunkCard c : junk)
+            if (adp().hasPower(RatKing.RatKingPower.POWER_ID))
+                adp().getPower(RatKing.RatKingPower.POWER_ID).flash();
+            for (JunkCard c : junk) {
+                if (adp().hasPower(RatKing.RatKingPower.POWER_ID) && c.canUpgrade())
+                    c.upgrade();
                 switch (location) {
                     case DRAW:
                         att(new MakeTempCardInDrawPileAction(c, 1, true, true));
@@ -134,6 +139,7 @@ public class Junk {
                         att(new MakeTempCardInHandAction(c, 1));
                         break;
                 }
+            }
             isDone = true;
         }
     }
