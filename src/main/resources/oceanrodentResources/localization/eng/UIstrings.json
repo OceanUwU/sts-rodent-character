@@ -1,3 +1,14 @@
 {
-    
+    "${ModID}:RemoveCardReward": {
+        "TEXT": [
+            "(-",
+            " hp) remove a card",
+            "choose a card to remove"
+        ]
+    },
+    "${ModID}:DiscardFromDrawPile": {
+        "TEXT": [
+            "choose cards from your draw pile to discard."
+        ]
+    }
 }

@@ -1,13 +1,9 @@
 package oceanrodent.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import java.util.ArrayList;
-import java.util.Collections;
+import oceanrodent.actions.DiscardFromDrawPile;
 
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
@@ -24,9 +20,7 @@ public class NimbleStrike extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
-        ArrayList<AbstractCard> drawCards = p.drawPile.group;
-        Collections.shuffle(drawCards);
-        atb(new SelectCardsAction(drawCards, magicNumber, exDesc[0], cards -> cards.stream().forEach(c -> att(new DiscardSpecificCardAction(c, p.drawPile)))));
+        atb(new DiscardFromDrawPile(magicNumber));
     }
 
     public void upp() {

@@ -30,7 +30,7 @@ import oceanrodent.cards.Defend;
 import oceanrodent.cards.Rummage;
 import oceanrodent.cards.Strike;
 import oceanrodent.effects.RatsVictoryEffect;
-import oceanrodent.relics.TodoItem;
+import oceanrodent.relics.StolenFang;
 import oceanrodent.util.TexLoader;
 
 import static oceanrodent.RodentMod.*;
@@ -93,7 +93,7 @@ public class TheRodent extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(StolenFang.ID);
         return retVal;
     }
 

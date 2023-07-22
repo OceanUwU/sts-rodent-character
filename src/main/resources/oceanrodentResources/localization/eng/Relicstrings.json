@@ -1,9 +1,84 @@
 {
-  "${ModID}:TodoItem": {
-    "NAME": "todo item",
-    "FLAVOR": "TODO: make this a sweet relic.",
+  "${ModID}:StolenFang": {
+    "NAME": "stolen fang",
+    "FLAVOR": "a trophy from the greatest fight of your life.",
     "DESCRIPTIONS": [
-      "has no effect."
+      "#yupgrade the first #b",
+      " unupgraded cards you draw each combat."
+    ]
+  },
+  "${ModID}:AppleCore": {
+    "NAME": "apple core",
+    "FLAVOR": "i swear this thing has at least like 2 more meals on it!",
+    "DESCRIPTIONS": [
+      "start each combat with #b",
+      " #y${ModID}:junk in your hand."
+    ]
+  },
+  "${ModID}:BottleOfDirt": {
+    "NAME": "bottle of dirt",
+    "FLAVOR": "if your cards aren't battle-ready then neither are you.",
+    "DESCRIPTIONS": [
+      "upon pickup, choose #b",
+      " cards. they start each combat #y${ModID}:grimy.",
+      "choose cards for "
+    ]
+  },
+  "${ModID}:CheeseSpaceCake": {
+    "NAME": "cheese cake",
+    "FLAVOR": "should've looked for a recipe instead of trusting my gut...",
+    "DESCRIPTIONS": [
+      "at the start of each combat, apply #b",
+      " #y${ModID}:encheesed to all enemies."
+    ]
+  },
+  "${ModID}:CrackedLens": {
+    "NAME": "cracked lens",
+    "FLAVOR": "preparation is key.",
+    "DESCRIPTIONS": [
+      "at the start of each combat, discard #b",
+      " cards from your draw pile.",
+      "choose cards to discard."
+    ]
+  },
+  "${ModID}:Net": {
+    "NAME": "net",
+    "FLAVOR": "i'd rather be catching jellyfish than slaying this spire.",
+    "DESCRIPTIONS": [
+      "whenever you play #b",
+      " #y${ModID}:junk [REMOVE_SPACE], add #b",
+      " #yjunk into your hand."
+    ]
+  },
+  "${ModID}:Pill": {
+    "NAME": "pill",
+    "FLAVOR": "deciding to eat this was a bit of a gamble but i guess it paid off?",
+    "DESCRIPTIONS": [
+      "whenever you play #b",
+      " #y${ModID}:junk [REMOVE_SPACE], gain [E] ."
+    ]
+  },
+  "${ModID}:SoggySock": {
+    "NAME": "soggy sock",
+    "FLAVOR": "a cruel weapon.",
+    "DESCRIPTIONS": [
+      "whenever you apply #y${ModID}:encheesed [REMOVE_SPACE], apply #b",
+      " more."
+    ]
+  },
+  "${ModID}:SabreToothedFangs": {
+    "NAME": "sabre-toothed fangs",
+    "FLAVOR": "who knew fossils could be this useful?",
+    "DESCRIPTIONS": [
+      "replaces #ystolen #yfang. whenever you play an unupgraded card, #yupgrade it."
+    ]
+  },
+  "${ModID}:WireCutters": {
+    "NAME": "wire cutters",
+    "FLAVOR": "harder to use than it may seem.",
+    "DESCRIPTIONS": [
+      "at the end of combat, you may lose #r",
+      " hp to remove a card from your deck."
     ]
   }
 }
