@@ -15,7 +15,7 @@ public class SurpriseShiv extends AbstractRodentCard {
     public final static String ID = makeID("SurpriseShiv");
 
     public SurpriseShiv() {
-        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 2;
         baseMagicNumber = magicNumber = 2;
         selfRetain = true;
