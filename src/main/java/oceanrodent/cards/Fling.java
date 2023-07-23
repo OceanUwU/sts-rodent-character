@@ -25,6 +25,7 @@ public class Fling extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new Junk.MakeAction(magicNumber, Junk.MakeAction.Location.HAND));
+        applyToEnemy(m, new FlingPower(m, secondMagic));
     }
 
     public void upp() {

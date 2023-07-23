@@ -17,7 +17,7 @@ public class Empty extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new Junk.MakeAction(magicNumber, Junk.MakeAction.Location.HAND));
+        atb(new Junk.MakeAction(magicNumber, Junk.MakeAction.Location.DRAW));
     }
 
     public void upp() {

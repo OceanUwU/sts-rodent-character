@@ -43,7 +43,10 @@ public class Exude extends AbstractRodentCard {
 
         public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
             if (power instanceof Encheesed && source == owner) {
-                power.amount *= 2;
+                if (target.hasPower(Encheesed.POWER_ID))
+                    ((Encheesed)target.getPower(Encheesed.POWER_ID)).amount += power.amount;
+                else
+                    power.amount *= 2;
                 flash();
                 att(new ReducePowerAction(owner, owner, this, 1));
             }

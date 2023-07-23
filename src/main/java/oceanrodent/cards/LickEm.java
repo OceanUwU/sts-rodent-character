@@ -1,6 +1,7 @@
 package oceanrodent.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -43,6 +44,7 @@ public class LickEm extends AbstractRodentCard {
         public void atStartOfTurnPostDraw() {
             flash();
             chooseToGrime(amount);
+            atb(new HandCheckAction());
         }
 
         public static void chooseToGrime(int amount) {

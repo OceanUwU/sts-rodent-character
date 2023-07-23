@@ -14,7 +14,7 @@ public class BinLidSwing extends AbstractRodentCard {
     public final static String ID = makeID("BinLidSwing");
 
     public BinLidSwing() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF_AND_ENEMY);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 13;
         baseDamage = 12;
         baseSecondMagic = secondMagic = 2;

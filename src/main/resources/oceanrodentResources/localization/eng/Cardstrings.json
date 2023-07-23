@@ -155,7 +155,12 @@
   },
   "${ModID}:Scurry": {
     "NAME": "scurry",
-    "DESCRIPTION": "{@@}gain !B! block. NL discard !${ModID}:m2! card{!${ModID}:m2!|>1=s}. NL ${ModID}:wreck !${ModID}:m3!: draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}gain !B! block. NL discard !${ModID}:m2! card{!${ModID}:m2!|>1=s}. NL ${ModID}:wreck !${ModID}:m3!: draw !M! card{!M!|>1=s}.",
+    "EXTENDED_DESCRIPTION": [
+      "draw #b",
+      " card.",
+      " cards."
+    ]
   },
   "${ModID}:Ratflip": {
     "NAME": "ratflip",
@@ -227,7 +232,7 @@
   },
   "${ModID}:BeatChest": {
     "NAME": "beat chest",
-    "DESCRIPTION": "deal !D! damage. NL ${ModID}:hardy: gain !M! strength."
+    "DESCRIPTION": "deal !D! damage twice. NL ${ModID}:hardy: gain !M! strength."
   },
   "${ModID}:SqueezeThrough": {
     "NAME": "squeeze through",
@@ -277,8 +282,8 @@
     "NAME": "bin lid swing",
     "DESCRIPTION": "gain !B! block. NL ${ModID}:wreck !${ModID}:m2!: all enemies lose !D! hp.",
     "EXTENDED_DESCRIPTION": [
-      "all enemies lose #b",
-      "hp."
+      "make all enemies lose #b",
+      " hp."
     ]
   },
   "${ModID}:SludgeSmash": {
@@ -313,7 +318,7 @@
     "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: gain block equal to unblocked damage dealt.",
     "EXTENDED_DESCRIPTION": [
       "gain #b",
-      " #yblock"
+      " #yblock."
     ]
   },
   "${ModID}:NotReadyYet": {
@@ -402,7 +407,7 @@
     "DESCRIPTION": "whenever you finish a ${ModID}:wreckage, gain !M! block. NL ${ModID}:wreck !${ModID}:m3!: channel !${ModID}:m2! lightning.",
     "EXTENDED_DESCRIPTION": [
       "#ychannel #b",
-      " #ylightning"
+      " #ylightning."
     ]
   },
   "${ModID}:Recollect": {

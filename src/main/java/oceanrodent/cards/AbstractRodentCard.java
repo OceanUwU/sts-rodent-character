@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -198,6 +199,7 @@ public abstract class AbstractRodentCard extends CustomCard {
                 adp().discardPile.moveToHand(c);
                 adp().hand.refreshHandLayout();
                 adp().hand.applyPowers();
+                att(new HandCheckAction());
                 c.onHardyReturn();
                 att(new AbstractGameAction() {
                     public void update() {

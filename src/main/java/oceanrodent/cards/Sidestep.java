@@ -15,11 +15,15 @@ public class Sidestep extends AbstractRodentCard {
         super(ID, -2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 0;
+        hardy = true;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new GainEnergyAction(magicNumber));
-        atb(new DrawCardAction(secondMagic));
+    public void use(AbstractPlayer p, AbstractMonster m) {}
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {return false;}
+
+    public void onHardyReturn() {
+        att(new DrawCardAction(secondMagic));
+        att(new GainEnergyAction(magicNumber));
     }
 
     public void upp() {

@@ -19,7 +19,7 @@ public class RashPounce extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SMASH);
+        allDmg(AbstractGameAction.AttackEffect.SMASH);
         atb(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
     }
 

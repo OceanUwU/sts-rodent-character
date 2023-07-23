@@ -16,7 +16,7 @@ public class Overconfidence extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.currentHealth > (float)m.currentHealth * 0.5f)
+        if (m.currentHealth > (float)m.maxHealth * 0.5f)
             dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         else
             altDmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);

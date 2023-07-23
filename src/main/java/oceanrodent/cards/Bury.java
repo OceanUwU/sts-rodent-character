@@ -1,6 +1,7 @@
 package oceanrodent.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.common.UpgradeSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,9 +25,10 @@ public class Bury extends AbstractRodentCard {
             if (cards.size() > 0) {
                 AbstractCard c = cards.get(0);
                 if (Grime.canGrime(c))
-                    applyToSelf(new WreckPower(this, true, secondMagic, magicNumber,
+                    applyToSelfTop(new WreckPower(this, true, secondMagic, magicNumber,
                         a -> a == 1 ? exDesc[1] + c.name + exDesc[2] : exDesc[1] + c.name + exDesc[3] + a + exDesc[4],
                         a -> atb(new Grime.Action(c, a))));
+                att(new UpgradeSpecificCardAction(c));
             }
         }));
     }

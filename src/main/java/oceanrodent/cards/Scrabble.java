@@ -18,7 +18,8 @@ public class Scrabble extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        randomDmg(AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        for (int i = 0; i < 2; i++)
+            randomDmg(AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         atb(new DiscardAction(p, p, 1, false));
     }
 

@@ -15,7 +15,7 @@ public class MudSpray extends AbstractRodentCard {
     public MudSpray() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 8;
-        baseSecondMagic = secondMagic = 4;
+        baseSecondMagic = secondMagic = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

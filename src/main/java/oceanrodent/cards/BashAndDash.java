@@ -30,7 +30,7 @@ public class BashAndDash extends AbstractRodentCard {
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
-                if (shouldCancelAction()) return;
+                if (m.isDeadOrEscaped()) return;
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
                 m.damage(info);
                 if (m.lastDamageTaken > 0) {

@@ -1,10 +1,10 @@
 package oceanrodent.powers;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -33,7 +33,7 @@ public class WreckPower extends AbstractEasyPower {
         updateDescription();
     }
   
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.type == cardType) {
             reducePower(1);
             updateDescription();

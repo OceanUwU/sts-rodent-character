@@ -22,9 +22,9 @@ public class NotReadyYet extends AbstractRodentCard {
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
-                att(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
                 for (int i = 0; i < p.hand.size(); i++)
                     att(new GainBlockAction(p, p, block));
+                att(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
             }
         });
     }

@@ -12,7 +12,7 @@ public class GatherSurroundings extends AbstractRodentCard {
     public final static String ID = makeID("GatherSurroundings");
 
     public GatherSurroundings() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 3;
     }

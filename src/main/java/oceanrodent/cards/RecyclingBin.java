@@ -23,8 +23,8 @@ public class RecyclingBin extends AbstractRodentCard {
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
-                att(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
                 att(new Junk.MakeAction(p.hand.size() * magicNumber, Junk.MakeAction.Location.HAND));
+                att(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
             }
         });
     }

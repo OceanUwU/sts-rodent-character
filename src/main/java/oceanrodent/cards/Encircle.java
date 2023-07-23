@@ -23,8 +23,10 @@ public class Encircle extends AbstractRodentCard {
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (adp().hand.contains(this))
+        if (adp().hand.contains(this)) {
+            flash();
             att(new ModifyBlockAction(uuid, magicNumber));
+        }
     }
 
     public void upp() {

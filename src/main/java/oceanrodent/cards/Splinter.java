@@ -17,6 +17,7 @@ public class Splinter extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {}
     public void upp() {}
+    public boolean canUpgrade() {return false;}
 
     public void onHardyReturn() {
         att(new ExhaustSpecificCardAction(this, adp().hand));

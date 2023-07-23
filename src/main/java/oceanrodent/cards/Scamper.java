@@ -13,7 +13,7 @@ public class Scamper extends AbstractRodentCard {
     public final static String ID = makeID("Scamper");
 
     public Scamper() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = 11;
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 1;

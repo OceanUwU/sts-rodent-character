@@ -23,7 +23,7 @@ public class Scurry extends AbstractRodentCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         atb(new DiscardAction(p, p, secondMagic, false));
-        applyToSelf(new WreckPower(this, true, thirdMagic, magicNumber, a -> exDesc[0] + a + exDesc[1], a -> atb(new DrawCardAction(a))));
+        applyToSelf(new WreckPower(this, true, thirdMagic, magicNumber, a -> exDesc[0] + a + exDesc[a == 1 ? 1 : 2], a -> atb(new DrawCardAction(a))));
     }
 
     public void upp() {

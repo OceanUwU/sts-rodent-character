@@ -19,13 +19,13 @@ public class Careen extends AbstractRodentCard {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         cardsToPreview = new Vault();
         baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = magicNumber = 8;
+        baseSecondMagic = secondMagic = 8;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new Junk.MakeAction(magicNumber, Junk.MakeAction.Location.HAND));
-        applyToSelf(new WreckPower(this, true, baseSecondMagic, 0, a -> exDesc[0], a -> {
+        applyToSelf(new WreckPower(this, true, secondMagic, 0, a -> exDesc[0], a -> {
             AbstractCard c = cardsToPreview.makeStatEquivalentCopy();
             p.limbo.group.add(c);
             atb(new NewQueueCardAction(c, m, false, true));

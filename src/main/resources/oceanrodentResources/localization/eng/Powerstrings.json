@@ -59,7 +59,7 @@
     "DESCRIPTIONS": [
       "#ygrime the next #b",
       " card you play.",
-      " cards you play"
+      " cards you play."
     ]
   },
   "${ModID}:DoubleEncheesedPower": {
@@ -102,7 +102,7 @@
   "${ModID}:SlipperyPawsPower": {
     "NAME": "slippery paws",
     "DESCRIPTIONS": [
-      "whenever you play a #ygrimed card, draw #b",
+      "whenever you play a #ygrimy card, draw #b",
       " card.",
       " cards."
     ]
