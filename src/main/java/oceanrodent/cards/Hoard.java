@@ -27,7 +27,7 @@ public class Hoard extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(null);
+        applyToSelf(new HoardPower(p, magicNumber));
     }
 
     public void upp() {
@@ -40,7 +40,8 @@ public class Hoard extends AbstractRodentCard {
         private static int IDOffset = 0;
 
         public HoardPower(AbstractCreature owner, int amount) {
-            super(POWER_ID+IDOffset++, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+            super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+            ID += IDOffset++;
         }
         
         public void updateDescription() {

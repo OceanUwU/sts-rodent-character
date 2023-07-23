@@ -100,10 +100,13 @@ public class Junk {
         for (int i = 0; i < amount; i++) {
             while (true) {
                 JunkCard newJunk = getRandomJunk(random);
-                if (allUnique)
+                if (allUnique) {
+                    boolean foundSame = false;
                     for (JunkCard comp : junk)
-                        if (comp.cardID == newJunk.cardID)
-                            continue;
+                        if (comp.cardID.equals(newJunk.cardID))
+                            foundSame = true;
+                    if (foundSame) continue;
+                }
                 junk.add(newJunk);
                 break;
             }
