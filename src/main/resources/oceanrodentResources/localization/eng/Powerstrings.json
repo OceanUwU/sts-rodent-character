@@ -91,5 +91,79 @@
     "DESCRIPTIONS": [
       "whenever you create #yjunk, #yupgrade it."
     ]
+  },
+  "${ModID}:SlogPower": {
+    "NAME": "slog",
+    "DESCRIPTIONS": [
+      "the next time you finish a wreckage this turn, loses #b",
+      " hp."
+    ]
+  },
+  "${ModID}:SlipperyPawsPower": {
+    "NAME": "slippery paws",
+    "DESCRIPTIONS": [
+      "whenever you play a #ygrimed card, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
+  "${ModID}:IllIntentPower": {
+    "NAME": "ill intent",
+    "DESCRIPTIONS": [
+      "whenever you finish a #ywreckage, gain #b",
+      " #yblock."
+    ]
+  },
+  "${ModID}:RecollectPower": {
+    "NAME": "recollect",
+    "DESCRIPTIONS": [
+      "whenever you discard a card during your turn, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
+  "${ModID}:LickEmPower": {
+    "NAME": "lick 'em",
+    "DESCRIPTIONS": [
+      "at the start of your turn, #ygrime #b",
+      " card.",
+      " cards.",
+      "grime"
+    ]
+  },
+  "${ModID}:ScavengePower": {
+    "NAME": "scavenge",
+    "DESCRIPTIONS": [
+      "at the start of your turn, add #b",
+      " #yjunk to your hand."
+    ]
+  },
+  "${ModID}:TossPaperPower": {
+    "NAME": "toss paper",
+    "DESCRIPTIONS": [
+      "whenever you #yexhaust a card, deal #b",
+      " damage to a random enemy."
+    ]
+  },
+  "${ModID}:BananaPeelHelmetPower": {
+    "NAME": "banana peel helmet",
+    "DESCRIPTIONS": [
+      "whenever you play #yjunk, gain #b",
+      " #yblock."
+    ]
+  },
+  "${ModID}:StinkyFumesPower": {
+    "NAME": "stinky fumes",
+    "DESCRIPTIONS": [
+      "at the start of your turn, apply #b",
+      " #yencheesed to all enemies."
+    ]
+  },
+  "${ModID}:FlingPower": {
+    "NAME": "fling",
+    "DESCRIPTIONS": [
+      "whenever you draw a card this turn, loses #b",
+      " hp."
+    ]
   }
 }

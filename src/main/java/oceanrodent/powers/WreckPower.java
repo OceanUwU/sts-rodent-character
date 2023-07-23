@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import oceanrodent.powers.interfaces.OnFinishWreckage;
 
 import static oceanrodent.RodentMod.makeID;
 import static oceanrodent.util.Wiz.*;
@@ -39,6 +41,15 @@ public class WreckPower extends AbstractEasyPower {
                 flash();
                 atb(new RemoveSpecificPowerAction(owner, owner, this));
                 effect.accept(power);
+                for (AbstractPower p : adp().powers)
+                    if (p instanceof OnFinishWreckage)
+                        ((OnFinishWreckage)p).onFinishWreckage(this);
+                forAllMonstersLiving(mo -> {
+                    for (AbstractPower p : mo.powers)
+                        if (p instanceof OnFinishWreckage)
+                            ((OnFinishWreckage)p).onFinishWreckage(this);
+                });
+                
             }
         } 
     }

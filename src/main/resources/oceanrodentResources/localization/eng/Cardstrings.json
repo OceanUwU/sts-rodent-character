@@ -248,5 +248,185 @@
   "${ModID}:RatKing": {
     "NAME": "rat king",
     "DESCRIPTION": "upgrade all future ${ModID}:junk."
+  },
+  "${ModID}:HoleyBarrage": {
+    "NAME": "holey barrage",
+    "DESCRIPTION": "apply !M! ${ModID}:encheesed to all enemies. NL ${ModID}:encheesed does not wear off this turn."
+  },
+  "${ModID}:Pilfer": {
+    "NAME": "pilfer",
+    "DESCRIPTION": "apply !${ModID}:m2! weak. NL shuffle !M! ${ModID}:junk into your draw pile."
+  },
+  "${ModID}:RapidMovements": {
+    "NAME": "rapid movements",
+    "DESCRIPTION": "${ModID}:nip: enemy loses !M! hp."
+  },
+  "${ModID}:HereThereEverywhere": {
+    "NAME": "here, there, everywhere",
+    "DESCRIPTION": "deal !D! damage twice. NL ${ModID}:nip: gain !M! block."
+  },
+  "${ModID}:Sidestep": {
+    "NAME": "sidestep",
+    "DESCRIPTION": "{@@}${ModID}:hardy: gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= and draw !${ModID}:m2! card|>1= and draw !${ModID}:m2! cards}."
+  },
+  "${ModID}:Encircle": {
+    "NAME": "encircle",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=${ModID}:hardy. NL }gain !B! block. NL increase this card's block by !M! whenever you play a card with this in hand. NL exhaust."
+  },
+  "${ModID}:BinLidSwing": {
+    "NAME": "bin lid swing",
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:wreck !${ModID}:m2! all enemies lose !D! hp.",
+    "EXTENDED_DESCRIPTION": [
+      "all enemies lose #b",
+      "hp."
+    ]
+  },
+  "${ModID}:SludgeSmash": {
+    "NAME": "sludge smash",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:grime this card."
+  },
+  "${ModID}:MuckyTap": {
+    "NAME": "mucky tap",
+    "DESCRIPTION": "{@@}deal !D! damage. NL ${ModID}:grime and ${ModID}:tarnish !M! card{!M!|>1=s}",
+    "EXTENDED_DESCRIPTION": [
+      "grime and tarnish"
+    ]
+  },
+  "${ModID}:RecklessPrance": {
+    "NAME": "reckless prance",
+    "DESCRIPTION": "{@@}draw !M! card{!M!|>1=s}. NL ${ModID}:tarnish your hand. NL discard !${ModID}:m2! card{!${ModID:m2}!|>1=s}."
+  },
+  "${ModID}:SummonCourage": {
+    "NAME": "summon courage",
+    "DESCRIPTION": "{@@}deal !D! damage. NL ${ModID}:hardy: ${ModID}:grime this card{!M!|>1= !M! times}."
+  },
+  "${ModID}:Ratcrobratics": {
+    "NAME": "ratcrobratics",
+    "DESCRIPTION": "{@@}draw !M! card{!M!|>1=s}. NL discard !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
+  },
+  "${ModID}:CheesedToMeetYou": {
+    "NAME": "cheesed to meet you!",
+    "DESCRIPTION": "deal !D! damage. NL apply !M! ${ModID}:encheesed."
+  },
+  "${ModID}:BashAndDash": {
+    "NAME": "bash and dash",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: gain block equal to unblocked damage dealt.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " #yblock"
+    ]
+  },
+  "${ModID}:NotReadyYet": {
+    "NAME": "not ready yet!",
+    "DESCRIPTION": "discard your hand. NL gain !B! block for each card discarded."
+  },
+  "${ModID}:Cower": {
+    "NAME": "cower",
+    "DESCRIPTION": "{@@}add a *safety{!Upgrades!|>0=+} to your hand and ${ModID}:grime it x times."
+  },
+  "${ModID}:Bury": {
+    "NAME": "bury",
+    "DESCRIPTION": "{@@}upgrade a card. NL ${ModID}:wreck !${ModID}:m2!: ${ModID}:grime it{!M!|>1= !M! times}.",
+    "EXTENDED_DESCRIPTION": [
+      "upgrade",
+      "#ygrime ",
+      ".",
+      " #b",
+      " times."
+    ]
+  },
+  "${ModID}:Slog": {
+    "NAME": "slog",
+    "DESCRIPTION": "deal !D! damage. NL the next time you finish a ${ModID}:wreckage this turn, the enemy loses !D! hp."
+  },
+  "${ModID}:SandAttack": {
+    "NAME": "sand attack",
+    "DESCRIPTION": "enemy loses !M! strength this turn. NL ${ModID}:wreck !${ModID}:m2!: heal !M! hp. NL exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "heal #b",
+      " hp."
+    ]
+  },
+  "${ModID}:Fling": {
+    "NAME": "fling",
+    "DESCRIPTION": "add !M! ${ModID}:junk to your hand. NL whenever you draw a card this turn, the enemy loses !${ModID}:m2! hp."
+  },
+  "${ModID}:Scamper": {
+    "NAME": "scamper",
+    "DESCRIPTION": "{@@}deal !D! damage to all enemies. NL ${ModID}:wreck !${ModID}:m2!: gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " [E] ."
+    ]
+  },
+  "${ModID}:Parkour": {
+    "NAME": "parkour",
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:wreck !${ModID}:m2!: gain !B! block.",
+    "EXTENDED_DESCRIPTION": [
+      "gain #b",
+      " #yblock."
+    ]
+  },
+  "${ModID}:ZipAround": {
+    "NAME": "zip around",
+    "DESCRIPTION": "deal !D! damage to a random enemy !M! times."
+  },
+  "${ModID}:Overconfidence": {
+    "NAME": "overconfidence",
+    "DESCRIPTION": "if the enemy has over 50% hp, deal !D! damage. otherwise, deal !${ModID}:sd! damage."
+  },
+  "${ModID}:MudSpray": {
+    "NAME": "mud spray",
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: ${ModID}:grime your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "#ygrime your hand."
+    ]
+  },
+  "${ModID}:PlateSmash": {
+    "NAME": "plate smash",
+    "DESCRIPTION": "deal !D! damage."
+  },
+  "${ModID}:TheStash": {
+    "NAME": "the stash",
+    "DESCRIPTION": "{@@}unplayable. NL ${ModID}:hardy: add !M! {!${ModID}:m2!|>0=${ModID}:grimy }${ModID}:junk into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "i shouldn't tap into my stash just yet!"
+    ]
+  },
+  "${ModID}:SlipperyPaws": {
+    "NAME": "slippery paws",
+    "DESCRIPTION": "{@@}whenever you play a ${ModID}:grimy card, draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:IllIntent": {
+    "NAME": "ill intent",
+    "DESCRIPTION": "whenever you finish a ${ModID}:wreckage, gain !M! block. NL ${ModID}:wreck !${ModID}:m3!: channel !${ModID}:m2! lightning.",
+    "EXTENDED_DESCRIPTION": [
+      "#ychannel #b",
+      " #ylightning"
+    ]
+  },
+  "${ModID}:Recollect": {
+    "NAME": "recollect",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=innate. NL }whenever you discard a card during your turn, draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:LickEm": {
+    "NAME": "lick 'em",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=now and } at the start of your turn, ${ModID}:grime !M! card{!M!|>1=s}."
+  },
+  "${ModID}:Scavenge": {
+    "NAME": "scavenge",
+    "DESCRIPTION": "at the start of your turn, add !M! ${ModID}:junk to your hand."
+  },
+  "${ModID}:TossPaper": {
+    "NAME": "toss paper",
+    "DESCRIPTION": "whenever you exhaust a card, deal !M! damage to a random enemy."
+  },
+  "${ModID}:BananaPeelHelmet": {
+    "NAME": "banana peel helmet",
+    "DESCRIPTION": "whenever you play ${ModID}:junk, gain !M! block."
+  },
+  "${ModID}:StinkyFumes": {
+    "NAME": "stinky fumes",
+    "DESCRIPTION": "at the start of your turn, apply !M! ${ModID}:encheesed to all enemies."
   }
 }

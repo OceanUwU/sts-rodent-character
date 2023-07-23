@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import oceanrodent.cards.SlipperyPaws;
 import oceanrodent.util.TexLoader;
 
 import static oceanrodent.RodentMod.makeID;
@@ -61,6 +62,8 @@ public class Grime {
                         else CardModifierManager.removeSpecificModifier(c, tarnish, true);
                     } else
                         CardModifierManager.removeSpecificModifier(c, modifier, true);
+                    if (adp().hasPower(SlipperyPaws.SlipperyPawsPower.POWER_ID))
+                        ((SlipperyPaws.SlipperyPawsPower)adp().getPower(SlipperyPaws.SlipperyPawsPower.POWER_ID)).onPlayGrimedCard(c);
                 }
             });
         }

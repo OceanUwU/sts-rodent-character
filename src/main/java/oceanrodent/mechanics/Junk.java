@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.random.Random;
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import oceanrodent.cards.AbstractRodentCard;
 import oceanrodent.cards.RatKing;
 import oceanrodent.mechanics.Junk.MakeAction.Location;
@@ -114,10 +115,16 @@ public class Junk {
         public enum Location {DRAW, HAND}
         private int amount;
         private Location location;
+        private Consumer<ArrayList<JunkCard>> doToJunk;
 
-        public MakeAction(int amount, Location location) {
+        public MakeAction(int amount, Location location, Consumer<ArrayList<JunkCard>> doToJunk) {
             this.amount = amount;
             this.location = location;
+            this.doToJunk = doToJunk;
+        }
+
+        public MakeAction(int amount, Location location) {
+            this(amount, location, cards -> {});
         }
 
         public MakeAction(Location location) {
@@ -140,6 +147,7 @@ public class Junk {
                         break;
                 }
             }
+            doToJunk.accept(junk);
             isDone = true;
         }
     }
