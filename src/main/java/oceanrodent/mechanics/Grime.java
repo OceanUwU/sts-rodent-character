@@ -178,7 +178,7 @@ public class Grime {
     }
 
     public static boolean canGrime(AbstractCard c) {
-        return c.baseDamage > 0 || c.baseBlock > 0;
+        return c.baseDamage >= 0 || c.baseBlock >= 0;
     }
 
     public static class Action extends AbstractGameAction {

@@ -1,5 +1,7 @@
 package oceanrodent.cards;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -44,13 +46,24 @@ public class Fling extends AbstractRodentCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
 
-        public void onCardDraw(AbstractCard card) {
+        public void onPlayerDraw() {
             flash();
             atb(new LoseHPAction(owner, null, amount));
         }
     
         public void atEndOfTurn(boolean isPlayer) {
             atb(new RemoveSpecificPowerAction(owner, owner, this));
+        }
+
+        @SpirePatch(clz=AbstractPlayer.class, method="draw", paramtypez={int.class})
+        public static class Trigger {
+            @SpireInsertPatch(rloc=14)
+            public static void Insert(AbstractPlayer __instance) {
+                forAllMonstersLiving(mo -> mo.powers.forEach(p -> {
+                    if (p instanceof FlingPower)
+                        ((FlingPower)p).onPlayerDraw();
+                }));
+            }
         }
     }
 }

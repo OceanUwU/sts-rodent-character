@@ -224,7 +224,7 @@
   },
   "${ModID}:SteppingStones": {
     "NAME": "stepping stones",
-    "DESCRIPTION": "{@@}whenever you discard a card, ${ModID}:grime it{!M!|>1= !M! times}."
+    "DESCRIPTION": "{@@}whenever you discard a card during your turn, ${ModID}:grime it{!M!|>1= !M! times}."
   },
   "${ModID}:Piddle": {
     "NAME": "piddle",
@@ -260,7 +260,7 @@
   },
   "${ModID}:Pilfer": {
     "NAME": "pilfer",
-    "DESCRIPTION": "apply !${ModID}:m2! weak. NL shuffle !M! ${ModID}:junk into your draw pile."
+    "DESCRIPTION": "apply !${ModID}:m2! weak. NL shuffle !M! ${ModID}:junk into your draw pile. NL exhaust."
   },
   "${ModID}:RapidMovements": {
     "NAME": "rapid movements",

@@ -19,7 +19,7 @@ public class Careen extends AbstractRodentCard {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         cardsToPreview = new Vault();
         baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = secondMagic = 8;
+        baseSecondMagic = secondMagic = 6;
         exhaust = true;
     }
 
