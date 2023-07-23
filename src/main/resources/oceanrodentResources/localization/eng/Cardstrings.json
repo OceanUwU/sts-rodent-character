@@ -275,7 +275,7 @@
   },
   "${ModID}:BinLidSwing": {
     "NAME": "bin lid swing",
-    "DESCRIPTION": "gain !B! block. NL ${ModID}:wreck !${ModID}:m2! all enemies lose !D! hp.",
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:wreck !${ModID}:m2!: all enemies lose !D! hp.",
     "EXTENDED_DESCRIPTION": [
       "all enemies lose #b",
       "hp."

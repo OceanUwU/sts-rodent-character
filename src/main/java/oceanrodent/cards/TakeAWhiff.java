@@ -15,7 +15,7 @@ public class TakeAWhiff extends AbstractRodentCard {
 
     public TakeAWhiff() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
