@@ -1,5 +1,6 @@
 package oceanrodent.characters;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
@@ -8,6 +9,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Slot;
+import com.esotericsoftware.spine.SlotData;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -41,12 +44,28 @@ public class TheRodent extends CustomPlayer {
     public static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
-    private static final Float SIZE_SCALE = 0.6f;
+    public static final Float SIZE_SCALE = 0.6f;
     private static final Float ANIMATION_SPEED = 1.0f;
     private static boolean endEffectStarted = false;
+    public static final String[] orbTextures = {
+        makeCharacterPath("mainChar/orb/layer1.png"),
+        makeCharacterPath("mainChar/orb/layer2.png"),
+        makeCharacterPath("mainChar/orb/layer3.png"),
+        makeCharacterPath("mainChar/orb/layer4.png"),
+        makeCharacterPath("mainChar/orb/layer4.png"),
+        makeCharacterPath("mainChar/orb/layer6.png"),
+        makeCharacterPath("mainChar/orb/layer1d.png"),
+        makeCharacterPath("mainChar/orb/layer2d.png"),
+        makeCharacterPath("mainChar/orb/layer3d.png"),
+        makeCharacterPath("mainChar/orb/layer4d.png"),
+        makeCharacterPath("mainChar/orb/layer5d.png"),
+    };
+    public static final String orbVfxTexture = makeCharacterPath("mainChar/orb/vfx.png");
+    public static float[] orbRotationValues = new float[]{24f, 36f, 16f, 12f, 0f};
+    public boolean isMultiplayer = false;
 
     public TheRodent(String name, PlayerClass setClass) {
-        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), new float[]{24f, 36f, 16f, 12f, 0f}), new SpineAnimation(makeCharacterPath("mainChar/rat.atlas"), makeCharacterPath("mainChar/rat.json"), 1f / SIZE_SCALE));
+        super(name, setClass, new CustomEnergyOrb(orbTextures, orbVfxTexture, orbRotationValues), new SpineAnimation(makeCharacterPath("mainChar/rat.atlas"), makeCharacterPath("mainChar/rat.json"), 1f / SIZE_SCALE));
         initializeClass(null, SHOULDER1, SHOULDER2, CORPSE, getLoadout(), 20.0F, -10.0F, 166.0F, 90.0F, new EnergyManager(3));
         loadNewAnimation("rat");
         dialogX = (drawX + 0.0F * Settings.scale);
@@ -54,9 +73,14 @@ public class TheRodent extends CustomPlayer {
     }
 
     public void loadNewAnimation(String version) {
+        if (isMultiplayer) return;
         animation = new SpineAnimation(makeCharacterPath("mainChar/"+version+".atlas"), makeCharacterPath("mainChar/"+version+".json"), 1f / SIZE_SCALE);
         SpineAnimation spine = (SpineAnimation)animation;
         loadAnimation(spine.atlasUrl, spine.skeletonUrl, spine.scale);
+        prepAnimation();
+    }
+
+    public void prepAnimation() {
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         stateData.setMix("Hit", "Idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
@@ -102,20 +126,6 @@ public class TheRodent extends CustomPlayer {
         CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false);
     }
-
-    private static final String[] orbTextures = {
-        makeCharacterPath("mainChar/orb/layer1.png"),
-        makeCharacterPath("mainChar/orb/layer2.png"),
-        makeCharacterPath("mainChar/orb/layer3.png"),
-        makeCharacterPath("mainChar/orb/layer4.png"),
-        makeCharacterPath("mainChar/orb/layer4.png"),
-        makeCharacterPath("mainChar/orb/layer6.png"),
-        makeCharacterPath("mainChar/orb/layer1d.png"),
-        makeCharacterPath("mainChar/orb/layer2d.png"),
-        makeCharacterPath("mainChar/orb/layer3d.png"),
-        makeCharacterPath("mainChar/orb/layer4d.png"),
-        makeCharacterPath("mainChar/orb/layer5d.png"),
-    };
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
