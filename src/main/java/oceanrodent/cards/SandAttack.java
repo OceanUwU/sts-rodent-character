@@ -18,6 +18,7 @@ public class SandAttack extends AbstractRodentCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 4;
         baseSecondMagic = secondMagic = 1;
+        exhaust = true;
         tags.add(CardTags.HEALING);
     }
 
