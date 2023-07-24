@@ -34,7 +34,7 @@ public class Sugar extends CustomPotion {
     }
 
     public void use(AbstractCreature abstractCreature) {
-        applyToSelf(new NipPower("SugarPower", canUse, potency, name, a -> potionStrings.DESCRIPTIONS[2] + a + potionStrings.DESCRIPTIONS[3], a -> atb(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(a, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE))));
+        applyToSelf(new NipPower("SugarPower", true, potency, name, a -> potionStrings.DESCRIPTIONS[2] + a + potionStrings.DESCRIPTIONS[3], a -> atb(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(a, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE))));
     }
 
     public int getPotency(int ascensionlevel) {
