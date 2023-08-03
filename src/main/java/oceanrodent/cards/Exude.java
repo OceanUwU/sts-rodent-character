@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import oceanrodent.mechanics.Junk;
 import oceanrodent.powers.AbstractEasyPower;
 import oceanrodent.powers.Encheesed;
 
@@ -18,11 +19,15 @@ public class Exude extends AbstractRodentCard {
 
     public Exude() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
+        baseSecondMagic = secondMagic = 1;
+        cardsToPreview = Junk.getJunk("MouldyCheese");
+        System.out.println(cardsToPreview);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new DoubleEncheesedPower(p, 3));
+        makeInHand(cardsToPreview, secondMagic);
     }
 
     public void upp() {

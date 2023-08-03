@@ -14,7 +14,7 @@ public class GetStuckIn extends AbstractRodentCard {
 
     public GetStuckIn() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 5;
+        baseDamage = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

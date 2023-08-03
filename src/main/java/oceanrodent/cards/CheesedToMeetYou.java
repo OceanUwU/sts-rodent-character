@@ -12,7 +12,7 @@ public class CheesedToMeetYou extends AbstractRodentCard {
     public final static String ID = makeID("CheesedToMeetYou");
 
     public CheesedToMeetYou() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 7;
         baseMagicNumber = magicNumber = 3;
     }

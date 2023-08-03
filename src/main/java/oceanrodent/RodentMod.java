@@ -153,16 +153,15 @@ public class RodentMod implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new ThirdMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
-        new AutoAdd(modID)
-            .packageFilter(AbstractRodentCard.class)
-            .setDefaultSeen(true)
-            .cards();
-        
         Junk.initialise();
         for (Junk.JunkCard junk : Junk.allJunk) {
             BaseMod.addCard(junk);
             UnlockTracker.unlockCard(junk.cardID);
         }
+        new AutoAdd(modID)
+            .packageFilter(AbstractRodentCard.class)
+            .setDefaultSeen(true)
+            .cards();
     }
 
 

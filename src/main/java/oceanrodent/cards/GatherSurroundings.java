@@ -12,9 +12,9 @@ public class GatherSurroundings extends AbstractRodentCard {
     public final static String ID = makeID("GatherSurroundings");
 
     public GatherSurroundings() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
-        baseSecondMagic = secondMagic = 3;
+        baseSecondMagic = secondMagic = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

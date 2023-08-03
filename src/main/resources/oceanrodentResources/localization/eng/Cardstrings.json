@@ -204,7 +204,7 @@
   },
   "${ModID}:Exude": {
     "NAME": "exude",
-    "DESCRIPTION": "{@@}apply double ${ModID}:encheesed the next !M! time{!M!|>1=s} you apply it."
+    "DESCRIPTION": "{@@}add !${ModID}:m2! *mouldy *cheese{!${ModID}:m2!|>1=s} to your hand. NL apply double ${ModID}:encheesed the next !M! time{!M!|>1=s} you apply it."
   },
   "${ModID}:TakeAWhiff": {
     "NAME": "take a whiff",
@@ -216,7 +216,7 @@
   },
   "${ModID}:Ratpack": {
     "NAME": "ratpack",
-    "DESCRIPTION": "{@@}discard your hand. NL put !M! card{!M!|>1=s} from your discard pile into your hand."
+    "DESCRIPTION": "{@@}discard your hand. NL put !M! card{!M!|>1=s} from your discard pile into your hand. NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:Lazors": {
     "NAME": "lazors!!",
@@ -236,7 +236,7 @@
   },
   "${ModID}:SqueezeThrough": {
     "NAME": "squeeze through",
-    "DESCRIPTION": "{@@}add !${ModID}:m2! *splinter{!${ModID}:m2!|>1=s} into your hand. NL gain !B! block."
+    "DESCRIPTION": "{@@}add !${ModID}:m2! *splinter{!${ModID}:m2!|>1=s} to your hand. NL gain !B! block."
   },
   "${ModID}:Empty": {
     "NAME": "empty",
@@ -276,7 +276,7 @@
   },
   "${ModID}:Encircle": {
     "NAME": "encircle",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=${ModID}:hardy. NL }gain !B! block. NL increase this card's block by !M! whenever you play a card with this in hand. NL exhaust."
+    "DESCRIPTION": "gain !B! block. NL increase this card's block by !M! whenever you play a card with this in hand. NL exhaust."
   },
   "${ModID}:BinLidSwing": {
     "NAME": "bin lid swing",
@@ -288,7 +288,7 @@
   },
   "${ModID}:SludgeSmash": {
     "NAME": "sludge smash",
-    "DESCRIPTION": "deal !D! damage. NL ${ModID}:grime this card."
+    "DESCRIPTION": "gain !B! block. NL deal !D! damage. NL affected !M!x by ${ModID}:grime."
   },
   "${ModID}:MuckyTap": {
     "NAME": "mucky tap",
@@ -389,11 +389,11 @@
   },
   "${ModID}:PlateSmash": {
     "NAME": "plate smash",
-    "DESCRIPTION": "deal !D! damage."
+    "DESCRIPTION": "deal !D! damage. NL ${ModID}:grime this card."
   },
   "${ModID}:TheStash": {
     "NAME": "the stash",
-    "DESCRIPTION": "{@@}unplayable. NL ${ModID}:hardy: add !M! {!${ModID}:m2!|>0=${ModID}:grimy }${ModID}:junk into your hand.",
+    "DESCRIPTION": "{@@}unplayable. NL ${ModID}:hardy: add !M! {!${ModID}:m2!|>0=${ModID}:grimy }${ModID}:junk to your hand.",
     "EXTENDED_DESCRIPTION": [
       "i shouldn't tap into my stash just yet!"
     ]

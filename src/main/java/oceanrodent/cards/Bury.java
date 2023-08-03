@@ -21,7 +21,7 @@ public class Bury extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new SelectCardsInHandAction(1, exDesc[0], false, false, c -> c.canUpgrade(), cards -> {
+        atb(new SelectCardsInHandAction(1, exDesc[0], false, false, c -> c.canUpgrade() || Grime.canGrime(c), cards -> {
             if (cards.size() > 0) {
                 AbstractCard c = cards.get(0);
                 if (Grime.canGrime(c))

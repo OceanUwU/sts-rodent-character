@@ -20,7 +20,7 @@ public class Recollect extends AbstractRodentCard {
     public final static String ID = makeID("Recollect");
 
     public Recollect() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 

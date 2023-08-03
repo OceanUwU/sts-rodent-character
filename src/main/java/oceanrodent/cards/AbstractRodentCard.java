@@ -184,7 +184,7 @@ public abstract class AbstractRodentCard extends CustomCard {
 
     public void triggerOnManualDiscard() {
         if (hardy)
-            atb(new HardyReturnAction(this));
+            att(new HardyReturnAction(this));
     }
 
     private static class HardyReturnAction extends AbstractGameAction {

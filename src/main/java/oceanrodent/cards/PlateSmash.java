@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import oceanrodent.mechanics.Grime;
 
 import static oceanrodent.RodentMod.makeID;
+import static oceanrodent.util.Wiz.*;
 
 public class PlateSmash extends AbstractRodentCard {
     public final static String ID = makeID("PlateSmash");
@@ -18,6 +19,7 @@ public class PlateSmash extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
+        atb(new Grime.Action(this));
     }
 
     public void upp() {

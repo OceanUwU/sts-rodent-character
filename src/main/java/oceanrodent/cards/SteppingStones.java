@@ -20,7 +20,7 @@ public class SteppingStones extends AbstractRodentCard {
     public final static String ID = makeID("SteppingStones");
 
     public SteppingStones() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 

@@ -100,7 +100,7 @@ public class TheRodent extends CustomPlayer {
 
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0],75, 75, 1, 99, 5, this, getStartingRelics(), getStartingDeck(), false);
+        return new CharSelectInfo(NAMES[0], TEXT[0], 72, 72, 1, 99, 5, this, getStartingRelics(), getStartingDeck(), false);
     }
 
     @Override

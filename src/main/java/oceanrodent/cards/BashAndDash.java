@@ -20,8 +20,8 @@ public class BashAndDash extends AbstractRodentCard {
 
     public BashAndDash() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 16;
-        baseSecondMagic = secondMagic = 3;
+        baseDamage = 14;
+        baseSecondMagic = secondMagic = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

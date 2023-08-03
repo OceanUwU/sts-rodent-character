@@ -12,7 +12,7 @@ public class StowAway extends AbstractRodentCard {
 
     public StowAway() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 1;
+        baseBlock = 2;
         baseMagicNumber = magicNumber = 1;
     }
 

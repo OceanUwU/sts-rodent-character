@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static oceanrodent.RodentMod.makeID;
-import static oceanrodent.util.Wiz.*;
 
 public class ZipAround extends AbstractRodentCard {
     public final static String ID = makeID("ZipAround");
@@ -18,14 +17,7 @@ public class ZipAround extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
-            atb(new AbstractGameAction() {
-                public void update() {
-                    isDone = true;
-                    AbstractMonster target = getRandomEnemy();
-                    if (target == null) return;
-                    dmgTop(target, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-                }
-            });
+            randomDmg(AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     public void upp() {

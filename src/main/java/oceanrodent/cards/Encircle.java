@@ -30,6 +30,6 @@ public class Encircle extends AbstractRodentCard {
     }
 
     public void upp() {
-        hardy = true;
+        upgradeMagicNumber(1);
     }
 }

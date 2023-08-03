@@ -79,10 +79,10 @@ public class Junk {
 
     public static JunkCard getJunk(String junkID) {
         for (JunkCard c : allJunk)
-            if (c.cardID == junkID)
+            if (c.cardID.equals(junkID))
                 return (JunkCard)c.makeCopy();
         for (JunkCard c : allJunk)
-            if (c.cardID == makeID(junkID))
+            if (c.cardID.equals(makeID(junkID)))
                 return (JunkCard)c.makeCopy();
         return null;
     }

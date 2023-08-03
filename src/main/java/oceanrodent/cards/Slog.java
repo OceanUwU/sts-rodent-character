@@ -20,7 +20,7 @@ public class Slog extends AbstractRodentCard {
 
     public Slog() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 15;
+        baseDamage = 16;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

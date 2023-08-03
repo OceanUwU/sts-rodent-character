@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import oceanrodent.cards.SlipperyPaws;
+import oceanrodent.cards.SludgeSmash;
 import oceanrodent.util.TexLoader;
 
 import static oceanrodent.RodentMod.makeID;
@@ -47,8 +48,8 @@ public class Grime {
             ExtraIcons.icon(ICON_TEXTURE).text(String.valueOf(amount)).render(c);
         }
 
-        private float amplifier() {
-            return 1 + 0.5f * amount;
+        private float amplifier(AbstractCard c) {
+            return 1 + 0.5f * amount * (c instanceof SludgeSmash ? c.magicNumber : 1);
         }
 
         public void onUse(AbstractCard c, AbstractCreature target, UseCardAction action) {
@@ -70,12 +71,12 @@ public class Grime {
 
         public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard c, AbstractMonster target) {
             if (type == DamageInfo.DamageType.NORMAL)
-                return damage * amplifier();
+                return damage * amplifier(c);
             return damage;
         }
 
         public float modifyBlock(float block, AbstractCard c) {
-            return block * amplifier();
+            return block * amplifier(c);
         }
 
         public boolean shouldApply(AbstractCard c) {
