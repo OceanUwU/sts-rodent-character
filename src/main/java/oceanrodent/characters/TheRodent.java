@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Skeleton;
 import com.esotericsoftware.spine.Slot;
 import com.esotericsoftware.spine.SlotData;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -84,6 +85,10 @@ public class TheRodent extends CustomPlayer {
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         stateData.setMix("Hit", "Idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
+    }
+
+    public Skeleton getSkeleton() {
+        return skeleton;
     }
 
     @Override

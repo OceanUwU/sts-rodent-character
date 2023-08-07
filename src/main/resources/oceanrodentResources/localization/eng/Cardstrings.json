@@ -12,7 +12,9 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "{@@}${ModID}:junk. NL ",
-      " NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}. NL exhaust."
+      " NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}.",
+      " NL exhaust.",
+      "rarity"
     ]
   },
   "${ModID}:Wrapper": {
@@ -188,7 +190,7 @@
   },
   "${ModID}:OopsDroppedEm": {
     "NAME": "oops, dropped 'em!",
-    "DESCRIPTION": "{@@}${ModID}:nip: ${ModID}:grime !M! card{!M!|>1=s} at random.",
+    "DESCRIPTION": "{@@}add !${ModID}:m2! *stands to your hand. NL ${ModID}:nip: ${ModID}:grime !M! card{!M!|>1=s} at random.",
     "EXTENDED_DESCRIPTION": [
       "#ygrime #b",
       " card at random.",
@@ -433,5 +435,65 @@
   "${ModID}:StinkyFumes": {
     "NAME": "stinky fumes",
     "DESCRIPTION": "at the start of your turn, apply !M! ${ModID}:encheesed to all enemies."
+  },
+  "${ModID}:Stand": {
+    "NAME": "stand",
+    "DESCRIPTION": "{@@}ethereal. NL {!B!|>-1=gain !B! block. NL }exhaust."
+  },
+  "${ModID}:Sandwich": {
+    "NAME": "sandwich",
+    "DESCRIPTION": "gain !M! strength."
+  },
+  "${ModID}:Toothbrush": {
+    "NAME": "toothbrush",
+    "DESCRIPTION": "gain !M! dexterity."
+  },
+  "${ModID}:BinLid": {
+    "NAME": "bin lid",
+    "DESCRIPTION": "gain !M! plated armour."
+  },
+  "${ModID}:BubbleWrap": {
+    "NAME": "bubble wrap",
+    "DESCRIPTION": "{@@}upgrade !M! card{!M!|>1=s} at random."
+  },
+  "${ModID}:PlasticBag": {
+    "NAME": "plastic bag",
+    "DESCRIPTION": "enemy loses !M! strength this turn."
+  },
+  "${ModID}:Battery": {
+    "NAME": "battery",
+    "DESCRIPTION": "channel !M! lightning."
+  },
+  "${ModID}:GlassBottle": {
+    "NAME": "glass bottle",
+    "DESCRIPTION": "channel !M! frost."
+  },
+  "${ModID}:Stardust": {
+    "NAME": "stardust",
+    "DESCRIPTION": "channel !M! plasma."
+  },
+  "${ModID}:Stickyweed": {
+    "NAME": "stickyweed",
+    "DESCRIPTION": "retain."
+  },
+  "${ModID}:LuckyPenny": {
+    "NAME": "lucky penny",
+    "DESCRIPTION": "this turn, your next card is played twice."
+  },
+  "${ModID}:HalfAPairOfScissors": {
+    "NAME": "half a pair of scissors",
+    "DESCRIPTION": "scry !M!."
+  },
+  "${ModID}:ShreddedLetter": {
+    "NAME": "shredded letter",
+    "DESCRIPTION": "{@@}choose 1 of !M! card{!M!|>1=s} of any colour to add to your hand."
+  },
+  "${ModID}:SpoiledOrange": {
+    "NAME": "spoiled orange",
+    "DESCRIPTION": "apply !M! poison."
+  },
+  "${ModID}:RunicWrapper": {
+    "NAME": "runic wrapper",
+    "DESCRIPTION": "at the end of your turn, deal !M! damage to all enemies."
   }
 }

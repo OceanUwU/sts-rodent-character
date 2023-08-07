@@ -10,5 +10,24 @@
         "TEXT": [
             "choose cards from your draw pile to discard."
         ]
+    },
+
+    "${ModID}:GrimePack": {
+      "TEXT": ["grime", "buff your cards' damage and block by embracing the grime.", "ocean", "inspired by enhance from blizzarre's runesmith"]
+    },
+    "${ModID}:GrimePackHat": {
+      "TEXT": ["no need to let it go to waste.", "banana peel helmet"]
+    },
+    "${ModID}:HardyPack": {
+      "TEXT": ["hardy", "resilient cards that come back when discarded, including ways to discard them.", "ocean", "inspired by ricochet from laugic's vacant"]
+    },
+    "${ModID}:HardyPackHat": {
+      "TEXT": ["squeak!", "rat face"]
+    },
+    "${ModID}:JunkPack": {
+      "TEXT": ["junk", "generate heaps of tiny cards!!", "ocean", "inspired by fish from vex's adventurer"]
+    },
+    "${ModID}:JunkPackHat": {
+      "TEXT": ["why carry bags around when you could use your hat as storage?", "bin"]
     }
 }

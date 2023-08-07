@@ -1,6 +1,7 @@
 package oceanrodent.cards;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,12 +23,14 @@ public class Exude extends AbstractRodentCard {
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 1;
         cardsToPreview = Junk.getJunk("MouldyCheese");
-        System.out.println(cardsToPreview);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new DoubleEncheesedPower(p, 3));
-        makeInHand(cardsToPreview, secondMagic);
+        AbstractCard c = cardsToPreview.makeStatEquivalentCopy();
+        if (c instanceof Junk.JunkCard && p.hasPower(RatKing.RatKingPower.POWER_ID) && c.canUpgrade())
+            c.upgrade();
+        makeInHand(c, secondMagic);
     }
 
     public void upp() {

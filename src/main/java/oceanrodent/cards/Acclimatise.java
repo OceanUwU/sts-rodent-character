@@ -43,7 +43,7 @@ public class Acclimatise extends AbstractRodentCard {
         }
   
         public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
-            if (Grime.canGrime(c)) {
+            if (Grime.canGrime(c) && !c.exhaust && c.type != AbstractCard.CardType.POWER) {
                 flash();
                 atb(new Grime.Action(c));
                 atb(new ReducePowerAction(owner, owner, this, 1));

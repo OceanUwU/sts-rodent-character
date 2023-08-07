@@ -11,7 +11,7 @@ public class ZipAround extends AbstractRodentCard {
 
     public ZipAround() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 1;
+        baseDamage = 2;
         baseMagicNumber = magicNumber = 4;
     }
 

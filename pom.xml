@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>oceanrodent</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <name>rodent (the)</name>
     <description>sts mashup character.</description>
 
@@ -56,6 +56,13 @@
             <version>5.1.2</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/2384072973/TogetherInSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>thePackmaster</groupId>
+            <artifactId>PackmasterCharacter</artifactId>
+            <version>1.8.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2920075378/ThePackmaster.jar</systemPath>
         </dependency>
     </dependencies>
 

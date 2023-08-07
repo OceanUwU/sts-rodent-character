@@ -23,6 +23,6 @@ public class Litterpicking extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeMagicNumber(1);
     }
 }

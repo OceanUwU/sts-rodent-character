@@ -27,7 +27,7 @@ public class TossPaper extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 
     public static class TossPaperPower extends AbstractEasyPower {

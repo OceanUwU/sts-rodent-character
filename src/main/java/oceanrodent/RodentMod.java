@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.patches.CenterGridCardSelectScreen;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -32,6 +33,8 @@ import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk;
 import oceanrodent.potions.*;
 import oceanrodent.relics.AbstractEasyRelic;
+import oceanrodent.util.PackLoader;
+import thePackmaster.SpireAnniversary5Mod;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -86,6 +89,8 @@ public class RodentMod implements
 
     public RodentMod() {
         BaseMod.subscribe(this);
+        if (Loader.isModLoaded("anniv5"))
+            SpireAnniversary5Mod.subscribe(new PackLoader());
 
         BaseMod.addColor(TheRodent.Enums.RODENT_COLOUR_OCEAN, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,

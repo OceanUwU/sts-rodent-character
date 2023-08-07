@@ -81,7 +81,7 @@
   "${ModID}:HoardPower": {
     "NAME": "hoard",
     "DESCRIPTIONS": [
-      "at the end of combat, you may add #b1 of #b",
+      "at the end of combat, you may choose #b1 of #b",
       " #yjunk to add to your deck.",
       "hoard junk"
     ]

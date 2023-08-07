@@ -13,8 +13,8 @@ public class Parkour extends AbstractRodentCard {
 
     public Parkour() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 7;
-        baseSecondMagic = secondMagic = 2;
+        baseBlock = 6;
+        baseSecondMagic = secondMagic = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
