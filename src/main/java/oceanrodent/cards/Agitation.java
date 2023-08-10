@@ -15,7 +15,7 @@ public class Agitation extends AbstractRodentCard {
     public Agitation() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 4;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 3;
     }
 
@@ -26,6 +26,6 @@ public class Agitation extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeSecondMagic(1);
     }
 }

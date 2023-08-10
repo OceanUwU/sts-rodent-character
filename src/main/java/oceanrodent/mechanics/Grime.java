@@ -20,8 +20,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import oceanrodent.cards.SlipperyPaws;
 import oceanrodent.cards.SludgeSmash;
+import oceanrodent.cards.SlipperyPaws.SlipperyPawsPower;
+import oceanrodent.cards.SteppingStones.SteppingStonesPower;
 import oceanrodent.util.TexLoader;
 
 import static oceanrodent.RodentMod.makeID;
@@ -48,13 +49,15 @@ public class Grime {
             ExtraIcons.icon(ICON_TEXTURE).text(String.valueOf(amount)).render(c);
         }
 
-        private float amplifier(AbstractCard c) {
-            return 1 + 0.5f * amount * (c instanceof SludgeSmash ? c.magicNumber : 1);
+        private float amplify(AbstractCard c, float power) {
+            power *= 1 + 0.5f * amount * (c instanceof SludgeSmash ? c.magicNumber : 1);
+            power += pwrAmt(adp(), SteppingStonesPower.POWER_ID);
+            return power;
         }
 
         public void onUse(AbstractCard c, AbstractCreature target, UseCardAction action) {
             GrimedMod modifier = this;
-            att(new AbstractGameAction() {
+            atb(new AbstractGameAction() {
                 public void update() {
                     isDone = true;
                     TarnishedMod tarnish = getTarnish(c);
@@ -63,20 +66,18 @@ public class Grime {
                         else CardModifierManager.removeSpecificModifier(c, tarnish, true);
                     } else
                         CardModifierManager.removeSpecificModifier(c, modifier, true);
-                    if (adp().hasPower(SlipperyPaws.SlipperyPawsPower.POWER_ID))
-                        ((SlipperyPaws.SlipperyPawsPower)adp().getPower(SlipperyPaws.SlipperyPawsPower.POWER_ID)).onPlayGrimedCard(c);
+                    if (adp().hasPower(SlipperyPawsPower.POWER_ID))
+                        ((SlipperyPawsPower)adp().getPower(SlipperyPawsPower.POWER_ID)).onPlayGrimedCard(c);
                 }
             });
         }
 
         public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard c, AbstractMonster target) {
-            if (type == DamageInfo.DamageType.NORMAL)
-                return damage * amplifier(c);
-            return damage;
+            return amplify(c, damage);
         }
 
         public float modifyBlock(float block, AbstractCard c) {
-            return block * amplifier(c);
+            return amplify(c, block);
         }
 
         public boolean shouldApply(AbstractCard c) {

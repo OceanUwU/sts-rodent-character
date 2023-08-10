@@ -1,6 +1,7 @@
 package oceanrodent.cards;
 
-import basemod.ReflectionHacks;
+import basemod.abstracts.CustomReward;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -8,14 +9,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.potions.FirePotion;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import java.util.ArrayList;
+import oceanrodent.RodentMod;
 import oceanrodent.mechanics.Junk;
 import oceanrodent.mechanics.Junk.JunkCard;
 import oceanrodent.powers.AbstractEasyPower;
+import oceanrodent.util.TexLoader;
 
 import static oceanrodent.RodentMod.makeID;
+import static oceanrodent.RodentMod.makeImagePath;
 import static oceanrodent.util.Wiz.*;
 
 public class Hoard extends AbstractRodentCard {
@@ -50,17 +52,33 @@ public class Hoard extends AbstractRodentCard {
         }
 
         public void onVictory() {
-            if (amount > 0) {
-                amount = Math.min(amount, Junk.allJunk.size());
-                RewardItem reward = new RewardItem(new FirePotion());
-                reward.type = RewardItem.RewardType.CARD;
-                ReflectionHacks.setPrivate(reward, RewardItem.class, "isBoss", false);
-                ArrayList<AbstractCard> cards = new ArrayList<>();
-                for (JunkCard c : Junk.getRandomJunk(AbstractDungeon.cardRng, amount, true))
+            if (amount > 0)
+                AbstractDungeon.getCurrRoom().rewards.add(new JunkReward(amount));
+        }
+
+        public static class JunkReward extends CustomReward {
+            private static final Texture TEXTURE = TexLoader.getTexture(makeImagePath("ui/junkreward.png"));
+            
+            public JunkReward(int numCards) {
+                super(TEXTURE, powerStrings.DESCRIPTIONS[2], RodentMod.JUNKCARDREWARD);
+                numCards = Math.min(numCards, Junk.allJunk.size());
+                cards = new ArrayList<>();
+                for (JunkCard c : Junk.getRandomJunk(AbstractDungeon.cardRng, numCards, true))
                     cards.add(c);
-                reward.cards = cards;
-                reward.text = powerStrings.DESCRIPTIONS[2];
-                AbstractDungeon.getCurrRoom().rewards.add(reward);
+            }
+
+            public JunkReward(ArrayList<AbstractCard> cards) {
+                this(0);
+                this.cards = cards;
+            }
+
+            @Override
+            public boolean claimReward() {
+                if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
+                    AbstractDungeon.cardRewardScreen.open(cards, this, powerStrings.DESCRIPTIONS[3]);
+                    AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+                }
+                return false;
             }
         }
     }

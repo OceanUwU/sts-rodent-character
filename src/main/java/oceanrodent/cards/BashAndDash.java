@@ -47,6 +47,6 @@ public class BashAndDash extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeSecondMagic(-1);
     }
 }

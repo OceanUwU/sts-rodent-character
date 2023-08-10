@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -23,11 +24,16 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import oceanrodent.cards.AbstractRodentCard;
+import oceanrodent.cards.Hoard.HoardPower.JunkReward;
 import oceanrodent.cards.cardvars.*;
 import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk;
@@ -44,6 +50,7 @@ public class RodentMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
+        PostInitializeSubscriber,
         PostUpdateSubscriber {
 
     public static final String modID = "oceanrodent";
@@ -73,6 +80,8 @@ public class RodentMod implements
 
     @SpireEnum
     public static RewardItem.RewardType REMOVECARD;
+    @SpireEnum
+    public static RewardItem.RewardType JUNKCARDREWARD;
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -191,6 +200,12 @@ public class RodentMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    public void receivePostInitialize() {
+        BaseMod.registerCustomReward(JUNKCARDREWARD,
+            rewardSave -> new JunkReward(new ArrayList<>(new ArrayList<>(Arrays.asList(rewardSave.id.substring(0, rewardSave.id.length()-1).split(","))).stream().map(c -> CardLibrary.getCard(c)).collect(Collectors.toList()))),
+            reward -> new RewardSave(reward.type.toString(), reward.cards.stream().map(c -> c.cardID).reduce("", (a,b)->a+b+',')));
     }
 
     public void receivePostUpdate() {

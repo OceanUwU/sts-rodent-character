@@ -12,9 +12,9 @@ public class OopsDroppedEm extends AbstractRodentCard {
     public final static String ID = makeID("OopsDroppedEm");
 
     public OopsDroppedEm() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = secondMagic = 2;
+        baseSecondMagic = secondMagic = 1;
         cardsToPreview = new Stand();
     }
 
@@ -24,6 +24,6 @@ public class OopsDroppedEm extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeSecondMagic(1);
     }
 }

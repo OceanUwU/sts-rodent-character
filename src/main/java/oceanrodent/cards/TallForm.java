@@ -26,7 +26,7 @@ public class TallForm extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TallFormPower(p, magicNumber));
+        applyToSelf(new TallFormPower(p, magicNumber, upgraded));
     }
 
     public void upp() {
@@ -35,10 +35,19 @@ public class TallForm extends AbstractRodentCard {
 
     public static class TallFormPower extends AbstractEasyPower {
         public static String POWER_ID = makeID("TallFormPower");
+        public static String POWER_ID_UPGRADED = POWER_ID+"Plus";
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+
+        private boolean upgraded;
     
-        public TallFormPower(AbstractCreature owner, int amount) {
+        public TallFormPower(AbstractCreature owner, int amount, boolean upgraded) {
             super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+            this.upgraded = upgraded;
+            if (upgraded) {
+                ID = POWER_ID_UPGRADED;
+                name += "+";
+            }
+            updateDescription();
         }
 
         public void onInitialApplication() {
@@ -52,14 +61,17 @@ public class TallForm extends AbstractRodentCard {
         }
 
         public void onUseCard(AbstractCard c, UseCardAction action) {
-            AbstractMonster m = getRandomEnemy();
-            if (m != null)
-                applyToEnemy(m, new Encheesed(m, amount));
             flash();
+            if (upgraded)
+                forAllMonstersLiving(m -> applyToEnemy(m, new Encheesed(m, amount)));
+            else {
+                AbstractMonster m = getRandomEnemy();
+                if (m != null) applyToEnemy(m, new Encheesed(m, amount));
+            }
         }
         
         public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[upgraded ? 2 : 1];
         }
     }
 }

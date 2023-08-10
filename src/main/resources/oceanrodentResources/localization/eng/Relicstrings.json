@@ -36,9 +36,9 @@
     "NAME": "cracked lens",
     "FLAVOR": "preparation is key.",
     "DESCRIPTIONS": [
-      "at the start of each combat, discard #b",
+      "at the start of each combat, discard up to #b",
       " cards from your draw pile.",
-      "choose cards to discard."
+      "choose cards from your draw pile to discard."
     ]
   },
   "${ModID}:Net": {

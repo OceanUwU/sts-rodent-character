@@ -44,7 +44,8 @@
     "NAME": "tall form",
     "DESCRIPTIONS": [
       "whenever you play a card, apply #b",
-      " #yencheesed to a random enemy."
+      " #yencheesed to a random enemy.",
+      " #yencheesed to all enemies."
     ]
   },
   "${ModID}:EnergizedRodent": {
@@ -73,9 +74,8 @@
   "${ModID}:SteppingStonesPower": {
     "NAME": "stepping stones",
     "DESCRIPTIONS": [
-      "whenever you discard a card during your turn, #ygrime it.",
-      "whenever you discard a card during your turn, #ygrime it #b",
-      " times."
+      "each level of #ygrime gives cards #b",
+      " damage and #yblock."
     ]
   },
   "${ModID}:HoardPower": {
@@ -83,7 +83,8 @@
     "DESCRIPTIONS": [
       "at the end of combat, you may choose #b1 of #b",
       " #yjunk to add to your deck.",
-      "hoard junk"
+      "hoard some junk",
+      "hoard some junk"
     ]
   },
   "${ModID}:RatKingPower": {

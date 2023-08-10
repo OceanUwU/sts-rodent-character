@@ -13,12 +13,14 @@ public class SummonCourage extends AbstractRodentCard {
 
     public SummonCourage() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 10;
+        baseDamage = 5;
+        baseBlock = 5;
         baseMagicNumber = magicNumber = 1;
         hardy = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
@@ -27,6 +29,7 @@ public class SummonCourage extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
+        upgradeBlock(2);
     }
 }

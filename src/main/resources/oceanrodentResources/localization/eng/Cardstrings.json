@@ -63,7 +63,7 @@
   },
   "${ModID}:TallForm": {
     "NAME": "tall form",
-    "DESCRIPTION": "{@@}{!Upgrades!|@=ethereal. NL |>0=}whenever you play a card, apply !M! ${ModID}:encheesed to a random enemy."
+    "DESCRIPTION": "{@@}whenever you play a card, apply !M! ${ModID}:encheesed to {!Upgrades!|@=a random enemy|>0=all enemies}."
   },
   "${ModID}:Splinter": {
     "NAME": "splinter",
@@ -141,7 +141,7 @@
   },
   "${ModID}:RashPounce": {
     "NAME": "rash pounce",
-    "DESCRIPTION": "deal !D! damage to all enemies. NL discard your hand."
+    "DESCRIPTION": "deal !D! damage to all enemies. NL discard your hand. NL can be upgraded any number of times"
   },
   "${ModID}:RiskyManoeuvre": {
     "NAME": "risky manoeuvre",
@@ -190,7 +190,7 @@
   },
   "${ModID}:OopsDroppedEm": {
     "NAME": "oops, dropped 'em!",
-    "DESCRIPTION": "{@@}add !${ModID}:m2! *stands to your hand. NL ${ModID}:nip: ${ModID}:grime !M! card{!M!|>1=s} at random.",
+    "DESCRIPTION": "{@@}add !${ModID}:m2! *stand{!${ModID}:m2!|>1=s} to your hand. NL ${ModID}:nip: ${ModID}:grime !M! card{!M!|>1=s} at random.",
     "EXTENDED_DESCRIPTION": [
       "#ygrime #b",
       " card at random.",
@@ -226,7 +226,7 @@
   },
   "${ModID}:SteppingStones": {
     "NAME": "stepping stones",
-    "DESCRIPTION": "{@@}whenever you discard a card during your turn, ${ModID}:grime it{!M!|>1= !M! times}."
+    "DESCRIPTION": "each level of ${ModID}:grime gives cards +!M! damage and block."
   },
   "${ModID}:Piddle": {
     "NAME": "piddle",
@@ -305,7 +305,7 @@
   },
   "${ModID}:SummonCourage": {
     "NAME": "summon courage",
-    "DESCRIPTION": "{@@}deal !D! damage. NL ${ModID}:hardy: ${ModID}:grime this card{!M!|>1= !M! times}."
+    "DESCRIPTION": "{@@}gain !B! block. NL deal !D! damage. NL ${ModID}:hardy: ${ModID}:grime this card{!M!|>1= !M! times}."
   },
   "${ModID}:Ratcrobratics": {
     "NAME": "ratcrobratics",
@@ -438,7 +438,7 @@
   },
   "${ModID}:Stand": {
     "NAME": "stand",
-    "DESCRIPTION": "{@@}ethereal. NL {!B!|>-1=gain !B! block. NL }exhaust."
+    "DESCRIPTION": "{@@}ethereal. NL {!Upgrades!|>0=gain !B! block. NL }exhaust."
   },
   "${ModID}:Sandwich": {
     "NAME": "sandwich",

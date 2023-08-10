@@ -31,8 +31,8 @@ public class WireCutters extends AbstractEasyRelic {
 
     @SpirePatch(clz=CombatRewardScreen.class, method="setupItemReward")
     public static class AddReward {
-        @SpireInsertPatch(rloc=21)
-        public static void Postfix(CombatRewardScreen __instance) {
+        @SpireInsertPatch(rloc=17)
+        public static void Insert(CombatRewardScreen __instance) {
             if (AbstractDungeon.player.hasRelic(ID))
                 __instance.rewards.add(new RemoveCardReward());
         }

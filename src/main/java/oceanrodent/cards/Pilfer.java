@@ -24,6 +24,7 @@ public class Pilfer extends AbstractRodentCard {
     }
 
     public void upp() {
+        upgradeMagicNumber(1);
         upgradeSecondMagic(1);
     }
 }

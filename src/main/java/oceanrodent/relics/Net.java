@@ -11,7 +11,7 @@ import static oceanrodent.util.Wiz.*;
 
 public class Net extends AbstractEasyRelic {
     public static final String ID = makeID("Net");
-    private static final int PER_JUNK_PLAYED = 7;
+    private static final int PER_JUNK_PLAYED = 6;
     private static final int JUNK_ADDED = 1;
 
     public Net() {

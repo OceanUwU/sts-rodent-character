@@ -149,7 +149,7 @@ public class Junk {
                             else r = AbstractCard.CardRarity.RARE;
                             AbstractCard c = CardLibrary.getAnyColorCard(r);
                             for (AbstractCard check : cards)
-                                if (c.cardID.equals(check.cardID))
+                                if (c.cardID.equals(check.cardID) || c.tags.contains(AbstractCard.CardTags.HEALING))
                                     dupe = true;
                             if (!dupe) cards.add(c.makeCopy());
                         }

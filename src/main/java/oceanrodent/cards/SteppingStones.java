@@ -1,16 +1,10 @@
 package oceanrodent.cards;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import oceanrodent.mechanics.Grime;
 import oceanrodent.powers.AbstractEasyPower;
 
 import static oceanrodent.RodentMod.makeID;
@@ -21,7 +15,7 @@ public class SteppingStones extends AbstractRodentCard {
 
     public SteppingStones() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -29,7 +23,7 @@ public class SteppingStones extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeMagicNumber(1);
     }
 
     public static class SteppingStonesPower extends AbstractEasyPower {
@@ -41,23 +35,7 @@ public class SteppingStones extends AbstractRodentCard {
         }
         
         public void updateDescription() {
-            if (amount == 1) description = powerStrings.DESCRIPTIONS[0];
-            else description = powerStrings.DESCRIPTIONS[1] + amount + powerStrings.DESCRIPTIONS[2];
-        }
-
-        public void onManualDiscardCard(AbstractCard card) {
-            flash();
-            atb(new Grime.Action(card, amount));
-        }
-
-        @SpirePatch(clz=GameActionManager.class, method="incrementDiscard")
-        public static class Trigger {
-            @SpireInsertPatch(rloc=4)
-            public static void Insert() {
-                for (AbstractPower p : adp().powers)
-                    if (p instanceof SteppingStonesPower)
-                        ((SteppingStonesPower)p).onManualDiscardCard(adp().discardPile.getTopCard());
-            }
+            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
     }
 }

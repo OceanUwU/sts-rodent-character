@@ -1,7 +1,9 @@
 package oceanrodent.relics;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import oceanrodent.actions.DiscardFromDrawPile;
 import oceanrodent.characters.TheRodent;
 
 import static oceanrodent.RodentMod.makeID;
@@ -30,7 +32,13 @@ public class CrackedLens extends AbstractEasyRelic {
             activated = true;
             flash();
             atb(new RelicAboveCreatureAction(adp(), this));
-            atb(new DiscardFromDrawPile(CARDS_DISCARDED));
+            atb(new AbstractGameAction() {
+                public void update() {
+                    isDone = true;
+                    att(new SelectCardsAction(adp().drawPile.group, CARDS_DISCARDED, DESCRIPTIONS[2], true, c -> true, cards -> cards.forEach(c -> att(new DiscardSpecificCardAction(c, adp().drawPile)))));
+                }
+            });
+            //atb(new DiscardFromDrawPile(CARDS_DISCARDED));
         } 
     }
 }

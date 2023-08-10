@@ -25,6 +25,7 @@ public class Dart extends AbstractRodentCard {
     }
 
     public void upp() {
+        upgradeDamage(1);
         upgradeMagicNumber(1);
     }
 }

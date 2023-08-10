@@ -20,6 +20,6 @@ public class Stand extends AbstractRodentCard {
     }
 
     public void upp() {
-        baseBlock = 3;
+        baseBlock = 5;
     }
 }

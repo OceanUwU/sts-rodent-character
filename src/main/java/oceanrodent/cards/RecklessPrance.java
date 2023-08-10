@@ -29,7 +29,7 @@ public class RecklessPrance extends AbstractRodentCard {
                     att(new Grime.TarnishAction(c));
             }
         });
-        atb(new DiscardAction(p, p, magicNumber, false));
+        atb(new DiscardAction(p, p, secondMagic, false));
     }
 
     public void upp() {
