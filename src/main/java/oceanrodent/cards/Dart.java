@@ -17,6 +17,7 @@ public class Dart extends AbstractRodentCard {
         baseDamage = 5;
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 1;
+        isMultiDamage = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

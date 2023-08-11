@@ -288,18 +288,7 @@ public class Junk {
             exhaust = type != CardType.POWER;
             baseSecondMagic = secondMagic = 1;
 
-            CardModifierManager.addModifier(this, new AbstractCardModifier() {
-                public List<TooltipInfo> additionalTooltips(AbstractCard card) {
-                    ArrayList<TooltipInfo> tips = new ArrayList<>();
-                    if (card instanceof JunkCard) {
-                        JunkCard junk = (JunkCard)card;
-                        tips.add(new TooltipInfo(junkStrings.EXTENDED_DESCRIPTION[3], ("#b"+((float)Math.round((float)junk.weight/(float)weightedJunk.size()*10000))/100f+"%").replace(".0%", "%")));
-                    }
-                    return tips;
-                }
-
-                public AbstractCardModifier makeCopy() {return this;}
-            });
+            CardModifierManager.addModifier(this, new RarityTipModifier());
         }
 
         public JunkCard edit(Consumer<JunkCard> consumer) {
@@ -330,6 +319,20 @@ public class Junk {
 
         public AbstractCard makeCopy() {
             return new JunkCard(cardID.replace(modID+":", ""), weight, type, target, origD, origB, origM, effect).edit(editOp);
+        }
+
+        public static class RarityTipModifier extends AbstractCardModifier {
+            public List<TooltipInfo> additionalTooltips(AbstractCard card) {
+                ArrayList<TooltipInfo> tips = new ArrayList<>();
+                if (card instanceof JunkCard) {
+                    JunkCard junk = (JunkCard)card;
+                    tips.add(new TooltipInfo(junkStrings.EXTENDED_DESCRIPTION[3], ("#b"+((float)Math.round((float)junk.weight/(float)weightedJunk.size()*10000))/100f+"%").replace(".0%", "%")));
+                }
+                return tips;
+            }
+
+            public boolean isInherent(AbstractCard card) {return true;}
+            public AbstractCardModifier makeCopy() {return new RarityTipModifier();}
         }
     }
 }

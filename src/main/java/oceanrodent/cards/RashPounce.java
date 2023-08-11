@@ -22,6 +22,7 @@ public class RashPounce extends AbstractRodentCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = 12;
         timesUpgraded = upgrades;
+        isMultiDamage = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

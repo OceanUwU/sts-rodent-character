@@ -17,6 +17,7 @@ public class Scamper extends AbstractRodentCard {
         baseDamage = 11;
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 1;
+        isMultiDamage = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
