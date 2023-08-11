@@ -18,7 +18,7 @@ public class SabreToothedFangs extends AbstractEasyRelic {
     }
 
     public void onUseCard(AbstractCard c, UseCardAction action) {
-        if (!c.upgraded && c.canUpgrade()) {
+        if (c.canUpgrade()) {
             flash();
             atb(new UpgradeSpecificCardAction(c));
         }

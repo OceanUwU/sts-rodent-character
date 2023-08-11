@@ -21,7 +21,6 @@ public class TallForm extends AbstractRodentCard {
     public TallForm() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        isEthereal = true;
         tags.add(BaseModCardTags.FORM);
     }
 
@@ -29,9 +28,7 @@ public class TallForm extends AbstractRodentCard {
         applyToSelf(new TallFormPower(p, magicNumber, upgraded));
     }
 
-    public void upp() {
-        isEthereal = false;
-    }
+    public void upp() {}
 
     public static class TallFormPower extends AbstractEasyPower {
         public static String POWER_ID = makeID("TallFormPower");

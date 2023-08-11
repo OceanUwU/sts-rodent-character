@@ -70,7 +70,7 @@
     "NAME": "sabre-toothed fangs",
     "FLAVOR": "who knew fossils could be this useful?",
     "DESCRIPTIONS": [
-      "replaces #ystolen #yfang. whenever you play an unupgraded card, #yupgrade it."
+      "replaces #ystolen #yfang. whenever you play a card, #yupgrade it."
     ]
   },
   "${ModID}:WireCutters": {
