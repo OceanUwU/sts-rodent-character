@@ -1,0 +1,170 @@
+{
+  "${ModID}:Wreck": {
+    "NAME": "大闹",
+    "DESCRIPTIONS": [
+      "在本回合内打出 #b",
+      " 张攻击牌",
+      " 张攻击牌",
+      " 张技能牌",
+      " 张技能牌",
+      " 张能力牌",
+      " 张能力牌",
+      " 来 "
+    ]
+  },
+  "${ModID}:Encheesed": {
+    "NAME": "涂了芝士",
+    "DESCRIPTIONS": [
+      "本回合受到的攻击伤害增加 #b",
+      " 。"
+    ]
+  },
+  "${ModID}:CheeseSeal": {
+    "NAME": "芝士封锁",
+    "DESCRIPTIONS": [
+      "#y涂了芝士 额外持续 #b",
+      " 回合。",
+      " 回合。"
+    ]
+  },
+  "${ModID}:Nip": {
+    "NAME": "小啃",
+    "DESCRIPTIONS": [
+      "你在本回合每打出一张牌， "
+    ]
+  },
+  "${ModID}:NipBlock": {
+    "NAME": "格挡",
+    "DESCRIPTIONS": [
+      "获得 #b",
+      " #y格挡 。"
+    ]
+  },
+  "${ModID}:TallFormPower": {
+    "NAME": "高高形态",
+    "DESCRIPTIONS": [
+      "你每打出一张牌，就施加 #b",
+      " 层 #y涂了芝士 给一名随机敌人。",
+      " 层 #y涂了芝士 给所有敌人。"
+    ]
+  },
+  "${ModID}:EnergizedRodent": {
+    "NAME": "有精神",
+    "DESCRIPTIONS": [
+      "下回合获得 #b",
+      " [E] 。"
+    ]
+  },
+  "${ModID}:AcclimatisePower": {
+    "NAME": "适应环境",
+    "DESCRIPTIONS": [
+      "#y弄脏 你接下来打出的 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:DoubleEncheesedPower": {
+    "NAME": "涂了双倍芝士",
+    "DESCRIPTIONS": [
+      "你下 #b",
+      " 次要施加 #y涂了芝士 时，施加两倍。",
+      " 次要施加 #y涂了芝士 时，施加两倍。"
+    ]
+  },
+  "${ModID}:SteppingStonesPower": {
+    "NAME": "踏脚石",
+    "DESCRIPTIONS": [
+      "每一层 #y弄脏 都给卡牌 #b",
+      " 点伤害和 #y格挡 。"
+    ]
+  },
+  "${ModID}:HoardPower": {
+    "NAME": "囤积",
+    "DESCRIPTIONS": [
+      "战斗结束时，你可以从 #b",
+      " 张 #y垃圾 中选择 #b1 张加入你的牌组。",
+      "囤点垃圾",
+      "囤点垃圾"
+    ]
+  },
+  "${ModID}:RatKingPower": {
+    "NAME": "鼠王",
+    "DESCRIPTIONS": [
+      "你在创造 #y垃圾 时，将其 #y升级 。"
+    ]
+  },
+  "${ModID}:SlogPower": {
+    "NAME": "猛殴",
+    "DESCRIPTIONS": [
+      "你在本回合下一次完成大闹时，失去 #b",
+      " 点生命。"
+    ]
+  },
+  "${ModID}:SlipperyPawsPower": {
+    "NAME": "爪子滑滑",
+    "DESCRIPTIONS": [
+      "你每次打出被 #y弄脏 的牌时，抽 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:IllIntentPower": {
+    "NAME": "坏心思",
+    "DESCRIPTIONS": [
+      "你每完成一次 #y大闹 ，都获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "${ModID}:RecollectPower": {
+    "NAME": "捡回来",
+    "DESCRIPTIONS": [
+      "当你在自己的回合中弃牌时，抽 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:LickEmPower": {
+    "NAME": "舔一舔",
+    "DESCRIPTIONS": [
+      "在你的回合开始时， #y弄脏 #b",
+      " 张牌。",
+      " 张牌。",
+      "弄脏"
+    ]
+  },
+  "${ModID}:ScavengePower": {
+    "NAME": "拾荒",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，在你的手牌中加入 #b",
+      " 张 #y垃圾 。"
+    ]
+  },
+  "${ModID}:TossPaperPower": {
+    "NAME": "扔纸团",
+    "DESCRIPTIONS": [
+      "每当你 #y消耗 一张牌时，对一名随机敌人造成 #b",
+      " 伤害。"
+    ]
+  },
+  "${ModID}:BananaPeelHelmetPower": {
+    "NAME": "香蕉皮头盔",
+    "DESCRIPTIONS": [
+      "每当你打出 #y垃圾 牌时，获得 #b",
+      " #y格挡 。"
+    ]
+  },
+  "${ModID}:StinkyFumesPower": {
+    "NAME": "臭气",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，对所有敌人施加 #b",
+      " 层 #y涂了芝士 。"
+    ]
+  },
+  "${ModID}:FlingPower": {
+    "NAME": "猛丢",
+    "DESCRIPTIONS": [
+      "每当你在本回合抽一张牌，失去 #b",
+      " 点生命。"
+    ]
+  }
+}

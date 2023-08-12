@@ -1,0 +1,499 @@
+{
+  "${ModID}:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "${ModID}:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "${ModID}:Junk": {
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "{@@}${ModID}:垃圾 。 NL ",
+      " NL 抽 !${ModID}:m2! 张牌。",
+      " NL 消耗。",
+      "稀有度"
+    ]
+  },
+  "${ModID}:Wrapper": {
+    "NAME": "包装纸",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "${ModID}:Lid": {
+    "NAME": "盖子",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "${ModID}:StaleLoafOfBread": {
+    "NAME": "硬了的面包",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "${ModID}:Mud": {
+    "NAME": "泥巴",
+    "DESCRIPTION": "随机 ${ModID}:弄脏 !M! 张牌。"
+  },
+  "${ModID}:MouldyCheese": {
+    "NAME": "发霉芝士",
+    "DESCRIPTION": "施加 !M! 层 ${ModID}:涂了芝士 。"
+  },
+  "${ModID}:FullCan": {
+    "NAME": "满满的罐子",
+    "DESCRIPTION": "获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} 。"
+  },
+  "${ModID}:BinBag": {
+    "NAME": "垃圾袋",
+    "DESCRIPTION": "在你的手牌中加入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:Cigarette": {
+    "NAME": "香烟。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 易伤 。"
+  },
+  "${ModID}:Bottle": {
+    "NAME": "水瓶",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
+  },
+  "${ModID}:Straw": {
+    "NAME": "塑料吸管",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 施加 !M! 虚弱 。"
+  },
+  "${ModID}:PaperPlate": {
+    "NAME": "纸盘",
+    "DESCRIPTION": "抽 !M! 张牌。"
+  },
+  "${ModID}:TallForm": {
+    "NAME": "高高形态",
+    "DESCRIPTION": "{@@}你每打出一张牌，都向 {!Upgrades!|@=一名随机敌人|>0=所有敌人} 施加 !M! 层 ${ModID}:涂了芝士 。"
+  },
+  "${ModID}:Splinter": {
+    "NAME": "木刺",
+    "DESCRIPTION": "无法被打出。 NL ${ModID}:吃苦 ： 消耗 。"
+  },
+  "${ModID}:BinLidShield": {
+    "NAME": "垃圾桶盖盾",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL ${ModID}:吃苦 ： 获得 !M! 点 格挡 。"
+  },
+  "${ModID}:Rummage": {
+    "NAME": "翻找",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在你的抽牌堆中洗入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:Belch": {
+    "NAME": "打嗝",
+    "DESCRIPTION": "{@@}获得 !B! 点 格挡 。 NL {!Upgrades!|@= 随机|>0=} ${ModID}:弄脏 !M! 张牌 。",
+    "EXTENDED_DESCRIPTION": [
+      "弄脏"
+    ]
+  },
+  "${ModID}:TailWhap": {
+    "NAME": "尾巴甩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： 获得 !B! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "${ModID}:Hindstrike": {
+    "NAME": "后腿打击",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL ${ModID}:弄脏 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "弄脏"
+    ]
+  },
+  "${ModID}:GetStuckIn": {
+    "NAME": "一头扎进去",
+    "DESCRIPTION": "{@@}造成 !D! 点伤害。 NL {!Upgrades!|@=|>0=升级并 }${ModID}:弄脏 你的手牌。"
+  },
+  "${ModID}:Litterpicking": {
+    "NAME": "捡垃圾",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在你的抽牌堆中洗入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:Scrabble": {
+    "NAME": "乱挠",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害两次。 NL 丢弃 !M! 张牌。"
+  },
+  "${ModID}:Agitation": {
+    "NAME": "急了",
+    "DESCRIPTION": "{@@}造成 !D! 点伤害 !${ModID}:m2! 次。 NL ${ModID}:小啃 ： 获得 !M! 活力 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 #b",
+      " #y活力 。"
+    ]
+  },
+  "${ModID}:StillCold": {
+    "NAME": "还是冰的！",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： 生成 !M! 个 冰霜 充能球。",
+    "EXTENDED_DESCRIPTION": [
+      "#y生成 #b",
+      " 个 #y冰霜 充能球。"
+    ]
+  },
+  "${ModID}:NimbleStrike": {
+    "NAME": "敏捷打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 从你的抽牌堆中丢弃 !M! 张牌。"
+  },
+  "${ModID}:Dart": {
+    "NAME": "飞蹿",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： 对所有敌人施加 !M! 虚弱 。",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人施加 #b",
+      " #y虚弱 。"
+    ]
+  },
+  "${ModID}:RashPounce": {
+    "NAME": "鲁莽猛扑",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 丢弃你的手牌。 NL 能够被多次升级。"
+  },
+  "${ModID}:RiskyManoeuvre": {
+    "NAME": "危险动作",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在你的抽牌堆中洗入 !${ModID}:m2! *木刺 。"
+  },
+  "${ModID}:Mine": {
+    "NAME": "我的！",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在你的手牌中加入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:Singles": {
+    "NAME": "单片芝士",
+    "DESCRIPTION": "施加 !M! 层 ${ModID}:涂了芝士 。"
+  },
+  "${ModID}:Scurry": {
+    "NAME": "小跑",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 丢弃 !${ModID}:m2! 张牌。 NL ${ModID}:大闹 !${ModID}:m3! ： 抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "抽 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:Ratflip": {
+    "NAME": "鼠鼠翻",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 施加 !M! 层 ${ModID}:涂了芝士 和 易伤 。"
+  },
+  "${ModID}:GatherSurroundings": {
+    "NAME": "四处收集",
+    "DESCRIPTION": "{@@}${ModID}:大闹 !${ModID}:m2! ： 下回合获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} 。",
+    "EXTENDED_DESCRIPTION": [
+      "下回合获得 #b",
+      " [E] 。"
+    ]
+  },
+  "${ModID}:StowAway": {
+    "NAME": "躲起",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL ${ModID}:小啃 ： 获得 !M! 点 格挡 。"
+  },
+  "${ModID}:Acclimatise": {
+    "NAME": "适应环境",
+    "DESCRIPTION": "${ModID}:弄脏 你接下来打出的 !M! 张牌。"
+  },
+  "${ModID}:RecyclingBin": {
+    "NAME": "回收站",
+    "DESCRIPTION": "丢弃你的手牌。 NL 每丢弃一张，就在手牌中加入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:OopsDroppedEm": {
+    "NAME": "啊欧，掉了！",
+    "DESCRIPTION": "在手牌中加入 !${ModID}:m2! *站起 。 NL ${ModID}:小啃 ： 随机 ${ModID}:弄脏 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "随机 #y弄脏 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:Careen": {
+    "NAME": "横冲直撞",
+    "DESCRIPTION": "在你的手牌中加入 !M! 张 ${ModID}:垃圾 。 NL ${ModID}:大闹 !${ModID}:m2! ： 打出一张 *腾跃 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "打出一张 #y腾跃 。"
+    ]
+  },
+  "${ModID}:Exude": {
+    "NAME": "渗出",
+    "DESCRIPTION": "在你的手牌中加入 !${ModID}:m2! 张 *发霉芝士 。 NL 你下 !M! 次施加 ${ModID}:涂了芝士 时，施加双倍。"
+  },
+  "${ModID}:TakeAWhiff": {
+    "NAME": "轻轻一闻",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得与你手牌中 ${ModID}:垃圾 数量相等的 [E] 。 NL 消耗 。"
+  },
+  "${ModID}:SurpriseShiv": {
+    "NAME": "意外小刀",
+    "DESCRIPTION": "保留 。 NL 造成 !D! 点伤害。 NL 当这张牌在手牌中时，你每消耗一张牌，这张牌的伤害增加 !M! 。 NL 消耗 。"
+  },
+  "${ModID}:Ratpack": {
+    "NAME": "鼠鼠包",
+    "DESCRIPTION": "丢弃你的手牌。 NL 将你的弃牌堆中的 !M! 张牌放入你的手牌。 NL 抽 !${ModID}:m2! 张牌。"
+  },
+  "${ModID}:Lazors": {
+    "NAME": "激光耶！！",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 !M! 次。"
+  },
+  "${ModID}:SteppingStones": {
+    "NAME": "踏脚石",
+    "DESCRIPTION": "每一层 ${ModID}:弄脏 都给卡牌增加 !M! 点伤害和格挡。"
+  },
+  "${ModID}:Piddle": {
+    "NAME": "撒一泡",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=固有 。 NL }${ModID}:弄脏 并丢弃你的抽牌堆。 NL 消耗 。"
+  },
+  "${ModID}:BeatChest": {
+    "NAME": "捶胸口",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL ${ModID}:吃苦 ： 获得 !M! 点 力量 。"
+  },
+  "${ModID}:SqueezeThrough": {
+    "NAME": "挤过去",
+    "DESCRIPTION": "在你的手牌中加入 !${ModID}:m2! 张 *木刺 。 NL 获得 !B! 点 格挡 。"
+  },
+  "${ModID}:Empty": {
+    "NAME": "空的",
+    "DESCRIPTION": "在你的抽牌堆中洗入 !M! 张 ${ModID}:垃圾 。 NL 消耗 。"
+  },
+  "${ModID}:MuddyPuddle": {
+    "NAME": "泥巴坑",
+    "DESCRIPTION": "{@@}将所有牌的 ${ModID}:弄脏 层数加倍。{!Upgrades!|@= NL 消耗 。|>0=}"
+  },
+  "${ModID}:Hoard": {
+    "NAME": "囤积",
+    "DESCRIPTION": "在战斗结束时，从 !M! 张 ${ModID}:垃圾 牌中选择 1 张加入你的牌组。"
+  },
+  "${ModID}:RatKing": {
+    "NAME": "鼠王",
+    "DESCRIPTION": "未来的所有 ${ModID}:垃圾 都被升级。"
+  },
+  "${ModID}:HoleyBarrage": {
+    "NAME": "大孔弹幕",
+    "DESCRIPTION": "对所有敌人施加 !M! 层 ${ModID}:涂了芝士 。 NL ${ModID}:涂了芝士 效果在本回合不消失。"
+  },
+  "${ModID}:Pilfer": {
+    "NAME": "偷窃",
+    "DESCRIPTION": "施加 !${ModID}:m2! 虚弱 。 NL 在你的抽牌堆中洗入 !M! 张 ${ModID}:垃圾 。 NL 消耗 。"
+  },
+  "${ModID}:RapidMovements": {
+    "NAME": "急速移动",
+    "DESCRIPTION": "${ModID}:小啃 ： 敌人失去 !M! 点生命。"
+  },
+  "${ModID}:HereThereEverywhere": {
+    "NAME": "这里那里到处都是",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL ${ModID}:小啃 ： 获得 !M! 点 格挡 。"
+  },
+  "${ModID}:Sidestep": {
+    "NAME": "侧身回避",
+    "DESCRIPTION": "{@@}${ModID}:吃苦 ： 获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= 并抽 !${ModID}:m2! 张牌|>1= 并抽 !${ModID}:m2! 张牌} 。"
+  },
+  "${ModID}:Encircle": {
+    "NAME": "绕圈",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 当这张牌在手牌中时，你每打出一张牌，这张牌的 格挡 增加 !M! 。 NL 消耗 。"
+  },
+  "${ModID}:BinLidSwing": {
+    "NAME": "垃圾桶盖挥舞",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL ${ModID}:大闹 !${ModID}:m2! ： 所有敌人失去 !D! 点生命。",
+    "EXTENDED_DESCRIPTION": [
+      "让所有敌人失去 #b",
+      " 点生命。"
+    ]
+  },
+  "${ModID}:SludgeSmash": {
+    "NAME": "淤泥捶打",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 受到 !M! 倍 ${ModID}:弄脏 效果。"
+  },
+  "${ModID}:MuckyTap": {
+    "NAME": "肮脏敲打",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:弄脏 并 ${ModID}:积垢 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "弄脏并积垢"
+    ]
+  },
+  "${ModID}:RecklessPrance": {
+    "NAME": "招摇过市",
+    "DESCRIPTION": "抽 !M! 张牌。 NL ${ModID}:积垢 你的手牌。 NL 丢弃 !${ModID}:m2! 张牌。"
+  },
+  "${ModID}:SummonCourage": {
+    "NAME": "壮起鼠胆",
+    "DESCRIPTION": "{@@}获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL ${ModID}:吃苦 ： ${ModID}:弄脏 这张牌{!M!|>1= !M! 次}。"
+  },
+  "${ModID}:Ratcrobratics": {
+    "NAME": "鼠鼠杂技",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 丢弃 !${ModID}:m2! 张牌。"
+  },
+  "${ModID}:CheesedToMeetYou": {
+    "NAME": "长芝士了！",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 ${ModID}:涂了芝士 。"
+  },
+  "${ModID}:BashAndDash": {
+    "NAME": "捶完就跑",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： 获得和所造成的未被格挡的伤害相等的 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 #b",
+      " #y格挡 。"
+    ]
+  },
+  "${ModID}:NotReadyYet": {
+    "NAME": "还没好呢！",
+    "DESCRIPTION": "丢弃你的手牌。 NL 每丢弃一张获得 !B! 点 格挡。"
+  },
+  "${ModID}:Cower": {
+    "NAME": "瑟瑟发抖",
+    "DESCRIPTION": "{@@}将一张 *平安{!Upgrades!|>0=+} 加入你的手牌，并将其 ${ModID}:弄脏 x 次。"
+  },
+  "${ModID}:Bury": {
+    "NAME": "埋了",
+    "DESCRIPTION": "{@@}升级一张牌。 NL ${ModID}:大闹 !${ModID}:m2! ： ${ModID}:弄脏 它{!M!|>1= !M! 次}。",
+    "EXTENDED_DESCRIPTION": [
+      "升级",
+      "#y弄脏 ",
+      "。",
+      " #b",
+      " 次。"
+    ]
+  },
+  "${ModID}:Slog": {
+    "NAME": "猛殴",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你在本回合下一次完成 ${ModID}:大闹 时，敌人失去 !D! 点生命。"
+  },
+  "${ModID}:SandAttack": {
+    "NAME": "沙子攻击",
+    "DESCRIPTION": "敌人在本回合失去 !M! 点 力量 。 NL ${ModID}:大闹 !${ModID}:m2! ： 治疗 !M! 点生命。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "治疗 #b",
+      " 点生命。"
+    ]
+  },
+  "${ModID}:Fling": {
+    "NAME": "猛丢",
+    "DESCRIPTION": "在你的手牌中加入 !M! 张 ${ModID}:垃圾 。 NL 你在本回合每抽一张牌，敌人失去 !${ModID}:m2! 点生命。"
+  },
+  "${ModID}:Scamper": {
+    "NAME": "溜了",
+    "DESCRIPTION": "{@@}对所有敌人造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： 获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 #b",
+      " [E] 。"
+    ]
+  },
+  "${ModID}:Parkour": {
+    "NAME": "跑酷",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL ${ModID}:大闹 !${ModID}:m2! ： 获得 !B! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "${ModID}:ZipAround": {
+    "NAME": "乱窜",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 !M! 次。"
+  },
+  "${ModID}:Overconfidence": {
+    "NAME": "过度自信",
+    "DESCRIPTION": "如果敌人生命高于50%，造成 !D! 点伤害。否则，造成 !${ModID}:sd! 点伤害。"
+  },
+  "${ModID}:MudSpray": {
+    "NAME": "溅泥巴",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： ${ModID}:弄脏 你的手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "#y弄脏 你的手牌。"
+    ]
+  },
+  "${ModID}:PlateSmash": {
+    "NAME": "用盘子砸",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:弄脏 这张牌。"
+  },
+  "${ModID}:TheStash": {
+    "NAME": "秘藏宝库",
+    "DESCRIPTION": "{@@}不能被打出。 NL ${ModID}:吃苦 ： 在你的手牌中加入 !M! 张 {!${ModID}:m2!|>0=${ModID}:弄脏的 }${ModID}:垃圾 。",
+    "EXTENDED_DESCRIPTION": [
+      "我怎么能动用我的宝库呢！"
+    ]
+  },
+  "${ModID}:SlipperyPaws": {
+    "NAME": "爪子滑滑",
+    "DESCRIPTION": "每次你打出一张 ${ModID}:弄脏的 牌时，抽 !M! 张牌。"
+  },
+  "${ModID}:IllIntent": {
+    "NAME": "坏心思",
+    "DESCRIPTION": "你每完成一次 ${ModID}:大闹 ，获得 !M! 点 格挡 。 NL ${ModID}:大闹 !${ModID}:m3! ： 生成 !${ModID}:m2! 个 闪电 充能球。",
+    "EXTENDED_DESCRIPTION": [
+      "#y生成 #b",
+      " 个 #y闪电 充能球。"
+    ]
+  },
+  "${ModID}:Recollect": {
+    "NAME": "捡回来",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=固有 。 NL }每当你在自己的回合丢弃一张牌时，抽 !M! 张牌。"
+  },
+  "${ModID}:LickEm": {
+    "NAME": "舔一舔",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=现在以及 } 在你的每个回合开始时， ${ModID}:弄脏 !M! 张牌。"
+  },
+  "${ModID}:Scavenge": {
+    "NAME": "拾荒",
+    "DESCRIPTION": "在你的每个回合开始时，在你的手牌中加入 !M! 张 ${ModID}:垃圾 。"
+  },
+  "${ModID}:TossPaper": {
+    "NAME": "扔纸团",
+    "DESCRIPTION": "每当你 消耗 一张牌时，对一名随机敌人造成 !M! 点伤害。"
+  },
+  "${ModID}:BananaPeelHelmet": {
+    "NAME": "香蕉皮头盔",
+    "DESCRIPTION": "每当你打出 ${ModID}:垃圾 时，获得 !M! 点 格挡 。"
+  },
+  "${ModID}:StinkyFumes": {
+    "NAME": "臭气",
+    "DESCRIPTION": "在你的每个回合开始时，对所有敌人施加 !M! 层 ${ModID}:涂了芝士 。"
+  },
+  "${ModID}:Stand": {
+    "NAME": "站起",
+    "DESCRIPTION": "{@@} 虚无 。 NL {!Upgrades!|>0=获得 !B! 点 格挡 。 NL } 消耗 。"
+  },
+  "${ModID}:Sandwich": {
+    "NAME": "三明治",
+    "DESCRIPTION": "获得 !M! 点 力量 。"
+  },
+  "${ModID}:Toothbrush": {
+    "NAME": "牙刷",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。"
+  },
+  "${ModID}:BinLid": {
+    "NAME": "垃圾桶盖",
+    "DESCRIPTION": "获得 !M! 层 多层护甲 。"
+  },
+  "${ModID}:BubbleWrap": {
+    "NAME": "泡泡纸",
+    "DESCRIPTION": "随机升级 !M! 张牌。"
+  },
+  "${ModID}:PlasticBag": {
+    "NAME": "塑料袋",
+    "DESCRIPTION": "敌人在本回合失去 !M! 点 力量 。"
+  },
+  "${ModID}:Battery": {
+    "NAME": "电池",
+    "DESCRIPTION": "生成 !M! 个 闪电 充能球。"
+  },
+  "${ModID}:GlassBottle": {
+    "NAME": "玻璃瓶",
+    "DESCRIPTION": "生成 !M! 个 冰霜 充能球。"
+  },
+  "${ModID}:Stardust": {
+    "NAME": "星尘",
+    "DESCRIPTION": "生成 !M! 个 等离子 充能球。"
+  },
+  "${ModID}:Stickyweed": {
+    "NAME": "黏黏杂草",
+    "DESCRIPTION": "保留 。"
+  },
+  "${ModID}:LuckyPenny": {
+    "NAME": "幸运钢镚",
+    "DESCRIPTION": "这个回合，你打出的下一张牌会被打出两次。"
+  },
+  "${ModID}:HalfAPairOfScissors": {
+    "NAME": "半把剪刀",
+    "DESCRIPTION": "预见 !M! 。"
+  },
+  "${ModID}:ShreddedLetter": {
+    "NAME": "碎纸过的信",
+    "DESCRIPTION": "从 !M! 张任意颜色的牌中选择 1 张加入你的手牌。"
+  },
+  "${ModID}:SpoiledOrange": {
+    "NAME": "馊橘子",
+    "DESCRIPTION": "施加 !M! 层 中毒 。"
+  },
+  "${ModID}:RunicWrapper": {
+    "NAME": "符文包装纸",
+    "DESCRIPTION": "在你的回合结束时，对所有敌人造成 !M! 点伤害。"
+  }
+}

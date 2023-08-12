@@ -1,0 +1,33 @@
+{
+    "${ModID}:RemoveCardReward": {
+        "TEXT": [
+            "（-",
+            " 生命）移除一张牌",
+            "选择一张牌移除"
+        ]
+    },
+    "${ModID}:DiscardFromDrawPile": {
+        "TEXT": [
+            "从你的抽牌堆中选择要丢弃的牌。"
+        ]
+    },
+
+    "${ModID}:GrimePack": {
+      "TEXT": ["弄脏", "拥抱脏污，强化你卡牌的伤害和格挡。", "ocean", "灵感来源于blizzarre的“runesmith”角色"]
+    },
+    "${ModID}:GrimePackHat": {
+      "TEXT": ["没必要浪费吧对不对。", "香蕉皮头盔"]
+    },
+    "${ModID}:HardyPack": {
+      "TEXT": ["吃苦", "被丢弃时回返回手牌的结实卡牌，也包括弃牌的方法。", "ocean", "灵感来源于laugic的“vacant”角色中的ricochet机制"]
+    },
+    "${ModID}:HardyPackHat": {
+      "TEXT": ["吱吱！", "鼠鼠脸"]
+    },
+    "${ModID}:JunkPack": {
+      "TEXT": ["垃圾", "生成一大堆微型卡牌！！", "ocean", "灵感来源于vex的“adventurer”角色中的fish机制"]
+    },
+    "${ModID}:JunkPackHat": {
+      "TEXT": ["能用帽子当储物容器的话，为什么还要带包呢？", "垃圾桶"]
+    }
+}

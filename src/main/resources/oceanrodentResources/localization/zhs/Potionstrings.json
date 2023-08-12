@@ -1,0 +1,26 @@
+{
+    "${ModID}:Gunk": {
+        "NAME": "黏糊东西",
+        "DESCRIPTIONS": [
+            "在你的手牌中加入 #b",
+            " 张 #y垃圾 。"
+        ]
+    },
+    "${ModID}:Sugar": {
+        "NAME": "砂糖",
+        "DESCRIPTIONS": [
+            "#y小啃 ：对所有敌人造成 #b",
+            " 点伤害。",
+            "对所有敌人造成 #b",
+            " 点伤害。"
+        ]
+    },
+    "${ModID}:MudBottle": {
+        "NAME": "泥巴瓶",
+        "DESCRIPTIONS": [
+            "将你的手牌 #y弄脏 并 #y积垢 。",
+            "将你的手牌 #y弄脏 并 #y积垢 #b",
+            " 次。"
+        ]
+    }
+}

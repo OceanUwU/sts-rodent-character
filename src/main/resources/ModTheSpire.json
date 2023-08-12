@@ -4,6 +4,7 @@
   "author_list": [
     "ocean"
   ],
+  "credits": "sound of mystery / 谜之声: simplified chinese translation",
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",

@@ -1,0 +1,84 @@
+{
+  "${ModID}:StolenFang": {
+    "NAME": "偷来的牙",
+    "FLAVOR": "你一生中最激烈的一战中得到的战利品。",
+    "DESCRIPTIONS": [
+      "#y升级 你每场战斗中抽到的前 #b",
+      " 张未升级的卡牌。"
+    ]
+  },
+  "${ModID}:AppleCore": {
+    "NAME": "苹果核",
+    "FLAVOR": "这东西起码还能吃两顿哦！",
+    "DESCRIPTIONS": [
+      "每场战斗开始时手牌中加入 #b",
+      " 张 #y${ModID}:垃圾 。"
+    ]
+  },
+  "${ModID}:BottleOfDirt": {
+    "NAME": "瓶装尘土",
+    "FLAVOR": "牌能打，你才能打。",
+    "DESCRIPTIONS": [
+      "拾取时，选择 #b",
+      " 张牌。这些牌在每场战斗开始时被 #y${ModID}:弄脏 。",
+      "选择卡牌来 "
+    ]
+  },
+  "${ModID}:CheeseSpaceCake": {
+    "NAME": "芝士蛋糕",
+    "FLAVOR": "果然不应该凭直觉，还是应该找菜谱的……",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，对所有敌人施加 #b",
+      " 层 #y${ModID}:涂了芝士 。"
+    ]
+  },
+  "${ModID}:CrackedLens": {
+    "NAME": "碎镜片",
+    "FLAVOR": "做好准备是关键。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，从你的抽牌堆中丢弃最多 #b",
+      " 张牌。",
+      "选择从抽牌堆中丢弃的牌。"
+    ]
+  },
+  "${ModID}:Net": {
+    "NAME": "网子",
+    "FLAVOR": "杀什么塔呀，还是去抓水母吧。",
+    "DESCRIPTIONS": [
+      "你每打出 #b",
+      " 张 #y${ModID}:垃圾 [REMOVE_SPACE]，在你的手牌中加入 #b",
+      " 张 #y垃圾 。"
+    ]
+  },
+  "${ModID}:Pill": {
+    "NAME": "药丸",
+    "FLAVOR": "吃这个还有点冒险的，但结果好像还不错？",
+    "DESCRIPTIONS": [
+      "你每打出 #b",
+      " 张 #y${ModID}:垃圾 [REMOVE_SPACE]，获得 [E] 。"
+    ]
+  },
+  "${ModID}:SoggySock": {
+    "NAME": "湿袜子",
+    "FLAVOR": "多残忍的武器呀。",
+    "DESCRIPTIONS": [
+      "每次你在施加 #y${ModID}:涂了芝士 时，额外施加 #b",
+      " 层。"
+    ]
+  },
+  "${ModID}:SabreToothedFangs": {
+    "NAME": "剑齿虎的牙",
+    "FLAVOR": "谁知道呢，化石能这么有用？",
+    "DESCRIPTIONS": [
+      "替换 #y偷来的牙 。你每打出一张牌，就将其 #y升级 。"
+    ]
+  },
+  "${ModID}:WireCutters": {
+    "NAME": "电线剪",
+    "FLAVOR": "比看起来要难用一点。",
+    "DESCRIPTIONS": [
+      "战斗结束时，你可以失去 #r",
+      " 点生命来从你的牌组中移除一张牌。"
+    ]
+  }
+}
