@@ -46,7 +46,7 @@
     "FLAVOR": "杀什么塔呀，还是去抓水母吧。",
     "DESCRIPTIONS": [
       "你每打出 #b",
-      " 张 #y${ModID}:垃圾 [REMOVE_SPACE]，在你的手牌中加入 #b",
+      " 张 #y${ModID}:垃圾 ，在你的手牌中加入 #b",
       " 张 #y垃圾 。"
     ]
   },
@@ -55,7 +55,7 @@
     "FLAVOR": "吃这个还有点冒险的，但结果好像还不错？",
     "DESCRIPTIONS": [
       "你每打出 #b",
-      " 张 #y${ModID}:垃圾 [REMOVE_SPACE]，获得 [E] 。"
+      " 张 #y${ModID}:垃圾 ，获得 [E] 。"
     ]
   },
   "${ModID}:SoggySock": {
