@@ -384,9 +384,11 @@
   },
   "${ModID}:MudSpray": {
     "NAME": "mud spray",
-    "DESCRIPTION": "deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: ${ModID}:grime your hand.",
+    "DESCRIPTION": "{@@}deal !D! damage. NL ${ModID}:wreck !${ModID}:m2!: ${ModID}:grime your hand{!M!|>1= !M! times}.",
     "EXTENDED_DESCRIPTION": [
-      "#ygrime your hand."
+      "#ygrime your hand.",
+      "#ygrime your hand #b",
+      " times."
     ]
   },
   "${ModID}:PlateSmash": {
@@ -454,7 +456,7 @@
   },
   "${ModID}:BubbleWrap": {
     "NAME": "bubble wrap",
-    "DESCRIPTION": "{@@}upgrade !M! card{!M!|>1=s} at random."
+    "DESCRIPTION": "upgrade !M! card{!M!|>1=s} at random."
   },
   "${ModID}:PlasticBag": {
     "NAME": "plastic bag",
@@ -486,7 +488,7 @@
   },
   "${ModID}:ShreddedLetter": {
     "NAME": "shredded letter",
-    "DESCRIPTION": "{@@}choose 1 of !M! card{!M!|>1=s} of any colour to add to your hand."
+    "DESCRIPTION": "choose 1 of !M! card{!M!|>1=s} of any colour to add to your hand."
   },
   "${ModID}:SpoiledOrange": {
     "NAME": "spoiled orange",

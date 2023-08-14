@@ -20,6 +20,6 @@ public class Singles extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(3);
     }
 }

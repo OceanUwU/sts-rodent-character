@@ -30,6 +30,6 @@ public class SandAttack extends AbstractRodentCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 }

@@ -80,5 +80,13 @@
       "at the end of combat, you may lose #r",
       " hp to remove a card from your deck."
     ]
+  },
+  "${ModID}:WreckRelic": {
+    "NAME": "flail",
+    "FLAVOR": "\"ouch!\" - ranwid",
+    "DESCRIPTIONS": [
+      "whenever you finish a #y${ModID}:wreckage [REMOVE_SPACE], gain #b",
+      " #yplated #yarmour."
+    ]
   }
 }

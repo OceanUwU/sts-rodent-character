@@ -42,7 +42,7 @@ public class Acclimatise extends AbstractRodentCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2];
         }
   
-        public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
+        public void onAfterUseCard(AbstractCard c, UseCardAction useCardAction) {
             if (Grime.canGrime(c) && !c.exhaust && c.type != AbstractCard.CardType.POWER) {
                 flash();
                 atb(new Grime.Action(c));

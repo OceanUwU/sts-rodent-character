@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -33,12 +34,12 @@ public class WreckPower extends AbstractEasyPower {
     private Function<Integer, String> effectText;
     private Consumer<Integer> effect;
     private int power;
-    private int originalAmount;
+    private int length;
     
-    public WreckPower(AbstractCard from, boolean buff, int cardsNeeded, int power, Function<Integer, String> effectText, Consumer<Integer> effect) {
-        super(POWER_ID+from.type.toString(), powerStrings.NAME + ": " + from.name, buff ? PowerType.BUFF : PowerType.DEBUFF, true, adp(), cardsNeeded+1);
+    public WreckPower(AbstractCard from, boolean buff, int length, int power, Function<Integer, String> effectText, Consumer<Integer> effect) {
+        super(POWER_ID+from.type.toString(), powerStrings.NAME + ": " + from.name, buff ? PowerType.BUFF : PowerType.DEBUFF, true, adp(), length+1);
         this.power = power;
-        originalAmount = cardsNeeded;
+        this.length = length;
         if (power > 0) {
             isTwoAmount = true;
             amount2 = power;
@@ -56,11 +57,14 @@ public class WreckPower extends AbstractEasyPower {
             updateDescription();
             if (amount == 0) {
                 flash();
-                for (int i = 0; i < originalAmount; i++)
+                for (int i = 0; i < length; i++)
                     vfx(new WreckBoulderEffect(i));
                 atb(new RemoveSpecificPowerAction(owner, owner, this));
                 effect.accept(power);
                 for (AbstractPower p : adp().powers)
+                    if (p instanceof OnFinishWreckage)
+                        ((OnFinishWreckage)p).onFinishWreckage(this);
+                for (AbstractRelic p : adp().relics)
                     if (p instanceof OnFinishWreckage)
                         ((OnFinishWreckage)p).onFinishWreckage(this);
                 forAllMonstersLiving(mo -> {

@@ -27,6 +27,7 @@ public class Scurry extends AbstractRodentCard {
     }
 
     public void upp() {
+        upgradeBlock(1);
         upgradeMagicNumber(1);
     }
 }

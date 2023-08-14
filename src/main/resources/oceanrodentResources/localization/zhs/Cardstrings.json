@@ -384,9 +384,11 @@
   },
   "${ModID}:MudSpray": {
     "NAME": "溅泥巴",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： ${ModID}:弄脏 你的手牌。",
+    "DESCRIPTION": "{@@}造成 !D! 点伤害。 NL ${ModID}:大闹 !${ModID}:m2! ： ${ModID}:弄脏 你的手牌{!M!|>1= !M! 次}。",
     "EXTENDED_DESCRIPTION": [
-      "#y弄脏 你的手牌。"
+      "#y弄脏 你的手牌。",
+      "#y弄脏 你的手牌 #b",
+      " 次。"
     ]
   },
   "${ModID}:PlateSmash": {

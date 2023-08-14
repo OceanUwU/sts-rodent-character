@@ -51,7 +51,7 @@ public class Grime {
 
         private float amplify(AbstractCard c, float power) {
             power *= 1 + 0.5f * amount * (c instanceof SludgeSmash ? c.magicNumber : 1);
-            power += pwrAmt(adp(), SteppingStonesPower.POWER_ID);
+            power += pwrAmt(adp(), SteppingStonesPower.POWER_ID) * amount;
             return power;
         }
 
