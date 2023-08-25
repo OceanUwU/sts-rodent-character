@@ -4,7 +4,10 @@
     "NAMES": [
       "弄脏",
       "被弄脏",
-      "弄脏的"
+      "弄脏的",
+      "grimy",
+      "grime",
+      "grimed"
     ],
     "DESCRIPTION": "弄脏的卡牌在下次被打出时将拥有额外的伤害和 #y格挡 。"
   },
@@ -12,21 +15,29 @@
     "PROPER_NAME": "积垢",
     "NAMES": [
       "积垢",
-      "顽垢"
+      "顽垢",
+      "tarnished",
+      "tarnish"
     ],
     "DESCRIPTION": "有顽垢的卡牌在打出时不会去除 #y弄脏 。"
   },
   {
     "PROPER_NAME": "吃苦",
     "NAMES": [
-      "吃苦"
+      "吃苦",
+      "hardy"
     ],
     "DESCRIPTION": "在你的回合中被丢弃时，返回你的手牌，并触发列出的效果。"
   },
   {
     "PROPER_NAME": "大闹",
     "NAMES": [
-      "大闹"
+      "大闹",
+      "wreck",
+      "wrecks",
+      "wrecked",
+      "wreckage",
+      "wreckages"
     ],
     "DESCRIPTION": "在本回合打出x张和这张牌相同类型的牌来触发效果。"
   },
@@ -34,21 +45,25 @@
     "PROPER_NAME": "涂了芝士",
     "NAMES": [
       "涂了芝士",
-      "涂芝士"
+      "涂芝士",
+      "encheese",
+      "encheesed"
     ],
     "DESCRIPTION": "涂了芝士的生物在本回合会受到更多攻击伤害。"
   },
   {
     "PROPER_NAME": "小啃",
     "NAMES": [
-      "小啃"
+      "小啃",
+      "nip"
     ],
     "DESCRIPTION": "你在这回合每次打出牌时会触发效果。"
   },
   {
     "PROPER_NAME": "垃圾",
     "NAMES": [
-      "垃圾"
+      "垃圾",
+      "junk"
     ],
     "DESCRIPTION": "垃圾是 #b0 费、抽 #b1 （升级后抽 #b2 ）、并且会 #y消耗 的牌，此外还会有一种随机效果。"
   }
