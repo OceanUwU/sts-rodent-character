@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.cards.colorless.HandOfGreed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -148,8 +149,10 @@ public class Junk {
                             else if (roll < 85) r = AbstractCard.CardRarity.UNCOMMON;
                             else r = AbstractCard.CardRarity.RARE;
                             AbstractCard c = CardLibrary.getAnyColorCard(r);
+                            if (c.hasTag(AbstractCard.CardTags.HEALING) || c instanceof HandOfGreed)
+                                dupe = true;
                             for (AbstractCard check : cards)
-                                if (c.cardID.equals(check.cardID) || c.tags.contains(AbstractCard.CardTags.HEALING))
+                                if (c.cardID.equals(check.cardID))
                                     dupe = true;
                             if (!dupe) cards.add(c.makeCopy());
                         }

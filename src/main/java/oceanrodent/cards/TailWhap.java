@@ -15,7 +15,7 @@ public class TailWhap extends AbstractRodentCard {
     public TailWhap() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 8;
-        baseBlock = 7;
+        baseBlock = 8;
         baseSecondMagic = secondMagic = 2;
     }
 

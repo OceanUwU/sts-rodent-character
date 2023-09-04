@@ -1,6 +1,7 @@
 package oceanrodent.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.UpgradeSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,8 +25,8 @@ public class GetStuckIn extends AbstractRodentCard {
             public void update() {
                 isDone = true;
                 for (AbstractCard c : p.hand.group) {
-                    if (upped) c.upgrade();
                     att(new Grime.Action(c));
+                    if (upped) att(new UpgradeSpecificCardAction(c));
                 }
             }
         });
