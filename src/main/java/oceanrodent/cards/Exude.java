@@ -26,7 +26,7 @@ public class Exude extends AbstractRodentCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new DoubleEncheesedPower(p, 3));
+        applyToSelf(new DoubleEncheesedPower(p, magicNumber));
         AbstractCard c = cardsToPreview.makeStatEquivalentCopy();
         if (c instanceof Junk.JunkCard && p.hasPower(RatKing.RatKingPower.POWER_ID) && c.canUpgrade())
             c.upgrade();
