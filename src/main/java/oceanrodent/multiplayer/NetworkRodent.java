@@ -11,7 +11,7 @@ import oceanrodent.characters.TheRodent;
 import oceanrodent.util.TexLoader;
 import spireTogether.SpireTogetherMod;
 import spireTogether.Unlockable;
-import spireTogether.modcompat.downfall.characters.energyorbs.CustomizableEnergyOrbCustom;
+import spireTogether.modcompat.generic.energyorbs.CustomizableEnergyOrbCustom;
 import spireTogether.monsters.CharacterEntity;
 import spireTogether.monsters.playerChars.NetworkCharPreset;
 import spireTogether.skins.AtlasSkin;
@@ -95,12 +95,14 @@ public class NetworkRodent extends NetworkCharPreset {
             jsonLoc = makeCharacterPath("mainChar/rat.json");
         }
 
-        public void LoadSkinOnPlayer() {
+        public boolean LoadSkinOnPlayer() {
             if (this.playerClass.equals(AbstractDungeon.player.chosenClass)) {
                 ((TheRodent)AbstractDungeon.player).isMultiplayer = true;
                 ReflectionHacks.privateMethod(AbstractCreature.class, "loadAnimation", String.class, String.class, float.class).invoke(AbstractDungeon.player, atlasLoc, jsonLoc, 1f / scale);
                 ((TheRodent)AbstractDungeon.player).prepAnimation();
+                return true;
             }
+            return false;
         }
     }
 }
