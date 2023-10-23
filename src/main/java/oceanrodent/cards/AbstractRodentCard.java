@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import oceanrodent.characters.TheRodent;
+import oceanrodent.mechanics.Junk;
 import oceanrodent.util.CardArtRoller;
 
 import static oceanrodent.RodentMod.makeImagePath;
@@ -30,6 +32,7 @@ public abstract class AbstractRodentCard extends CustomCard {
 
     protected CardStrings cardStrings;
     protected String[] exDesc;
+    protected static AbstractCard dummyCard = new Strike();
 
     public int secondMagic;
     public int baseSecondMagic;
@@ -49,6 +52,10 @@ public abstract class AbstractRodentCard extends CustomCard {
     public boolean hardy = false;
     
     private boolean needsArtRefresh = false;
+    protected boolean previewsJunk = false;
+    private static float junkChangeTimer = 0f;
+    private static final float JUNK_CHANGE_INTERVAL = 2f;
+    private static AbstractCard junkPreview;
     
     public AbstractRodentCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheRodent.Enums.RODENT_COLOUR_OCEAN);
@@ -69,6 +76,29 @@ public abstract class AbstractRodentCard extends CustomCard {
                 CardArtRoller.computeCard(this);
             } else
                 needsArtRefresh = true;
+        }
+    }
+
+    @Override
+    public void renderCardPreview(SpriteBatch sb) {
+        rotateJunkPreview();
+        super.renderCardPreview(sb);
+    }
+
+    @Override
+    public void renderCardPreviewInSingleView(SpriteBatch sb) {
+        rotateJunkPreview();
+        super.renderCardPreviewInSingleView(sb);
+    }
+
+    private void rotateJunkPreview() {
+        if (previewsJunk) {
+            junkChangeTimer -= Gdx.graphics.getDeltaTime();
+            if (junkChangeTimer <= 0f) {
+                junkChangeTimer += JUNK_CHANGE_INTERVAL;
+                junkPreview = Junk.getRandomJunk();
+            }
+            cardsToPreview = junkPreview;
         }
     }
 

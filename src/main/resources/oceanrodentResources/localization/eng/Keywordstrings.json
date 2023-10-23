@@ -54,6 +54,6 @@
     "NAMES": [
       "junk"
     ],
-    "DESCRIPTION": "junk cards cost #b0, draw #b1 card (or #b2 if upgraded), and #yexhaust in addition to a random effect."
+    "DESCRIPTION": "junk cards cost nothing, draw #b1 (or #b2 if upgraded), #yexhaust, and perform a small effect."
   }
 ]

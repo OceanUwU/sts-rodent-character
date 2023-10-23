@@ -11,6 +11,11 @@
             "从你的抽牌堆中选择要丢弃的牌。"
         ]
     },
+    "${ModID}:JunkCompendiumName": {
+      "TEXT": [
+        "垃圾"
+      ]
+    },
 
     "${ModID}:GrimePack": {
       "TEXT": ["弄脏", "拥抱脏污，强化你卡牌的伤害和格挡。", "ocean", "灵感来源于blizzarre的“runesmith”角色"]

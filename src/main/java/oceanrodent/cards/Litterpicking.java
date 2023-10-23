@@ -15,6 +15,8 @@ public class Litterpicking extends AbstractRodentCard {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 3;
         baseMagicNumber = magicNumber = 1;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

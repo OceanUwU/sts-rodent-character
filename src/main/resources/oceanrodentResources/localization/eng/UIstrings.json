@@ -11,6 +11,11 @@
             "choose cards from your draw pile to discard."
         ]
     },
+    "${ModID}:JunkCompendiumName": {
+      "TEXT": [
+        "junk"
+      ]
+    },
 
     "${ModID}:GrimePack": {
       "TEXT": ["grime", "buff your cards' damage and block by embracing the grime.", "ocean", "inspired by enhance from blizzarre's runesmith"]

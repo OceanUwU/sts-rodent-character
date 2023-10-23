@@ -12,7 +12,7 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "{@@}${ModID}:junk. NL ",
-      " NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}.",
+      "{@@} NL draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}.",
       " NL exhaust.",
       "rarity"
     ]
@@ -452,7 +452,7 @@
   },
   "${ModID}:BinLid": {
     "NAME": "bin lid",
-    "DESCRIPTION": "gain !M! plated armour."
+    "DESCRIPTION": "gain !M! *plated *armour."
   },
   "${ModID}:BubbleWrap": {
     "NAME": "bubble wrap",

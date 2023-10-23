@@ -238,5 +238,10 @@ public class TheRodent extends CustomPlayer {
         @SpireEnum(name = "RODENT_COLOUR_OCEAN")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
+        @SpireEnum(name = "JUNK_COLOUR_OCEAN")
+        public static AbstractCard.CardColor JUNK_COLOUR_OCEAN;
+        @SpireEnum(name = "JUNK_COLOUR_OCEAN")
+        @SuppressWarnings("unused")
+        public static CardLibrary.LibraryType JUNK_LIBRARY_COLOR;
     }
 }

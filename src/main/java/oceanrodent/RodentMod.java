@@ -59,7 +59,8 @@ public class RodentMod implements
         return modID + ":" + idText;
     }
 
-    public static Color characterColor = new Color(1.00f, 0.91f, 0.91f, 1);
+    public static Color characterColor = new Color(1.00f, 0.91f, 0.91f, 1f);
+    public static Color junkColour = new Color(0.57f, 0.57f, 0.57f, 1f);
 
     public static final String SHOULDER1 = makeCharacterPath("mainChar/shoulder.png");
     public static final String SHOULDER2 = makeCharacterPath("mainChar/shoulder2.png");
@@ -67,12 +68,14 @@ public class RodentMod implements
     private static final String ATTACK_S_ART = makeImagePath("512/attack.png");
     private static final String SKILL_S_ART = makeImagePath("512/skill.png");
     private static final String POWER_S_ART = makeImagePath("512/power.png");
-    private static final String CARD_ENERGY_S = makeImagePath("512/energy.png");
+    public static final String CARD_ENERGY_S = makeImagePath("512/energy.png");
     private static final String TEXT_ENERGY = makeImagePath("512/text_energy.png");
     private static final String ATTACK_L_ART = makeImagePath("1024/attack.png");
     private static final String SKILL_L_ART = makeImagePath("1024/skill.png");
     private static final String POWER_L_ART = makeImagePath("1024/power.png");
-    private static final String CARD_ENERGY_L = makeImagePath("1024/energy.png");
+    public static final String CARD_ENERGY_L = makeImagePath("1024/energy.png");
+    public static final String JUNK_S_ART = makeImagePath("512/junk.png");
+    public static final String JUNK_L_ART = makeImagePath("1024/junk.png");
     private static final String CHARSELECT_BUTTON = makeImagePath("charSelect/charButton.png");
     private static final String CHARSELECT_PORTRAIT = makeImagePath("charSelect/charBG.png");
     
@@ -106,6 +109,12 @@ public class RodentMod implements
                 characterColor, characterColor, characterColor, characterColor,
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
+                CARD_ENERGY_L, TEXT_ENERGY);
+
+        BaseMod.addColor(TheRodent.Enums.JUNK_COLOUR_OCEAN, junkColour, junkColour, junkColour,
+                junkColour, junkColour, junkColour, junkColour,
+                JUNK_S_ART, JUNK_S_ART, JUNK_S_ART, CARD_ENERGY_S,
+                JUNK_L_ART, JUNK_L_ART, JUNK_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
     }
 

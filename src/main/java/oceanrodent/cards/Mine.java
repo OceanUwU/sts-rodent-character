@@ -14,6 +14,8 @@ public class Mine extends AbstractRodentCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 5;
         baseMagicNumber = magicNumber = 1;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

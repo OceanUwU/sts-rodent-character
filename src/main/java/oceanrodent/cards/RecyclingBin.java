@@ -17,6 +17,8 @@ public class RecyclingBin extends AbstractRodentCard {
     public RecyclingBin() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

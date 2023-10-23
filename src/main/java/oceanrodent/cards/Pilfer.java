@@ -16,6 +16,8 @@ public class Pilfer extends AbstractRodentCard {
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 1;
         exhaust = true;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

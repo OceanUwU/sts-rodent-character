@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -47,6 +48,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import oceanrodent.cards.AbstractRodentCard;
 import oceanrodent.cards.RatKing.RatKingPower;
+import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk.MakeAction.Location;
 import oceanrodent.powers.Encheesed;
 
@@ -198,6 +200,10 @@ public class Junk {
         return null;
     }
 
+    public static JunkCard getRandomJunk() {
+        return getJunk(weightedJunk.get(MathUtils.random(0, weightedJunk.size() - 1)));
+    }
+
     public static JunkCard getRandomJunk(Random random) {
         return getJunk(weightedJunk.get(random.random(0, weightedJunk.size() - 1)));
     }
@@ -274,9 +280,18 @@ public class Junk {
         private Consumer<JunkCard> editOp;
 
         public JunkCard(String cardID, int weight, CardType type, CardTarget target, int dmg, int blc, int mgc, BiConsumer<JunkCard, AbstractMonster> effect) {
-            super(makeID(cardID), 0, type, CardRarity.SPECIAL, target, CardColor.COLORLESS);
+            super(makeID(cardID), -2, type, CardRarity.SPECIAL, target, TheRodent.Enums.JUNK_COLOUR_OCEAN);
             this.effect = effect;
             this.weight = weight;
+
+            if (weight >= 30)
+                rarity = CardRarity.BASIC;
+            else if (weight >= 10)
+                rarity = CardRarity.COMMON;
+            else if (weight <= 3)
+                rarity = CardRarity.RARE;
+            else
+                rarity = CardRarity.UNCOMMON;
 
             if (dmg == 0) dmg = -1;
             if (blc == 0) blc = -1;
@@ -310,9 +325,12 @@ public class Junk {
         public void initializeDescription() {
             if (cardStrings == null)
                 cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
+            rawDescription = cardStrings.DESCRIPTION + junkStrings.EXTENDED_DESCRIPTION[1];
+            /*
             rawDescription = junkStrings.EXTENDED_DESCRIPTION[0] + cardStrings.DESCRIPTION + junkStrings.EXTENDED_DESCRIPTION[1];
             if (type != CardType.POWER)
                 rawDescription += junkStrings.EXTENDED_DESCRIPTION[2];
+            */
             super.initializeDescription();
         }
 
@@ -329,6 +347,7 @@ public class Junk {
                 ArrayList<TooltipInfo> tips = new ArrayList<>();
                 if (card instanceof JunkCard) {
                     JunkCard junk = (JunkCard)card;
+                    tips.add(new TooltipInfo(BaseMod.getKeywordTitle(makeID("junk")), BaseMod.getKeywordDescription(makeID("junk"))));
                     tips.add(new TooltipInfo(junkStrings.EXTENDED_DESCRIPTION[3], ("#b"+((float)Math.round((float)junk.weight/(float)weightedJunk.size()*10000))/100f+"%").replace(".0%", "%")));
                 }
                 return tips;

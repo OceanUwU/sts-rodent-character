@@ -15,6 +15,8 @@ public class Rummage extends AbstractRodentCard {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = 7;
         baseMagicNumber = magicNumber = 2;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

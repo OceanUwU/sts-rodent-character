@@ -12,7 +12,7 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "{@@}${ModID}:垃圾 。 NL ",
-      " NL 抽 !${ModID}:m2! 张牌。",
+      "{@@} NL 抽 !${ModID}:m2! 张牌。",
       " NL 消耗。",
       "稀有度"
     ]

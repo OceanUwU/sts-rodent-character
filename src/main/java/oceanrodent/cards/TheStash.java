@@ -16,6 +16,8 @@ public class TheStash extends AbstractRodentCard {
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 0;
         hardy = true;
+        previewsJunk = true;
+        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {}
