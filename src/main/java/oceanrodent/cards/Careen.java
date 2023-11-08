@@ -21,8 +21,6 @@ public class Careen extends AbstractRodentCard {
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 6;
         exhaust = true;
-        previewsJunk = true;
-        cardsToPreview = dummyCard;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
