@@ -214,7 +214,7 @@
   },
   "${ModID}:SurpriseShiv": {
     "NAME": "surprise shiv",
-    "DESCRIPTION": "retain. NL deal !D! damage. NL increase this card's damage by !M! whenever you exhaust a card with this in hand. NL exhaust."
+    "DESCRIPTION": "retain. NL deal !D! damage. NL ${ModID}:flit: increase this card's damage by !M!. NL exhaust."
   },
   "${ModID}:Ratpack": {
     "NAME": "ratpack",
@@ -274,11 +274,11 @@
   },
   "${ModID}:Sidestep": {
     "NAME": "sidestep",
-    "DESCRIPTION": "{@@}${ModID}:hardy: gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= and draw !${ModID}:m2! card|>1= and draw !${ModID}:m2! cards}."
+    "DESCRIPTION": "{@@}unplayable. NL ${ModID}:hardy: gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= and draw !${ModID}:m2! card|>1= and draw !${ModID}:m2! cards}."
   },
   "${ModID}:Encircle": {
     "NAME": "encircle",
-    "DESCRIPTION": "gain !B! block. NL increase this card's block by !M! whenever you play a card with this in hand. NL exhaust."
+    "DESCRIPTION": "gain !B! block. NL ${ModID}:flit: increase this card's block by !M!. NL exhaust."
   },
   "${ModID}:BinLidSwing": {
     "NAME": "bin lid swing",

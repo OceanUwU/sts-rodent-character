@@ -274,7 +274,7 @@
   },
   "${ModID}:Sidestep": {
     "NAME": "侧身回避",
-    "DESCRIPTION": "{@@}${ModID}:吃苦 ： 获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= 并抽 !${ModID}:m2! 张牌|>1= 并抽 !${ModID}:m2! 张牌} 。"
+    "DESCRIPTION": "{@@}不能被打出。 NL ${ModID}:吃苦 ： 获得 {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{!${ModID}:m2!|1= 并抽 !${ModID}:m2! 张牌|>1= 并抽 !${ModID}:m2! 张牌} 。"
   },
   "${ModID}:Encircle": {
     "NAME": "绕圈",
