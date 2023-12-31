@@ -40,6 +40,7 @@ import oceanrodent.mechanics.Junk;
 import oceanrodent.potions.*;
 import oceanrodent.relics.AbstractEasyRelic;
 import oceanrodent.util.PackLoader;
+import oceanrodent.util.Skindexer;
 import thePackmaster.SpireAnniversary5Mod;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -104,6 +105,8 @@ public class RodentMod implements
         BaseMod.subscribe(this);
         if (Loader.isModLoaded("anniv5"))
             SpireAnniversary5Mod.subscribe(new PackLoader());
+        if (Loader.isModLoaded("skindex") || Loader.isModLoaded("spireTogether"))
+            Skindexer.register();
 
         BaseMod.addColor(TheRodent.Enums.RODENT_COLOUR_OCEAN, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,

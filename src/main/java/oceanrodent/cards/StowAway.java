@@ -18,7 +18,7 @@ public class StowAway extends AbstractRodentCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        applyToSelf(new NipBlockPower(magicNumber));
+        applyToSelf(NipBlockPower.make(magicNumber));
     }
 
     public void upp() {

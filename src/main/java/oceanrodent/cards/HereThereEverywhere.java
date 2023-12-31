@@ -20,7 +20,7 @@ public class HereThereEverywhere extends AbstractRodentCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < 2; i++)
             dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        applyToSelf(new NipBlockPower(magicNumber));
+        applyToSelf(NipBlockPower.make(magicNumber));
     }
 
     public void upp() {
