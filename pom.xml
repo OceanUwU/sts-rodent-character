@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>oceanrodent</artifactId>
-    <version>1.3.18</version>
+    <version>1.3.19</version>
     <name>rodent (the)</name>
     <description>sts mashup character.</description>
 
@@ -18,7 +18,7 @@
         <ModID>oceanrodent</ModID>
 
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>C:/Program Files (x86)/Steam/steamapps</Steam.path>
+        <Steam.path>/home/ocean/.local/share/Steam/steamapps</Steam.path>
 
     </properties>
 

@@ -55,12 +55,5 @@
       "junk"
     ],
     "DESCRIPTION": "junk cards cost nothing, draw #b1 (or #b2 if upgraded), #yexhaust, and perform a small effect."
-  },
-  {
-    "PROPER_NAME": "flit",
-    "NAMES": [
-      "flit"
-    ],
-    "DESCRIPTION": "effect triggers every time you play another card while this card is in your hand."
   }
 ]
