@@ -67,7 +67,7 @@ public class Junk {
         add(new JunkCard("Lid", 30, CardType.SKILL, CardTarget.SELF, 0, 3, 0, (c, m) -> {
             c.blck();}));
 
-        add(new JunkCard("StaleLoafOfBread", 10, CardType.ATTACK, CardTarget.ALL_ENEMY, 2, 0, 0, (c, m) -> {
+        add(new JunkCard("StaleLoafOfBread", 10, CardType.ATTACK, CardTarget.ALL_ENEMY, 2, 0, 0, (JunkCard c, AbstractMonster m) -> {
             c.allDmg(AttackEffect.BLUNT_LIGHT);}));
 
         add(new JunkCard("Bottle", 15, CardType.ATTACK, CardTarget.ENEMY, 3, 3, 0, (c, m) -> {
@@ -305,6 +305,9 @@ public class Junk {
 
             exhaust = type != CardType.POWER;
             baseSecondMagic = secondMagic = 1;
+
+            if (type == CardType.ATTACK && (target == CardTarget.ALL_ENEMY || target == CardTarget.ALL))
+                isMultiDamage = true;
 
             CardModifierManager.addModifier(this, new RarityTipModifier());
         }
