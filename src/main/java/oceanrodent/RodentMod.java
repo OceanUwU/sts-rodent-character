@@ -37,6 +37,7 @@ import oceanrodent.cards.Hoard.HoardPower.JunkReward;
 import oceanrodent.cards.cardvars.*;
 import oceanrodent.characters.TheRodent;
 import oceanrodent.mechanics.Junk;
+import oceanrodent.patches.LowercaseStuff;
 import oceanrodent.potions.*;
 import oceanrodent.relics.AbstractEasyRelic;
 import oceanrodent.util.PackLoader;
@@ -52,7 +53,8 @@ public class RodentMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber,
+        StartGameSubscriber {
 
     public static final String modID = "oceanrodent";
 
@@ -213,6 +215,11 @@ public class RodentMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+    @Override
+    public void receiveStartGame() {
+        if (AbstractDungeon.player instanceof TheRodent)
+            LowercaseStuff.run = true;
     }
 
     public void receivePostInitialize() {
